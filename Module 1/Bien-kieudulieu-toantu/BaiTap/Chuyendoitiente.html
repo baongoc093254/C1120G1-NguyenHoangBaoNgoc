@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyendoitiente</title>
+
+</head>
+<body>
+<form method="get" action="Chuyendoitiente.html">
+    <strong><p style="margin-left: 50px">Amount</p></strong>
+    <input id="amount" type="number">
+    <strong><p>Form Currency</p></strong>
+    <label>
+        <select id="chuyendoi1">
+            <option>VND</option>
+            <option>USD</option>
+        </select>
+    </label>
+    <strong><p>To Currency</p></strong>
+    <label>
+        <select id="chuyendoi2">
+            <option>USD</option>
+            <option>VND</option>
+        </select>
+    </label>
+    <input type="button" onclick="doiTien()" value="Convert">
+
+    <p id="result"></p>
+</form>
+<script>
+    function doiTien() {
+        let tienNhap = document.getElementById("amount").value;
+        let cache1 = document.getElementById("chuyendoi1").value;
+        let cache2 = document.getElementById("chuyendoi2").value;
+        let ketqua;
+        if (cache1 === "VND" && cache2 === "USD") {
+            ketqua = tienNhap / 23000;
+
+        }
+        else if (cache1 === "USD" && cache2 === "VND") {
+            ketqua = tienNhap * 23000;
+        }
+        document.getElementById("result").innerText = "Kết quả là: " + ketqua;
+
+    }
+</script>
+
+
+</body>
+</html>
