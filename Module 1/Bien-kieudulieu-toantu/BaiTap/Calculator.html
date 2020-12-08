@@ -6,21 +6,36 @@
 </head>
 <body>
 <strong><h1>Calculator</h1></strong>
-<input type="number1" id="numb1">
-<input type =number2" id="numb2">
+<input type="number" id="numb1">
+<input type =number" id="numb2">
 <br><br>
-<input type="button" onclick="Cong" value="Addition(+)">
-<input type="button" onclick="Tru"  value="Subtraction(-)">
-<input type="button" onclick="Nhan" value="Mulplication(X)">
-<input type="button" onclick="Chia" value="Division(/)">
+<input type="submit" onclick="adding()" value="Addition(+)">
+<input type="submit" onclick="Subtracting()"  value="Subtraction(-)">
+<input type="submit" onclick="Mulplicating()" value="Mulplication(X)">
+<input type="submit" onclick="Division()" value="Division(/)">
 <p id="result"></p>
     <script>
-    let Nb1=document.getElementById("numb1").value
-        let Nb2= document.getElementById("numb2").value
-    let Addition = Nb1 + Nb2
-        let ketqua;
-    document.getElementById("result").innerText="Kết quả là =" +ketqua;
-
+        function adding() {
+    let number1 = parseInt(document.getElementById("numb1").value);
+    let number2 = parseInt(document.getElementById("numb2").value);
+    document.getElementById("result").innerText = number1 + number2
+        }
+        function Subtracting() {
+            let number1 = parseInt(document.getElementById("numb1").value);
+            let number2 = parseInt(document.getElementById("numb2").value);
+            document.getElementById("result").innerText = number1 - number2
+        }
+        function Mulplicating() {
+            let number1 = parseInt(document.getElementById("numb1").value);
+            let number2 =parseInt(document.getElementById("numb2").value);
+            document.getElementById("result").innerText = number1 * number2
+            }
+        function Division() {
+            let number1 = parseInt(document.getElementById("numb1").value);
+            let number2 = parseInt(document.getElementById("numb2").value);
+            document.getElementById("result").innerText = number1 / number2
+            }
+        
     </script>
 
 </body>
