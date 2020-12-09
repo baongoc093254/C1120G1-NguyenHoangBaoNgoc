@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ifelse2</title>
+</head>
+<body>
+<script>
+    let userName = prompt("Who's there?", '');
+
+    if (userName === 'Admin') {
+        let pass = prompt("Nhập pass");
+        if (pass === "TheMaster") {
+            alert("Welcome!");
+        } else if (pass === "") {
+            alert("Wrong password");
+        } else {
+            alert("I don't know you.")
+        }
+    } else if (userName === "") {
+        alert("Canceled.")
+    } else {
+        alert("I don't know you.")
+    }
+</script>
+</body>
+</html>

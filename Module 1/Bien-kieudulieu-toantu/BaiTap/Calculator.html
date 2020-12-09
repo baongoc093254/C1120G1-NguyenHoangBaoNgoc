@@ -10,9 +10,9 @@
 <input type =number" id="numb2">
 <br><br>
 <input type="submit" onclick="adding()" value="Addition(+)">
-<input type="submit" onclick="Subtracting()"  value="Subtraction(-)">
-<input type="submit" onclick="Mulplicating()" value="Mulplication(X)">
-<input type="submit" onclick="Division()" value="Division(/)">
+<input type="submit" onclick="subtracting()"  value="Subtraction(-)">
+<input type="submit" onclick="mulplicating()" value="Mulplication(X)">
+<input type="submit" onclick="division()" value="Division(/)">
 <p id="result"></p>
     <script>
         function adding() {
@@ -20,17 +20,17 @@
     let number2 = parseInt(document.getElementById("numb2").value);
     document.getElementById("result").innerText = number1 + number2
         }
-        function Subtracting() {
+        function subtracting() {
             let number1 = parseInt(document.getElementById("numb1").value);
             let number2 = parseInt(document.getElementById("numb2").value);
             document.getElementById("result").innerText = number1 - number2
         }
-        function Mulplicating() {
+        function mulplicating() {
             let number1 = parseInt(document.getElementById("numb1").value);
             let number2 =parseInt(document.getElementById("numb2").value);
             document.getElementById("result").innerText = number1 * number2
             }
-        function Division() {
+        function division() {
             let number1 = parseInt(document.getElementById("numb1").value);
             let number2 = parseInt(document.getElementById("numb2").value);
             document.getElementById("result").innerText = number1 / number2
