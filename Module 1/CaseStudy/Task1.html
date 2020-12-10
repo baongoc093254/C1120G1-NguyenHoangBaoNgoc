@@ -6,52 +6,81 @@
 </head>
 <body>
 <h1>Khu nghỉ dưỡng</h1>
-<p>Họ tên:</p>
+Họ tên:
 <input type="text" id="name" size="35">
-<p>Số CMND:</p>
+<br><br>
+Số CMND:
 <input type="number" id="IDcard" size="20">
-<p>Địa chỉ:</p>
+<br><br>
+Địa chỉ:
 <input type="text" id="address" size="20">
-<p>Email:</p>
+<br><br>
+Email:
 <input type="text" id="email" size="35">
-<p>Ngày tháng năm sinh:</p>
+<br><br>
+Ngày tháng năm sinh:
 <input type="date" id="dayofbirth" size="15">
-<p>Số lượng người đi cùng:</p>
-<input  type="number" id="number" size="5">
-<p>Số ngày thuê dịch vụ:</p>
+<br><br>
+Số lượng người đi cùng:
+<input type="number" id="number" size="5">
+<br><br>
+Số ngày thuê dịch vụ:
 <input type="number" id="rentdays" size="10">
-<p>Loại customer</p>
-<input type="radio" name="rank"/> Diamond <br>
-<input type="radio" name="rank"/> Platinum <br>
-<input type="radio" name="rank"/> Gold <br>
-<input type="radio" name="rank"/> Silver <br>
-<input type="radio" name="rank"/> Member <br>
-<p>Loại dịch vụ:</p>
+<br><br>
+Loại customer
+<input type="radio" name="rank"/> Diamond
+<input type="radio" name="rank"/> Platinum
+<input type="radio" name="rank"/> Gold
+<input type="radio" name="rank"/> Silver
+<input type="radio" name="rank"/> Member
+<br><br>
+Loại dịch vụ:
 <select>
     <option>Villa</option>
     <option>House</option>
     <option>Room</option>
 </select>
-<p>Loại phòng thuê</p>
+Loại phòng thuê
 <select>
     <option value="">Normal</option>
     <option>Business</option>
     <option>Vip</option>
 </select>
 <script>
-let fullname =prompt("Nhập tên");
-let idcard =prompt("Nhập cmnd");
-let address = prompt("Nhập địa chỉ");
-let email =prompt("Nhập email");
-let dayofbirth = prompt()
-
-
-
-
+    let fullname = prompt("Nhập tên");
+    let idcard = prompt("Nhập cmnd");
+    let address = prompt("Nhập địa chỉ:");
+    let email = prompt("Nhập email");
+    let dayofbirth = prompt("Nhập ngày tháng năm sinh");
+    let numbers = prompt("Số người đi cùng");
+    let days = prompt("Số ngày thuê dịch vụ");
+    let service = prompt("Loại hình dịch vụ");
+    let rank = prompt("Rank của bạn");
+    let kindroom = prompt("Loại phòng");
+    let discount = prompt("Phần trăm giảm giá")
+    let moneyforservice;
+    if (service === "Villa") {
+        alert(moneyforservice == 500);
+    } else if (service === "House") {
+        alert(moneyforservice === 300)
+    } else {
+        alert(moneyforservice === 100)
+    }
+    let pay = moneyforservice * days * (1 - discount / 100)
+    alert("1. Tên khách hàng :" + fullname + " " +
+        "\n" + "2. Nhập CMND :" + idcard + " " +
+        "\n" + "3. Nhập địa chỉ: " + address + " " +
+        "\n" + "4. Nhập email: " + email + " " +
+        "\n" + "5. Nhập ngày tháng năm sinh: " + dayofbirth + " " +
+        "\n" + "6. Số người đi cùng: " + numbers + " " +
+        "\n" + "7. Số ngày thuê dịch vụ: " + days + " " +
+        "\n" + "8. Loại hình dịch vụ: " + service + " " +
+        "\n" + "9. Rank của bạn: " + rank + " " +
+        "\n" + "10. Loại phòng: " + kindroom + " " +
+        "\n" + "11. Tổng tiền phải trả: " + pay
+    )
 
 </script>
-
-
 
 
 </body>
