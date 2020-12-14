@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hinhchunhat</title>
+</head>
+<body>
+<script>
+    let n =parseInt(prompt("nhập n:"));
+    let m =parseInt(prompt("nhập m:"));
+    for (let i = 1; i <= n ; i++) {
+        for (let k = 1; k <= m ; k++) {
+            if (i == 1 || k == 1 || i == n || k == m) {
+                document.write("*");
+            } else {
+                document.write("&nbsp;&nbsp");
+            }
+        }
+        document.writeln("<br>");
+    }
+
+
+
+</script>
+</body>
+</html>
