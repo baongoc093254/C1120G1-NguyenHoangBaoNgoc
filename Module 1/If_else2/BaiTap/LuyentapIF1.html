@@ -43,12 +43,13 @@
     let grade1 = parseFloat(prompt("Nhập điểm kiểm tra"));
     let grade2 =parseFloat(prompt("Nhập điểm giữa kì"));
     let grade3 =parseFloat(prompt("Nhập điểm cuối kì"));
-    if (grade1>8 && grade2>8 && grade3 >8) {
+    let total = (grade1 + grade2*2 + grade3*3)/6;
+    if (total >= 8) {
         alert("Xếp loại A");
-    } else if (grade1 <=6.5 && grade2 <=6.5 && grade3 <=6.5) {
-        alert("Xếp loại B");
+    } else if (total <=7.5) {
+        alert("Xếp loại B")
     } else {
-        alert("Xếp loại C");
+        alert("Xếp loại C")
     }
 
 

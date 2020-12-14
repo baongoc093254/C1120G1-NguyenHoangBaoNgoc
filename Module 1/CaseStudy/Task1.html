@@ -5,82 +5,134 @@
     <title>Task1-Furama</title>
 </head>
 <body>
-<h1>Khu nghỉ dưỡng</h1>
-Họ tên:
-<input type="text" id="name" size="35">
-<br><br>
-Số CMND:
-<input type="number" id="IDcard" size="20">
-<br><br>
-Địa chỉ:
-<input type="text" id="address" size="20">
-<br><br>
-Email:
-<input type="text" id="email" size="35">
-<br><br>
-Ngày tháng năm sinh:
-<input type="date" id="dayofbirth" size="15">
-<br><br>
-Số lượng người đi cùng:
-<input type="number" id="number" size="5">
-<br><br>
-Số ngày thuê dịch vụ:
-<input type="number" id="rentdays" size="10">
-<br><br>
-Loại customer
-<input type="radio" name="rank"/> Diamond
-<input type="radio" name="rank"/> Platinum
-<input type="radio" name="rank"/> Gold
-<input type="radio" name="rank"/> Silver
-<input type="radio" name="rank"/> Member
-<br><br>
-Loại dịch vụ:
-<select>
-    <option>Villa</option>
-    <option>House</option>
-    <option>Room</option>
-</select>
-Loại phòng thuê
-<select>
-    <option value="">Normal</option>
-    <option>Business</option>
-    <option>Vip</option>
-</select>
+<form>
+<h1 style="text-align: center">Khu nghỉ dưỡng</h1>
+<table style="margin: auto">
+    <tr>
+    <th></th>
+    <th></th>
+    </tr>
+    <tr>
+        <td>Họ và tên :</td>
+        <td><input type="text" id="name"></td>
+    </tr>
+    <tr>
+        <td>Số CMND:</td>
+        <td><input type="number" id="idcard"></td>
+    </tr>
+    <tr>
+        <td>Địa chỉ :</td>
+        <td><input type="text" id="address"></td>
+    </tr>
+    <tr>
+        <td>Email: </td>
+        <td><input type="text" id="email"> </td>
+    </tr>
+    <tr>
+        <td>Ngày tháng năm sinh:</td>
+        <td><input type="date" id="birthday"></td>
+    </tr>
+    <tr>
+        <td>Số người đi cùng:</td>
+        <td><input type="number" id="people"></td>
+    </tr>
+    <tr>
+        <td>Số ngày thuê dịch vụ:</td>
+        <td><input type="number" id="rentday"></td>
+    </tr>
+    <tr>
+        <td>Loại hình dịch vụ muốn sử dụng: </td>
+        <td><select id="kindroom">
+            <option>Villa</option>
+            <option>House</option>
+            <option>Room</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td>Loại phòng thuê:</td>
+        <td><select id="rank">
+            <option>Normal</option>
+            <option>Business</option>
+            <option>Vip</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td>Loại customer</td>
+        <td>
+            <input type="checkbox" id="customer">Member
+            <input type="checkbox" id="customer1">Silver
+            <input type="checkbox" id="customer2">Gold
+            <input type="checkbox" id="customer3">Platinum
+            <input type="checkbox" id="customer4">Diamond
+        </td>
+    </tr>
+    <tr>
+        <td>Số tiền được giảm</td>
+    </tr>
+    <tr>
+        <td>Số tiền phải trả</td>
+        <td><input type="number" id="pay"></td>
+    </tr>
+    <tr>
+        <td>
+    <input onclick="send()" type="button" value="Submit" id="submit">
+        </td>
+        <td>
+    <input onclick="reset()" type="button" value="Reset" id="reset">
+        </td>
+    </tr>
+</table>
+<br>
+
+</form>
 <script>
-    let fullname = prompt("Nhập tên");
-    let idcard = prompt("Nhập cmnd");
-    let address = prompt("Nhập địa chỉ:");
-    let email = prompt("Nhập email");
-    let dayofbirth = prompt("Nhập ngày tháng năm sinh");
-    let numbers = prompt("Số người đi cùng");
-    let days = prompt("Số ngày thuê dịch vụ");
-    let service = prompt("Loại hình dịch vụ");
-    let rank = prompt("Rank của bạn");
-    let kindroom = prompt("Loại phòng");
-    let discount = prompt("Phần trăm giảm giá")
-    let moneyforservice;
-    if (service === "Villa") {
-        alert(moneyforservice == 500);
-    } else if (service === "House") {
-        alert(moneyforservice === 300)
-    } else {
-        alert(moneyforservice === 100)
+    function send() {
+    let fullname = document.getElementById("name").innerText;
+    let idcard = document.getElementById("idcard").innerText;
+    let email =document.getElementById("email").innerText;
+    let address = document.getElementById("address").innerText;
+    let dayofbirth = document.getElementById("birthday").innerText;
+    let people =document.getElementById("people").innerText;
+    let rentdays = document.getElementById("rentday").innerText;
+    let kindroom = document.getElementById("kindroom").innerText;
+    let customer = document.getElementById("customer").innerText;
+    let rank = document.getElementById("rank").innerText;
+    let moneyforroom;
+    let discount;
+    let pay = moneyforroom * rentdays - discount;
+    if ( fullname == "" || idcard == "" || email == "" || address =="" || dayofbirth == "" || people == "" || rentdays == "") {
+        alert("Please fill all fields");
     }
-    let pay = moneyforservice * days * (1 - discount / 100)
-    alert("1. Tên khách hàng :" + fullname + " " +
-        "\n" + "2. Nhập CMND :" + idcard + " " +
-        "\n" + "3. Nhập địa chỉ: " + address + " " +
-        "\n" + "4. Nhập email: " + email + " " +
-        "\n" + "5. Nhập ngày tháng năm sinh: " + dayofbirth + " " +
-        "\n" + "6. Số người đi cùng: " + numbers + " " +
-        "\n" + "7. Số ngày thuê dịch vụ: " + days + " " +
-        "\n" + "8. Loại hình dịch vụ: " + service + " " +
-        "\n" + "9. Rank của bạn: " + rank + " " +
-        "\n" + "10. Loại phòng: " + kindroom + " " +
-        "\n" + "11. Tổng tiền phải trả: " + pay
-    )
+    if (kindroom == "Villa") {
+        moneyforroom == 500;
+    } else if (kindroom == "House") {
+        moneyforroom == 300;
+    } else {
+        moneyforroom == 100;
+    }
+    let register = confirm("Xác nhận lại thông tin của bạn trước khi thanh toán: " +
+        "\n" + fullname + ""
+        + "\n" + idcard + ""
+        + "\n" +email + ""
+        + "\n" + address + ""
+        + "\n" + dayofbirth + ""
+        + "\n" + people + ""
+        + "\n" + rentdays + ""
+        + "\n" + kindroom + ""
+        + "\n" + customer + ""
+        + "\n" + rank + "" );
+    if (register == 1) {
+        alert("Thông tin của bạn đã được gửi đi.")
+    }
+    }
+    function reset() {
+        document.getElementsByTagName("form").reset;
+
+    }
 
 </script>
+
+
 
 
 </body>
