@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chenvitri</title>
+</head>
+<body>
+<script>
+    let posit = parseInt(prompt("Nhập số bất kì "));
+    let add = parseInt(prompt("Nhập vị trí bạn muốn chèn"));
+    let arrays = [2,3,4,5,7,9,10,12];
+    for (let i = 0; i <= arrays.length ; i++) {
+        if (add > arrays.length) {
+            alert("Nhập lại vị trí khác");
+    }
+        arrays.splice(add,0,posit);
+        console.log(arrays);
+    }
+
+
+</script>
+</body>
+</html>

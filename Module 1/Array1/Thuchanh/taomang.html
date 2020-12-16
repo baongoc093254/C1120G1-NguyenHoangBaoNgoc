@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>taomang</title>
+</head>
+<body>
+<h3>Sample Screen:</h3>
+<input type="text" id="value">
+<input onclick="send()" type="button" value="Add" id="add">
+<input onclick="display()" type="button" value="Display" id="display">
+<div id="result"></div>
+<script>
+    let x = 0;
+    let array = Array();
+
+    function send() {
+        array[x] = document.getElementById("value").value;
+        alert("Element: " + array[x] + " Added at index " + x);
+        x++;
+        document.getElementById("value").value = "";
+
+    }
+    function display() {
+        let e = "<br>";
+        for (let i = 0; i < array.length;i++) {
+            e += "Element" + i + "=" + array[i] + "<br>";
+        }
+        document.getElementById("result").innerHTML=e;
+        }
+
+</script>
+</body>
+</html>

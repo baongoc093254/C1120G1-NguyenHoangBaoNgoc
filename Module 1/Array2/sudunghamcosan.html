@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 1:
+    // let myColor = ["Red", "Green", "White","Black"]
+    // let newcolor = myColor.join()
+    // console.log(newcolor)
+    // Bài 2:
+    // let array = [025468]
+    // let newarray;
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] % 2 === 0) {
+    //         newarray = array.push("-");
+    //     }
+    //
+    //     }
+    //
+    // console.log(newarray);
+    // let arrayy = ["The Quick Brown Fox"];
+    // for (let i = 0; i < arrayy.length ; i++) {
+    //     if (arrayy.includes(arrayy[i])) {
+    //         arrayy.push(arrayy[i].toLocaleUpperCase());
+    //     } else if (arrayy.includes(arrayy[i])) {
+    //         arrayy.push(arrayy[i].toLocaleLowerCase());
+    //     }
+    //
+    // }
+    // console.log(arrayy.join(''));
+    var str = 'The Quick Brown Fox';
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    const result = [];
+
+    for(let x=0; x<str.length; x++)
+    {
+        if(UPPER.includes(str[x]))
+        {
+            result.push(str[x].toLowerCase());
+        }
+        else if(LOWER.includes(str[x]))
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    console.log(result.join(''));
+
+
+
+
+</script>
+</body>
+</html>
