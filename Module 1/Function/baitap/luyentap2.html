@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Bài 1:
+    // Tính bình phương của một số bất kì:
+    // function square(x) {
+    //     let result  = x*x;
+    //     return result;
+    // }
+    // let x = prompt("Nhập x")
+    // console.log(square(x));
+
+
+    // Bài 2:
+    // function perimeter(r) {
+    //     let result = 2*3.14*r;
+    //     return result;
+    // }
+    // function area(r) {
+    //     let result = 3.14*r*r;
+    //     return result;
+    // }
+    // let r = prompt("Nhập bán kính r");
+    // console.log(perimeter(r));
+    // console.log(area(r));
+
+
+
+    // Bài 3:
+    // let  giaithua = 1;
+    // function factorial(x) {
+    //     for (let i = 1; i <= x ; i++) {
+    //         giaithua = giaithua * i;
+    //     }
+    //     return giaithua;
+    // }
+    // let x = prompt("Nhập số x bất kì");
+    // console.log(factorial(x));
+
+
+    // Bài 4:
+    // function testnumber(x) {
+    //     let a = x*0;
+    //     if (a == 0 ) {
+    //         alert(x + " là số");
+    //     } else {
+    //         alert(x + " Không phải là số");
+    //     }
+    // }
+    // testnumber(prompt("Nhập kí tự bật kì "));
+
+
+    // bài 5:
+    // function testMinNumber(x,y,z) {
+    //     let min = a
+    //     let result = min
+    //     if (b < a && b < c) {
+    //         result = b;
+    //     } else if (c < a && c < b) {
+    //         result = c;
+    //     }
+    //     return result;
+    // }
+    // let result;
+    // let a = parseInt(prompt("Nhập số a"));
+    // let b = parseInt(prompt("Nhập số b"));
+    // let c = parseInt(prompt("Nhập số c"));
+    //
+    // console.log(testMinNumber());
+
+        // Bài 6:
+    // let nhapso = parseInt(prompt("Nhập số bất kì: "));
+    // function testnumber(x) {
+    //     if (!Number.isInteger(x) || x <= 0 ) {
+    //         return false;
+    // }
+    // else return true;
+    // }
+    // console.log(testnumber(nhapso));
+
+    //     Bài 7:
+    // let number1 = parseInt(prompt("Nhập số thứ nhất :"));
+    // let number2 = parseInt(prompt("Nhập số thứ hai :"));
+    // document.write("Vị trí 2 số ban đầu là : " + number1 + " và " + number2 + "<br>");
+    // document.write(swap(number1,number2));
+    // function swap(a,b) {
+    //     //let index = a;
+    //     //a = b;
+    //     //b = index;
+    //     return "Vị trí 2 số sau khi đổi chỗ là : " + b + " và " + a;
+    // }
+
+
+    let mangNhap = new Array();
+    for (let i=0;i<5;i++){
+        let nhapNumber = parseInt(prompt("Nhập số nguyên bất kỳ:"));
+        mangNhap.push(nhapNumber);
+    }
+    document.write("Mảng ban đầu nhập vào là : " + mangNhap + "<br>");
+    document.write(daoNguocMang(mangNhap));
+    function daoNguocMang(array) {
+        let first = 0;
+        let last = array.length - 1;
+        while (first < last) {
+            let index = array[first];
+            array[first] = array[last];
+            array[last] = index;
+            first++;
+            last--;
+        }
+        return "Mảng sau khi đảo ngược là : " + array;
+    }
+</script>
+</body>
+</html>

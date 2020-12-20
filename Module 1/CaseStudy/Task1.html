@@ -5,135 +5,39 @@
     <title>Task1-Furama</title>
 </head>
 <body>
-<form>
-<h1 style="text-align: center">Khu nghỉ dưỡng</h1>
-<table style="margin: auto">
-    <tr>
-    <th></th>
-    <th></th>
-    </tr>
-    <tr>
-        <td>Họ và tên :</td>
-        <td><input type="text" id="name"></td>
-    </tr>
-    <tr>
-        <td>Số CMND:</td>
-        <td><input type="number" id="idcard"></td>
-    </tr>
-    <tr>
-        <td>Địa chỉ :</td>
-        <td><input type="text" id="address"></td>
-    </tr>
-    <tr>
-        <td>Email: </td>
-        <td><input type="text" id="email"> </td>
-    </tr>
-    <tr>
-        <td>Ngày tháng năm sinh:</td>
-        <td><input type="date" id="birthday"></td>
-    </tr>
-    <tr>
-        <td>Số người đi cùng:</td>
-        <td><input type="number" id="people"></td>
-    </tr>
-    <tr>
-        <td>Số ngày thuê dịch vụ:</td>
-        <td><input type="number" id="rentday"></td>
-    </tr>
-    <tr>
-        <td>Loại hình dịch vụ muốn sử dụng: </td>
-        <td>
-            <input type="checkbox" id="kindroom1">Villa
-            <input type="checkbox" id="kindroom2">House
-            <input type="checkbox" id="kindroom3">Room
-        </td>
-    </tr>
-    <tr>
-        <td>Loại phòng thuê:</td>
-        <td>
-            <input type="checkbox" id="rank1">Vip
-            <input type="checkbox" id="rank2">Business
-            <input type="checkbox" id="rank3">Normal
-        </td>
-    </tr>
-    <tr>
-        <td>Loại customer</td>
-        <td>
-            <input type="checkbox" id="customer">Member
-            <input type="checkbox" id="customer1">Silver
-            <input type="checkbox" id="customer2">Gold
-            <input type="checkbox" id="customer3">Platinum
-            <input type="checkbox" id="customer4">Diamond
-        </td>
-    </tr>
-    <tr>
-        <td>Số tiền được giảm</td>
-    </tr>
-    <tr>
-        <td>Số tiền phải trả</td>
-        <td><input type="number" id="pay"></td>
-    </tr>
-    <tr>
-        <td>
-    <input onclick="send()" type="button" value="Submit" id="submit">
-        </td>
-        <td>
-    <input onclick="reset()" type="button" value="Reset" id="reset">
-        </td>
-    </tr>
-</table>
-<br>
-
-</form>
 <script>
-    function send() {
-    let fullname = document.getElementById("name").innerText;
-    let idcard = document.getElementById("idcard").innerText;
-    let email =document.getElementById("email").innerText;
-    let address = document.getElementById("address").innerText;
-    let dayofbirth = document.getElementById("birthday").innerText;
-    let people =document.getElementById("people").innerText;
-    let rentdays = document.getElementById("rentday").innerText;
-    let kindroom = document.getElementById("kindroom").innerText;
-    let customer = document.getElementById("customer").innerText;
-    let rank = document.getElementById("rank").innerText;
-    let moneyforroom;
-    let discount;
-    let pay = moneyforroom * rentdays - discount;
-    if ( fullname == "" || idcard == "" || email == "" || address =="" || dayofbirth == "" || people == "" || rentdays == "") {
-        alert("Please fill all fields");
-    }
+    let fullname = prompt("Nhập tên: ");
+    let idcard = parseInt(prompt("Nhập số cmnd: "));
+    let email =prompt("Nhập email: ");
+    let address = prompt("Nhập địa chỉ: ");
+    let dayofbirth = prompt("Nhập ngày tháng năm sinh: ");
+    let people =prompt("Nhập số người đi cùng: ");
+    let rentdays = prompt("Nhập số ngày thuê: ");
+    let kindroom = prompt("Nhập loại dịch vụ muốn sử dụng: " + "\n" + "1.Villa" + "\n" + "2.House" + "\n" + "3.Room");
+    let customer = prompt("Nhập thẻ member của bạn: " + "\n" + "1.Member" + "\n" + "2.Silver" + "\n" + "3.Gold" + "\n" + "4.Platinum" + "\n" + "5.Diamond")
+    let rank = prompt("Nhập loại phòng bạn muốn thuê:" + "\n" + "1.Vip" + "\n" + "2.Business" + "\n" + "3.Normal");
+    let moneyroom;
+    let discount = prompt("Nhập số % muốn giảm" )
+
     if (kindroom == "Villa") {
-        moneyforroom == 500;
+        moneyroom == 500;
     } else if (kindroom == "House") {
-        moneyforroom == 300;
+        moneyroom == 300;
     } else {
-        moneyforroom == 100;
+        moneyroom == 100;
     }
-    let register = confirm("Xác nhận lại thông tin của bạn trước khi thanh toán: " +
-        "\n" + fullname + ""
-        + "\n" + idcard + ""
-        + "\n" +email + ""
-        + "\n" + address + ""
-        + "\n" + dayofbirth + ""
-        + "\n" + people + ""
-        + "\n" + rentdays + ""
-        + "\n" + kindroom + ""
-        + "\n" + customer + ""
-        + "\n" + rank + "" );
-    if (register == 1) {
-        alert("Thông tin của bạn đã được gửi đi.")
-    }
-    }
-    function reset() {
-        document.getElementsByTagName("form").reset;
-
-    }
-
+    alert("Xác nhận lại thông tin của bạn trước khi thanh toán: " +
+        "\n" + "1. Họ và tên:" + fullname + ""
+        + "\n" + "2. CMND: " + idcard + ""
+        + "\n" + "3. Email: " + email + ""
+        + "\n" + "4. Địa chỉ của bạn: " + address + ""
+        + "\n" + "5. Ngày tháng năm sinh: " + dayofbirth + ""
+        + "\n" + "6. Số người đi cùng: " + people + ""
+        + "\n" + "7. Số ngày thuê :" + rentdays + ""
+        + "\n" + "8. Loại dịch vụ: " + kindroom + ""
+        + "\n" + "9. Thẻ member của bạn:  " + customer + ""
+        + "\n" + "10. loại phòng thuê: " + rank + "" + ""
+        + "\n" + "11. Tiền phải trả: " + (parseInt(moneyroom))*parseInt(rentdays)*(1-(parseInt(discount)/100)) + "$")
 </script>
-
-
-
-
 </body>
 </html>

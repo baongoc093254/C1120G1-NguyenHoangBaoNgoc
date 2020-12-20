@@ -6,23 +6,20 @@
 </head>
 <body>
 <script>
-    let number = prompt("Nhập n số nguyên tố muốn in ra")
-    let countpri = 1;
-    let prime = 2;
-    let count = 0;
-    while (countpri <= number) {
-        count = 0;
-        for (let i = 1; i <= prime;i++) {
-            if (prime % i === 0) {
-                count++
+    function prime(number) {
+        for (let i = 1; i <= number; i++) {
+            if (number % i === 0){
+                count++;
             }
         }
-        if (count ==2) {
-            document.write(prime + " ");
-            countpri++
+        if(count == 2){
+            document.write(number +" ");
+            countPrime++;
         }
-        prime
+        number++;
     }
+
+
 
 
 

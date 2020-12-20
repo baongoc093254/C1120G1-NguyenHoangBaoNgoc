@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // bài 1:
+    // let arr1 = [3,5,1,8,-3,7,8]
+    // let min = minArray(arr1);
+    // function minArray(arr1) {
+    //     let min = arr1[0];
+    //     for (let i = 1; i < arr1.length;i++){
+    //     if (arr1[i] < min) {
+    //         min = arr1[i];
+    //     }
+    //     }
+    //     return min;
+    // }
+    //
+    // console.log(min)
+    let arr2 = [7,12,6,9,20,56,89]
+    let minn = minArray(arr2);
+    function minArray(arr2) {
+        let minn = arr2[0];
+        for (let j = 0; j < arr2.length ; j++) {
+            if (arr2[j] < minn){
+                minn = arr2[j];
+        }
+        }
+        return minn;
+    }
+    console.log(minn)
+</script>
+</body>
+</html>
