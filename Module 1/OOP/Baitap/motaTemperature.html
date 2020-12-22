@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature {
+        constructor(celcius) {
+            this.celcius = celcius;
+            }
+
+
+        getFahren() {
+            return 9*this.celcius/5 + 32;
+        }
+        getKevin() {
+            return this.celcius + 273.15;
+        }
+    }
+    let flag = true;
+    let a = parseInt(prompt("Nhập 123"));
+    if (a < -273) {
+        alert("nhập lại")
+        a = parseInt(prompt("Nhập 123"));
+
+    } else {
+        flag = false;
+    }
+    let temperature = new Temperature(a)
+    // let b = temperature.getFahren();
+    // let c = temperature.getKevin();
+    console.log(temperature.celcius + " độ C tương ứng chuyển thành :" +  temperature.getFahren()+ "độ F.");
+    console.log(temperature.celcius + " độ C tương ứng chuyển thành :" + temperature.getKevin() + "độ K.");
+
+
+</script>
+</body>
+</html>

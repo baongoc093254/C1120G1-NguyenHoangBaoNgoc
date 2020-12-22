@@ -5,19 +5,35 @@
     <title>Title</title>
 </head>
 <body>
+<canvas id="myCanvas" with="1000px" height="600px" style="border: 1px" ></canvas>
 <script>
     class Rectangle {
-        constructor(x,y) {
-            this.x = x;
-            this.y = y;
-        this.getArea() {
-            return x*y;
-            }
-            this.getPremeter() {}
-            return (x+y)/2;
+        constructor(wide,long) {
+            this.wide = wide;
+            this.long = long;
         }
+        getArea () {
+            return this.long*this.wide;
+        }
+        getPermiter () {
+            return (this.wide + this.long)*2;
+        }
+        taoRectangle () {
+           let canvasObj = document.getElementById("myCanvas");
+           let context = canvasObj.getContext ("2d");
+           context.rect(100,100,300,500);
+           context.stroke();
+           context.fillStyle = "red";
+           context.fill();
 
         }
+    }
+    let rectangle = new Rectangle()
+    let area = rectangle.getArea();
+    let permiter = rectangle.getPermiter();
+    rectangle.taoRectangle();
+    alert(" Diện tích hình chữ nhật " + area + " Chu vi hình chữ nhật " + permiter );
+
 
 </script>
 </body>

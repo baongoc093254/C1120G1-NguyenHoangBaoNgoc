@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrayCustomer = [];
+    let choose = parseInt(prompt("1. Add customer to Array" + "\n" + " 2. Delete customer from array."));
+    switch (choose) {
+        case 1:
+            let number = parseInt(prompt("Nhập số người muốn thêm vào: "));
+            for (let i = 0; i < number; i++) {
+                let nameCustomer = prompt("Nhập tên customer");
+                arrayCustomer.push(nameCustomer);
+            }
+            let result = ""
+            for (let i = 0; i < arrayCustomer.length ; i++) {
+                alert(arrayCustomer[i]);
+                result += arrayCustomer[i] + "\n";
+            }
+            alert(result);
+            break;
+        default:
+            alert("Failed.");
+        }
+
+
+
+</script>
+
+</body>
+</html>

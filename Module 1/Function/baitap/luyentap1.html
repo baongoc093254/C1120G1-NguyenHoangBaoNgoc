@@ -50,21 +50,23 @@
         // alert(result);
 
         // Bài 5: Tìm chòm sao (BLOCK) CHỈ HIỂN THỊ NẾU NHẬP "POLARIS" CÒN LẠI NẾU THỬ CÁC SAO CÒN LẠI THÌ KHÔNG ĐƯỢC.
-        //
-        // let arraySao = ["Polaris","Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
-        // let arrayChomsao =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
-        // let saocantim = prompt("Nhập tên sao mà bạn muốn tìm: ")
-        // function testStar() {
-        //     for (let i = 0; i < arrayChomsao.length ; i++) {
-        //         if (saocantim === arraySao[i]) {
-        //             return "Ngôi sao " + saocantim + " thuộc chòm sao: " + arrayChomsao[i];
-        //             break;
-        //         } else {
-        //             return  "Không tìm thấy sao " + saocantim + " thuộc chòm sao nào"
-        //             }
-        //         }
-        //     }
-        // console.log(testStar());
+
+        let arraySao = ["Polaris","Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+        let arrayChomsao =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+        let saocantim = prompt("Nhập tên sao mà bạn muốn tìm: ")
+        let index = 0;
+
+        function testStar() {
+            for (let i = 0; i < arrayChomsao.length;i++) {
+                if (saocantim == arraySao[i]) {
+                    index = i;
+                    console.log("Ngôi sao " + saocantim + " thuộc chòm sao: " + arrayChomsao[index]) ;
+                } else {
+                     console.log("Không tìm thấy sao " + saocantim + " thuộc chòm sao nào");
+                    }
+                }
+            }
+        console.log(testStar());
     </script>
 </body>
 </html>
