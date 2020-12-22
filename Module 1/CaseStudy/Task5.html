@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberCustomer;
+    let arrayNameCustomer = []
+    menu();
+    function menu() {
+        let choose = parseInt(prompt("Nhập 1 số trong menu bên dưới để thực hiện:" +
+            "\n" + "1. Add new customer" + "\n"
+            + "2. Display infomation" + "\n"
+            + "3. Edit Information" + "\n"
+            + "4. Delete Customer." + "\n"
+            + "5. Exit" ));
+        switch (choose) {
+            case 1:
+                addNewCustomer();
+                break;
+            case 2:
+                displayCustomer();
+                break;
+            case 3:
+                editInformation ();
+                break;
+            case 4:
+                deleteCustomer ();
+                break;
+            case 5:
+                exit();
+                break;
+
+            default:
+                alert("Failed.");
+                menu();
+
+        }
+    }
+    function displayCustomer() {
+        let result = ""
+        arrayNameCustomer.sort();
+        for (let i = 0; i < arrayNameCustomer.length ; i++) {
+            result += (i+1) + ". " + arrayNameCustomer[i] + "\n";
+        }
+        alert(result);
+        menu();
+    }
+    function addNewCustomer() {
+        numberCustomer = parseInt(prompt("Nhập số người bạn muốn thêm vào:"));
+        for (let i = 0; i < numberCustomer ; i++) {
+            let nameCustomer = prompt("Nhập tên customer bạn muốn thêm vào:");
+            arrayNameCustomer.push(nameCustomer);
+
+        }
+        displayCustomer();
+    }
+</script>
+</body>
+</html>
