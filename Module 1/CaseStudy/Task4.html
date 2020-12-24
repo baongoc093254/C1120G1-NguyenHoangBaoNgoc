@@ -76,23 +76,25 @@
     }
     function deleteCustomer() {
             // xoá theo số thứ tự
-        // let list = ""
-        // numberCustomer = parseInt(prompt("Nhập số customer bạn muốn xoá đi"));
-        // for (let j = 0; j < arrayNameCustomer.length ; i++) {
-        //     list += (i+1) + "." + arrayNameCustomer[i] + "\n";
-        // }
-        // let choose = parseInt(prompt("Nhập tên customer bạn muốn xoá"));
-        // arrayNameCustomer.splice(choose-1,1);
-        // showCustomer();
-
-            // Xoá theo tên
-       let nameCustomer = prompt("Nhập tên customer bạn muốn xoá");
+        let list = ""
+        numberCustomer = parseInt(prompt("Nhập số customer bạn muốn xoá đi"));
         for (let i = 0; i < arrayNameCustomer.length ; i++) {
-            if (arrayNameCustomer[i] === nameCustomer) {}
-            arrayNameCustomer.splice(i,1);
-            showCustomer()
+            list += (i+1) + "." + arrayNameCustomer[i] + "\n";
         }
+        let choose = parseInt(prompt("Nhập số thứ tự customer bạn muốn xoá"));
+        arrayNameCustomer.splice(choose-1,1);
+        menu();
 
+       //      // Xoá theo tên
+       //  let result = ""
+       // let nameCustomer = prompt("Nhập tên customer bạn muốn xoá");
+       //  for (let i = 0; i < arrayNameCustomer.length ; i++) {
+       //      if (arrayNameCustomer[i] === nameCustomer) {}
+       //      arrayNameCustomer.splice(i,1);
+       //
+       //  }
+       //  alert(result)
+       //  showCustomer();
     }
 </script>
 

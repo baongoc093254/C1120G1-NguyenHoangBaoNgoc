@@ -14,12 +14,93 @@
             this.address = address;
             this.idcustomer = idcustomer;
             this.discount = discount;
-            this,numberpeople = numberpeople;
+            this.numberpeople = numberpeople;
             this.rentday = rentday;
             this.tyservice = typeservice;
             this.typeroom = typeroom;
         }
+        getName () {
+            return this.name = name;
+        }
+        setName() {
+             this.name = name;
+        }
+        getIdcard () {
+            return this.idcard = idcard;
+        }
+        setIdcard() {
+            this.idcard = idcard;
+        }
+        getEmail () {
+            return this.email = email;
+        }
+        setEmail() {
+            this.email = email;
+        }
+        getIdCustomer () {
+            return this.idcustomer = idcustomer;
+        }
+        setIdCustomer () {
+            this.idcustomer = this.idcustomer
+        }
+        getDiscount() {
+            return this.discount = discount;
+        }
+        setDiscount() {
+            this.discount = discount;
+        }
+        getNumPeople() {
+            return this.numberpeople = numberpeople;
+        }
+        setNumPeople() {
+            this.numberpeople = numberCustomer;
+        }
+        getRentDay() {
+            return this.rentday = rentday;
+        }
+        setRentDay() {
+            this.rentday = rentday;
+        }
+        getTypeService () {
+            return this.tyservice = typeservice;
+        }
+        setTypeService () {
+            this.tyservice = tyservice;
+        }
+        getTypeRoom() {
+            return this.typeroom = typeroom;
+        }
+        setTypeRoom () {
+            this.typeroom = typeroom;
+        }
+
     }
+    let listcustomer = [];
+    function addNewCustomer() {
+        let name = prompt("Nhập tên : ");
+        let idcard = prompt("Nhập cmnd: ");
+        let email = prompt("Nhập email: ");
+        let address = prompt("Nhập địa chỉ:");
+        let idcustomer  = prompt("Nhập thẻ member của bạn:" "\n" "1.Diamond" "\n" "2.Platinum" "\n" "3.Gold" "\n" "4.Silver" "\n" "5.Member");
+        let discount = parseInt(prompt("Nhập % giảm giá:"));
+        let numberpeople = prompt("Nhập số người đi cùng:");
+        let rentday = prompt("Nhập số ngày thuê phòng: ");
+        let typeservice = prompt("Nhập loại dịch vụ:");
+        let typeroom = prompt("Nhập loại phòng:");
+
+
+    }
+
+    this.name = name;
+    this.idcard = idcard;
+    this.email = email;
+    this.address = address;
+    this.idcustomer = idcustomer;
+    this.discount = discount;
+    this.numberpeople = numberpeople;
+    this.rentday = rentday;
+    this.tyservice = typeservice;
+    this.typeroom = typeroom;
 </script>
 </body>
 </html>

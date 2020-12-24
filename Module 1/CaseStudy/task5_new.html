@@ -33,16 +33,16 @@
     }
 
     function addNameCus() {
-        numCustomer = prompt("Enter number of customer:");
+        numberCustomer = prompt("Enter number of customer:");
         for (let i = 0; i < numCustomer; i++) {
             arrNameCustomers[i] = {
                 name: prompt("Enter Name:"),
-                addr: prompt("Enter Address:"),
-                idNum: prompt("Enter ID:"),
-                date: prompt("Date of birth:"),
+                address: prompt("Enter Address:"),
+                idCustomer: prompt("Enter ID:"),
+                dayofbirth: prompt("Date of birth:"),
                 email: prompt("Enter email:"),
-                customer: prompt("Enter: Diamond/ Plantinum/Gold/Silver/Member"),
-                numpeo: prompt("Enter amount of people:"),
+                idcustomer: prompt("Enter: Diamond/ Plantinum/Gold/Silver/Member"),
+                numpeople: prompt("Enter amount of people:"),
                 rentDay: prompt("Enter rent Day"),
                 service: prompt("Enter: Vip/Business/Normal "),
                 room: prompt("Enter: Villa/House/Room"),
@@ -71,12 +71,12 @@
         let choose1 = prompt("Enter the number of customer you want to edit:\n" + text);
         let choose2 = prompt("Thông tin khách hàng " + (choose1) + ":" + "\n" +
             "1.Name: " + arrNameCustomers[choose1 - 1].name + "\n" +
-            "2.Address: " + arrNameCustomers[choose1 - 1].addr + "\n" +
+            "2.Address: " + arrNameCustomers[choose1 - 1].address + "\n" +
             "3.ID: " + arrNameCustomers[choose1 - 1].idNum + "\n" +
-            "4.Date of birth: " + arrNameCustomers[choose1 - 1].date + "\n" +
+            "4.Date of birth: " + arrNameCustomers[choose1 - 1].dayofbirth + "\n" +
             "5.Email: " + arrNameCustomers[choose1 - 1].email + "\n" +
-            "6.Customer " + arrNameCustomers[choose1 - 1].customer + "\n" +
-            "7.Amount of people: " + arrNameCustomers[choose1 - 1].numpeo + "\n" +
+            "6.Customer " + arrNameCustomers[choose1 - 1].idcustomer + "\n" +
+            "7.Amount of people: " + arrNameCustomers[choose1 - 1].numpeople + "\n" +
             "8.Day of rent: " + arrNameCustomers[choose1 - 1].rentDay + "\n" +
             "9.Type of services: " + arrNameCustomers[choose1 - 1].service + "\n" +
             "10.Type of room: " + arrNameCustomers[choose1 - 1].room + "\n")
@@ -97,10 +97,10 @@
                 arrNameCustomers[choose1 - 1].email = prompt("Enter email:");
                 break;
             case "6":
-                arrNameCustomers[choose1 - 1].customer = prompt("Nhập lại loại Customer:\nDiamond, Platinum, Gold, Silver, Member");
+                arrNameCustomers[choose1 - 1].idcustomer = prompt("Nhập lại loại Customer:\nDiamond, Platinum, Gold, Silver, Member");
                 break;
             case "7":
-                arrNameCustomers[choose1 - 1].numpeo = prompt("Enter people:");
+                arrNameCustomers[choose1 - 1].numpeople = prompt("Enter people:");
                 break;
             case "8":
                 arrNameCustomers[choose1 - 1].rentDay = prompt("Enter rent days:");
