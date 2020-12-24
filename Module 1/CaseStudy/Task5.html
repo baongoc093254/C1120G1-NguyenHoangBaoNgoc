@@ -6,8 +6,12 @@
 </head>
 <body>
 <script>
-    let numberCustomer;
-    let arrayNameCustomer = []
+
+    let infomationCustomer = ["Họ và tên","CMND","DateofBirth", "Email", "Địa chỉ", "Loại Customer", "Số người đi cùng", "Số ngày thuê phòng","Loại dịch vụ", "Loại phòng", "Số % được discount" ];
+    let listCutomers = new Array();
+    let numberCustomer = new Array();
+
+    let j = 0;
     menu();
     function menu() {
         let choose = parseInt(prompt("Nhập 1 số trong menu bên dưới để thực hiện:" +
@@ -30,32 +34,116 @@
                 deleteCustomer ();
                 break;
             case 5:
-                exit();
                 break;
-
             default:
                 alert("Failed.");
                 menu();
 
         }
     }
+
+    // function displayCustomer(array) {
+    //     let infoNeedDisplay = displayNameAndIdCard(array);
+    //     if ( infoNeedDisplay === (array.length + 1)){
+    //         return menu();
+    //     }else {
+    //         alert(displayInformation(infoNeedDisplay-1));
+    //         displayMainMenu();
+    //     }
+    // }
+
+
+
+
+
+
+
     function displayCustomer() {
         let result = ""
-        arrayNameCustomer.sort();
-        for (let i = 0; i < arrayNameCustomer.length ; i++) {
-            result += (i+1) + ". " + arrayNameCustomer[i] + "\n";
+        for (let i = 0; i < listCutomers.length ; i++) {
+            result += (i+1) + "." + listCutomers[i][0] + "\n" + listCutomers[i][1] + "\n";
+
         }
         alert(result);
         menu();
-    }
-    function addNewCustomer() {
-        numberCustomer = parseInt(prompt("Nhập số người bạn muốn thêm vào:"));
-        for (let i = 0; i < numberCustomer ; i++) {
-            let nameCustomer = prompt("Nhập tên customer bạn muốn thêm vào:");
-            arrayNameCustomer.push(nameCustomer);
-
         }
-        displayCustomer();
+    function display() {
+
+    }
+    // function displayInfoCustomer() {
+    //
+    //     let outputStr = "";
+    //
+    //     for (let i = 0; i < arrCus.length; i++) {
+    //         outputStr += arrCus[i].id + " " + arrCus[i].name + "\n";
+    //     }
+    //
+    //     alert(outputStr);
+    // }
+
+
+
+
+
+
+
+    function addNewCustomer() {
+        listCutomers[j] = new Array();
+        for (let i=0;i<infomationCustomer.length;i++){
+            let nhapThongTin = prompt("Nhập " + infomationCustomer[i] + " : ");
+            listCutomers[j].push(infomationCustomer[i] + ' : ' + nhapThongTin);
+        }
+        alert(listCutomers[j].join("\n"));
+        j++;
+        menu();
+    }
+
+
+    function deleteCustomer() {
+        let list = ""
+        numberCustomer = parseInt(prompt("Nhập số customer bạn muốn xoá đi"));
+        for (let i = 0; i < listCutomers.length; i++) {
+            list += (i + 1) + "." + listCutomers[i] + "\n";
+        }
+        let choose = parseInt(prompt("Nhập customer bạn muốn xoá"));
+        listCutomers.splice(choose - 1, 1);
+        displayCustomer()
+    }
+
+    function editInformation() {
+        let id = parseInt(prompt("Nhập customer mà bạn muốn edit."));
+        let index;
+        for (let i = 0; i < listCutomers.length ; i++) {
+            if (id === listCutomers[i].id) {
+                index = i;
+                break;
+            }
+        }
+
+        let choose = parseInt(prompt("Chọn thành phần bạn muốn edit: " + "\n"
+        + "1. Họ và tên" + "\n"
+        + "2. CMND" + "\n"
+        + "3. Day of Birth" + "\n"
+        + "4. Email" + "\n"
+        + "5. Địa chỉ" + "\n"
+        + "6. Loại customer" + "\n"
+        + "7. Số người đi cùng " + "\n"
+        + "8. số ngày thuê phòng" + "\n"
+        + "9. Loại dịch vụ" + "\n"
+        + "10. Loại phòng" + "\n"
+        + "11. % discount" ));
+        switch (choose) {
+                case 1:
+
+                    break;
+                    case 2:
+
+                        break;
+                        case 3:
+
+                            break;
+                            case 4:
+        }
     }
 </script>
 </body>

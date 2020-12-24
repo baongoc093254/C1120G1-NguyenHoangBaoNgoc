@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNameCustomers = [];
+    menu();
+
+    function menu() {
+        let menuList = prompt("1. Add name customer \n 2. Show information \n 3. Delete customer\n 4.Edit\n 5.Exit");
+        switch (menuList) {
+            case "1":
+                addNameCus();
+                break;
+            case "2":
+                showInfor();
+                break;
+            case "3":
+                deleteCusTomer();
+                break;
+            case "4":
+                edit();
+                break;
+            case "5":
+            break;
+            default:
+                alert("Failed");
+
+        }
+    }
+
+    function addNameCus() {
+        numCustomer = prompt("Enter number of customer:");
+        for (let i = 0; i < numCustomer; i++) {
+            arrNameCustomers[i] = {
+                name: prompt("Enter Name:"),
+                addr: prompt("Enter Address:"),
+                idNum: prompt("Enter ID:"),
+                date: prompt("Date of birth:"),
+                email: prompt("Enter email:"),
+                customer: prompt("Enter: Diamond/ Plantinum/Gold/Silver/Member"),
+                numpeo: prompt("Enter amount of people:"),
+                rentDay: prompt("Enter rent Day"),
+                service: prompt("Enter: Vip/Business/Normal "),
+                room: prompt("Enter: Villa/House/Room"),
+
+            }
+        }
+        menu();
+    }
+
+    function deleteCusTomer() {
+        let text = "";
+        for (let i = 0; i < arrNameCustomers.length; i++) {
+            text += (i + 1) + " " + arrNameCustomers[i].name + "  ";
+        }
+        let choose = prompt("Enter the number of customer you want to remove:\n" + text);
+        arrNameCustomers.splice(choose - 1, 1);
+        menu();
+    }
+
+    function edit() {
+        let text = "";
+        for (let i = 0; i < arrNameCustomers.length; i++) {
+            text += (i + 1) + " " + arrNameCustomers[i].name + "  ";
+        }
+
+        let choose1 = prompt("Enter the number of customer you want to edit:\n" + text);
+        let choose2 = prompt("Thông tin khách hàng " + (choose1) + ":" + "\n" +
+            "1.Name: " + arrNameCustomers[choose1 - 1].name + "\n" +
+            "2.Address: " + arrNameCustomers[choose1 - 1].addr + "\n" +
+            "3.ID: " + arrNameCustomers[choose1 - 1].idNum + "\n" +
+            "4.Date of birth: " + arrNameCustomers[choose1 - 1].date + "\n" +
+            "5.Email: " + arrNameCustomers[choose1 - 1].email + "\n" +
+            "6.Customer " + arrNameCustomers[choose1 - 1].customer + "\n" +
+            "7.Amount of people: " + arrNameCustomers[choose1 - 1].numpeo + "\n" +
+            "8.Day of rent: " + arrNameCustomers[choose1 - 1].rentDay + "\n" +
+            "9.Type of services: " + arrNameCustomers[choose1 - 1].service + "\n" +
+            "10.Type of room: " + arrNameCustomers[choose1 - 1].room + "\n")
+        switch (choose2) {
+            case "1":
+                arrNameCustomers[choose1 - 1].name = prompt("Enter name:");
+                break;
+            case "2":
+                arrNameCustomers[choose1 - 1].addr = prompt("Enter address :");
+                break;
+            case "3":
+                arrNameCustomers[choose1 - 1].idNum = prompt("Enter ID:");
+                break;
+            case "4":
+                arrNameCustomers[choose1 - 1].date = prompt("Enter birthday:\nFormat: mm/dd/yyyy");
+                break;
+            case "5":
+                arrNameCustomers[choose1 - 1].email = prompt("Enter email:");
+                break;
+            case "6":
+                arrNameCustomers[choose1 - 1].customer = prompt("Nhập lại loại Customer:\nDiamond, Platinum, Gold, Silver, Member");
+                break;
+            case "7":
+                arrNameCustomers[choose1 - 1].numpeo = prompt("Enter people:");
+                break;
+            case "8":
+                arrNameCustomers[choose1 - 1].rentDay = prompt("Enter rent days:");
+                break;
+            case "9":
+                arrNameCustomers[choose1 - 1].service = prompt("Enter types of services:\nVilla: 500$/1 ngày\nHouse: 300$/1 ngày\nRoom: 100$/1 ngày");
+                break;
+            case "10":
+                arrNameCustomers[choose1 - 1].room = prompt("Enter room:\nVip, Business, Normal");
+                break;
+            default:
+                alert("Failed");
+                break;
+        }
+        showInfor();
+    }
+
+
+    function showInfor() {
+        let text = "";
+        for (let i = 0; i < arrNameCustomers.length; i++) {
+            text += (i + 1) + " " + arrNameCustomers[i].name + " ";
+        }
+        let choose1 = prompt("Enter the number of customer you want to show:\n" + text);
+        alert("Thông tin khách hàng " + (choose1) + ":" + "\n" +
+            "Name: " + arrNameCustomers[choose1 - 1].name + "\n" +
+            "Address: " + arrNameCustomers[choose1 - 1].addr + "\n" +
+            "ID: " + arrNameCustomers[choose1 - 1].idNum + "\n" +
+            "Date of birth: " + arrNameCustomers[choose1 - 1].date + "\n" +
+            "Email: " + arrNameCustomers[choose1 - 1].email + "\n" +
+            "Customer " + arrNameCustomers[choose1 - 1].customer + "\n" +
+            "Amount of people: " + arrNameCustomers[choose1 - 1].numpeo + "\n" +
+            "Day of rent: " + arrNameCustomers[choose1 - 1].rentDay + "\n" +
+            "Type of services: " + arrNameCustomers[choose1 - 1].service + "\n" +
+            "Type of room: " + arrNameCustomers[choose1 - 1].room + "\n");
+        menu();
+    }
+</script>
+</body>
+</html>
