@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    listEmployee = [];
+    class Employ {
+        constructor(name,dateofbith,idcard,phone,email,academiclevel,position) {
+                this.name = name;
+                this.dateofbirth = dateofbith;
+                this.idcard = idcard;
+                this.phone = phone;
+                this.email = email;
+                this.academiclevel = academiclevel;
+                this.position = position;
+                this.salary;
+        }
+        getName() {
+            return this.name;
+        }
+        setName() {
+            this.name = name;
+        }
+        getDateofBirth() {
+            return this.dateofbirth;
+        }
+        setDateofBirth() {
+            this.dateofbirth = dayofbirth;
+        }
+        getIdcard() {
+            return this.idcard;
+        }
+        setIdcard() {
+            this.idcard = idcard;
+        }
+        getPhone() {
+            return this.phone;
+        }
+        setPhone() {
+            this.phone = phone;
+        }
+        getEmail() {
+            return this.email;
+        }
+        setEmail() {
+            this.email = email;
+        }
+        getAcademic() {
+            return this.academiclevel;
+        }
+        setAcademic() {
+            this.academiclevel = academiclevel;
+        }
+        getPosition() {
+            return this.position;
+        }
+        setPosition() {
+            this.position = position;
+        }
+        getSalary() {
+            let salary = 0;
+            if (this.position === "Manager") {
+                salary = 500;
+            } else if (this.position === "Sale") {
+                salary = 300;
+            } else {
+                salary = 200;
+            }
+            return this.salary = salary
+        }
+    }
+    menu();
+    function menu() {
+        let choose = parseInt(prompt("Nhập chức năng bạn muốn sử dụng: " + "\n"
+        + "1. Add new Employee" + "\n"
+        + "2. Display information Employee" + "\n"
+        + "3. Salary of Employ" + "\n"
+        + "4. Exit"));
+        switch (choose) {
+            case 1:
+                addnewemployee()
+                break;
+            case 2:
+                displayinfor()
+                break;
+            case 3:
+                salaryemployee();
+                break;
+            case 4:
+                break;
+            default:
+                alert("Failed.");
+                menu();
+
+        }
+    }
+    function addnewemployee() {
+        //    nhập họ và tên - ktra
+
+        let name = prompt("Nhập tên : ");
+        let check0 = true;
+        let dateofbirth;
+        do {
+            dateofbirth = prompt("Nhập ngày tháng năm sinh của customer: ");
+            let day = dateofbirth.substr(0,2);
+            let month = dateofbirth.substr(3,2);
+            let year = dateofbirth.substr(6,4);
+            if (dateofbirth.length===10 && dateofbirth.charAt(2)==="/" && dateofbirth.charAt(5)==="/" &&
+                0<day<31 && 0<month<12 && 1900<year<2002) {
+                check0 = false;
+            } else {
+                alert('Nhập lại ngày tháng năm sinh');
+            }
+        }while(check0);
+
+        // nhập cmnd - ktra
+        let check1 = true;
+        let idcard;
+        do {
+            idcard = prompt("Nhập cmnd: ");
+            if (!isNaN(idcard)) {
+                idcard = Number.parseFloat(idcard);
+            }
+            if (!Number.isInteger(idcard)) {
+                alert("Nhập không đúng");
+                continue;
+            }
+            if (idcard < 100000000 || idcard > 999999999) {
+                alert("Mời nhập lại CMND");
+                check1 =false;
+                continue;
+            }
+            check1 = true;
+        } while (!check1)
+
+        //nhập SĐT
+
+        let phone = parseInt(prompt("Nhập số điện thoại:"))
+
+        //    nhập email
+        let email;
+        do {
+            let countAt = 0;
+            let countDoc = 0;
+            email = prompt("Nhập lại email : ");
+            for (let i = 0; i < email.length; i++) {
+                if (email.charAt(i) === "@") {
+                    countAt++;
+                    for (let j = i + 1; j < email.length; j++) {
+                        if (email.charAt(j) === ".") {
+                            countDoc++;
+                        }
+
+                    }
+
+                }
+            }
+            if (countDoc != 1 || countAt < 1) {
+                alert("Mời bạn nhập lại")
+                check = false;
+            } else {
+                check = true;
+            }
+        } while (!check)
+
+        // nhập trình độ học vấn
+        let academiclevel = prompt("Nhập trình độ học vấn:");
+
+        // nhập id customer
+        let position = prompt("Nhập vị trí của bạn:"
+            + "\n" + "1.Manager"
+            + "\n" + "2.Sale"
+            + "\n" + "3.Marketing");
+        let employEE = new Employ(name,dateofbirth,idcard,phone,email,academiclevel,position);
+        listEmployee.push(employEE);
+        menu();
+    }
+    function displayinfor() {
+        let text = ""
+        for (let i = 0; i < listEmployee.length ; i++) {
+            text += (i+1) + "." + listEmployee[i].name + "\n";
+        }
+        let choose3 = prompt("Enter the number of employee you want to show:\n" + text);
+        alert("Thông tin Employee " + (choose3) + ":" + "\n" +
+            "Name: " + listEmployee[choose3 - 1].name + "\n" +
+            "Date of birth: " + listEmployee[choose3 - 1].dateofbirth + "\n" +
+            "Id card: " + listEmployee[choose3 - 1].idcard + "\n" +
+            "Phone: " + listEmployee[choose3 - 1].phone + "\n" +
+            "Email: " + listEmployee[choose3 - 1].email + "\n" +
+            "Academic level: " + listEmployee[choose3 - 1].academiclevel+ "\n" +
+            "Position: " + listEmployee[choose3 - 1].position );
+        menu();
+    }
+    function salaryemployee() {
+        let result = "";
+        for (let i = 0; i < listEmployee.length ; i++) {
+            result += (i+1) + ": " + listEmployee[i].name + "\n";
+        }
+        let choose4 = prompt("Nhập id employee bạn muốn xem salary.");
+        let salaryy  = listEmployee[choose4 -1].getSalary();
+        alert("Employee" + listEmployee[choose4-1].name + "\n" + "Salary :" + salaryy )
+        menu();
+    }
+
+</script>
+</body>
+</html>
