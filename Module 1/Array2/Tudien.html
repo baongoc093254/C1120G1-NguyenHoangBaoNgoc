@@ -5,10 +5,34 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Dictionary</h1>
+<form>
+    <input type="text" id="keyword">
+    <input type="button" value="Search" onclick="search()">
+    <div id="result"></div>
+</form>
 <script>
-    let english = ["car","book","bicycle","table","pen"];
-    let vietnamese = ["xe oto","sách","xe đạp","bàn","bút"];
+    let vieArray = ["do", "xanh", "vang", "den", "hong"];
+    let engArray = ["red", "blue", "yellow", "black", "pink"]
+    let keyword;
+    let result;
+    let index;
+    let flag;
 
-</script>
-</body>
-</html>
+    function search() {
+        keyword = document.getElementById("keyword").value;
+        for (index = 0; index <= vieArray.length; index++) {
+            flag = false;
+            if (keyword === vieArray[index]) {
+                result = engArray[index];
+                flag = true;
+                break;
+            }
+        }
+        if (flag) {
+            document.getElementById("result").innerHTML = result;
+        } else {
+            alert("Not found!!!")
+        }
+
+    }

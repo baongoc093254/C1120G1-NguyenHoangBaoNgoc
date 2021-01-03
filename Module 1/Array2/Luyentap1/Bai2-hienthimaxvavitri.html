@@ -6,17 +6,51 @@
 </head>
 <body>
 <script>
-    let array = [22,3,5,4,7,9,15,20,32,6,72];
-    let max = array[0];
-    let index = 0;
-    for (let i = 0; i < array.length ; i++) {
-        if (array[i] > max) {
-            max = array[i];
-            index = i;
+    // let array = [22,3,5,4,7,9,15,20,32,6,72];
+    // let max = array[0];
+    // let index = 0;
+    // for (let i = 0; i < array.length ; i++) {
+    //     if (array[i] > max) {
+    //         max = array[i];
+    //         index = i;
+    //     }
+    // }
+    // document.write("Max =" + max + "find at" + index);
+
+
+//    nhập mảng kiểm tra số nguyên tố:
+
+        let k;
+    let check = false;
+    let a=[];
+    do {
+        k = prompt("Nhập số phần tử của  mảng");
+        if (k <= 50) {
+            check = true;
+        }
+    }while (check === false)
+    for (let i=0; i<k; i++){
+        a[i]=prompt('Nhap so thu '+i)
+    }
+    document.write('Mang a gom: ' + a);
+    document.write('</br>');
+    for (let i=0; i<a.length; i++ ){
+        if (isPrimeNumber(a[i])){
+            document.write(a[i] + "\n");
         }
     }
-    document.write("Max =" + max + "find at" + index);
-
+    function isPrimeNumber(numberCheck) {
+        let count = 0;
+        for (let i = 1; i <= numberCheck; i++) {
+            if (numberCheck % i === 0) {
+                count++;
+            }
+        }
+        if (count === 2) {
+            return true;
+        }
+        return false;
+    }
 </script>
 </body>
 </html>

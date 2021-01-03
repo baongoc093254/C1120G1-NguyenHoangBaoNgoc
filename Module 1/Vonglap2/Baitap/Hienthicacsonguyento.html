@@ -6,17 +6,22 @@
 </head>
 <body>
 <script>
-    function prime(number) {
-        for (let i = 1; i <= number; i++) {
-            if (number % i === 0){
-                count++;
+    let countFlag = 0;
+    let prime = 2;
+    let countPrime = 0;
+
+    while (countPrime < 20) {
+        countFlag = 0;
+        for (let index = 1; index <= Math.sqrt(prime); index++) {
+            if (prime % index === 0) {
+                countFlag++;
             }
         }
-        if(count == 2){
-            document.write(number +" ");
+        if (countFlag === 1) {
+            document.write(prime + " ");
             countPrime++;
         }
-        number++;
+        prime++;
     }
 
 

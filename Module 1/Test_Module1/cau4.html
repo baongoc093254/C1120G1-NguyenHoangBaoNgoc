@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let listProduct = [];
+
+    class Product {
+        constructor(id, name, company, number) {
+            this.id = id;
+            this.name = name;
+            this.company = company;
+            this.number = number;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getCompany() {
+            return this.company;
+        }
+
+        setCompany(company) {
+            this.company = company;
+        }
+
+        getNumber() {
+            return this.number;
+        }
+
+        setNumber() {
+            this.number = number;
+        }
+
+        toString() {
+            return this.name + this.id + this.company + this.number;
+        }
+    }
+
+    menu();
+
+    function menu() {
+        let choose = parseInt(prompt("Nhập chức năng bạn muốn sử dụng." + "\n"
+            + "1. Add new Product." + "\n"
+            + "2. Show information Product."));
+        switch (choose) {
+            case 1:
+                addnewProduct();
+                break;
+            case 2:
+                showinforProduct();
+                break;
+            default:
+                break;
+                menu();
+        }
+    }
+
+    function addnewProduct() {
+        let check = true;
+        let id = prompt("Nhập ID sản phẩm:");
+        let name = prompt("Nhập tên sản phẩm:");
+        let company = prompt("Nhập tên công ty sản xuất:");
+        let number = parseInt(prompt("Giá của sản phẩm là :"));
+        let productObj = new Product(id, name, company, number);
+        listProduct.push(productObj);
+        menu();
+    }
+
+    function showinforProduct() {
+        let text = "";
+        for (let i = 0; i < listProduct.length; i++) {
+            text += (i + 1) + " " + listProduct[i].name + "\n";
+        }
+        let choose1 = parseInt(prompt("Nhập product bạn muốn show thông tin:\n" + text));
+        alert("Thông tin sản phẩm:" + choose1 + "\n"
+            + "1. Id sản phẩm" + listProduct[choose1 - 1].id + "\n"
+            + "2. Tên sản phẩm" + listProduct[choose1 - 1].name + "\n"
+            + "3. Công ty sản xuất" + listProduct[choose1 - 1].company + "\n"
+            + "4. Giá sản phẩm" + listProduct[choose1 - 1].number);
+        menu();
+    }
+</script>
+</body>
+</html>

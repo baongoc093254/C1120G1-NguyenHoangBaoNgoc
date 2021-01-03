@@ -6,41 +6,67 @@
 </head>
 <body>
 <script>
-    let MyDate = function(day, month, year) {
+    class myDate {
+        constructor(day, month, year) {
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
 
-        this.day = day;
-
-        this.month = month;
-
-        this.year = year;
-        this.getDay = function() {
+        getDay() {
             return this.day;
         }
-        this.getMonth = function() {
+        getMonth() {
             return this.month;
         }
-        this.getYear = function() {
+        getYear() {
             return this.year;
         }
-        this.setDay = function(day) {
-            this.day  = day;
-        }
-        this.setMonth = function(month) {
-            this.month  = month;
-        }
-        this.setYear = function(year) {
-            this.year  = year;
+        getDate() {
+            if (this.month < 10) {
+                return ((this.day+"/0"+this.month+"/"+this.year).toString());
+            }
+            return ((this.day+"/"+this.month+"/"+this.year).toString());
         }
 
-    };
-    let date = new MyDate(2, 2, 2007);
-    let day = date.getDay(); // 2
+        setDay(day){
+            this.day = day;
+        }
+        setMonth(month){
+            this.month = month;
+        }
+        setYear(year){
+            this.year = year;
+        }
+        setDate(day, month, year){
+            this.day = day;
+            this.month = month;
+            this.year = year;
+        }
+    }
 
-    let month = date.getMonth(); // 2
+    let date = new myDate(5,8,2001);
 
-    let year = date.getYear(); // 2007
-    alert(day + "/" + month + "/" + year);
+    let day = date.getDay();
+    let month = date.getMonth();
+    let year = date.getYear();
 
+    document.write(day+"/"+month+"/"+year+"<br>");
+
+    date.setDay(15);
+    date.setMonth(9);
+    date.setYear(2006);
+
+    day = date.getDay();
+    month = date.getMonth();
+    year = date.getYear();
+
+    document.write(day+"/"+month+"/"+year+"<br>");
+
+    date.setDate(12, 11, 2017);
+    date1 = date.getDate();
+
+    document.write(date1);
 
 
 </script>

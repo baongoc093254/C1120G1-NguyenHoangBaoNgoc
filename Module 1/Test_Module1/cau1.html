@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let number = parseInt(prompt("Nhập n kí tự muốn nhập vào mảng"));
+    let check = true;
+
+    function Count(array, anyindex) {
+        let count = 0;
+        let charact;
+        for (let i = 0; i < number; i++) {
+            array[i] = parseInt(prompt("Nhập phần tử thứ" + i));
+            if (anyindex === array[i]) {
+                charact = array[i];
+                check = false;
+                count++;
+            }
+        }
+        if (check) {
+            return (charact + "xuất hiện" + count + "lần." + "\n")
+        }
+    }
+
+    console.log(array)
+    console.log(Count(array,));
+
+
+</script>
+</body>
+</html>

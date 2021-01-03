@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let check = true;
+
+    function testdoixung(str) {
+        let first = 0;
+        let last = str.length - 1;
+        let check = true;
+        for (let i = 0; i < str.length; i++) {
+            if (str[first] != str[last]) {
+                check = false;
+                break;
+            }
+        }
+        if (check) {
+            alert("True");
+        } else {
+            alert("False");
+        }
+    }
+
+    console.log(testdoixung(prompt("Nhập chuỗi bất kì muốn kiểm tra")))
+</script>
+</body>
+</html>

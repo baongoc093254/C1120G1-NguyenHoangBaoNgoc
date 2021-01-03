@@ -6,19 +6,18 @@
 </head>
 <body>
 <script>
-    let number=parseInt(prompt("Nhập n số "));
-    let total;
-    let count = 0
     let sum = 0;
-    let i =0;
-    for (let i = 1; i <= number ; i++) {
-        if (i % 7 == 0) {
-            count ++;
-            sum += ;
+    let index = 0;
+    let count = 0;
+    while (count < 30) {
+        if (index % 7 === 0) {
+            count++;
+            document.write(index + " ");
+            sum += index;
         }
-        i += 1;
+        index++;
     }
-    document.write(sum);
+    document.write("Sum = " + sum);
 </script>
 </body>
 </html>

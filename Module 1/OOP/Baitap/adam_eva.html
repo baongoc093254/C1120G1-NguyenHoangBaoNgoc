@@ -6,52 +6,97 @@
 </head>
 <body>
 <script>
+    <script>
     class Apple {
         constructor(weight) {
-            this.weightt = 10;
-            this.status =status;
+            this.weight = 10;
         }
-        getWeight () {
+
+        decrease() {
+            this.weight--;
+        }
+
+        isEmpty() {
+            return false;
+        }
+
+        getWeight() {
             return this.weight;
         }
-        getDecrease () {
-
-        }
     }
-    class People {
-        constructor(name,gender,weight) {
+
+    class Human {
+        constructor(name, gender, weight) {
             this.name = name;
             this.gender = gender;
             this.weight = weight;
         }
-        getWeight () {
-            console.log( this.name + "Weight" + this.weight );
+
+        isMale() {
+            return true;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        checkApple(appleObj) {
+            return appleObj.isEmpty();
+        }
+
+        eat(appleObj) {
+            if (appleObj.weight > 0) {
+                appleObj.decrease();
+                this.weight++;
+            } else {
+                alert("Out of apple!!!");
+            }
+        }
+
+        say(str) {
+            return str;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getWeight() {
             return this.weight;
         }
-        setWeight() {
+
+        setWeight(weight) {
             this.weight = weight;
         }
-        talk() {
-           console.log(this.name + "say" + "tao ngon qua" )
-        }
-        eat(appleObJ) {
-            if (apple.weightt > 0) {
-                console.log(this.name + " Đang ăn");
-                apple.weightt --;
-                this.weight ++;
-            } else {
-                console.log(this.name + "khong the an ");
-            }
-
-            }
-        checkapple () {
-            console.log("Weight of apple" + apple.weightt)
-        }
     }
-    let adam = new People("Adam","Male",70);
-    let eva = new People("Eva","female",50);
-    let apple  = new Apple ();
 
+    let apple = new Apple();
+    let adam = new Human("adam", true, 70);
+    let eva = new Human("eva", false, 55);
+
+    console.log(apple.getWeight());
+    adam.eat(apple);
+    console.log(adam.say("Let's eat apple honey"))
+    eva.eat(apple);
+    console.log(apple.getWeight());
+    adam.eat(apple);
+    eva.eat(apple);
+    console.log(apple.getWeight());
+    adam.eat(apple);
+    eva.eat(apple);
+    console.log(apple.getWeight());
+    adam.eat(apple);
+    eva.eat(apple);
+    console.log(apple.getWeight());
+    adam.eat(apple);
+    eva.eat(apple);
+    console.log(apple.getWeight());
+    adam.eat(apple);
+</script>
 
 </script>
 </body>

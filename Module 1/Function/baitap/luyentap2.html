@@ -95,26 +95,85 @@
     //     return "Vị trí 2 số sau khi đổi chỗ là : " + b + " và " + a;
     // }
 
+    // Bài 7 : đổi chỗ
+    // let mangNhap = new Array();
+    // for (let i=0;i<5;i++){
+    //     let nhapNumber = parseInt(prompt("Nhập số nguyên bất kỳ:"));
+    //     mangNhap.push(nhapNumber);
+    // }
+    // document.write("Mảng ban đầu nhập vào là : " + mangNhap + "<br>");
+    // document.write(daoNguocMang(mangNhap));
+    // function daoNguocMang(array) {
+    //     let first = 0;
+    //     let last = array.length - 1;
+    //     while (first < last) {
+    //         let index = array[first];
+    //         array[first] = array[last];
+    //         array[last] = index;
+    //         first++;
+    //         last--;
+    //     }
+    //     return "Mảng sau khi đảo ngược là : " + array;
+    // }
+//    cáhc 2:
+//     let numberArray;
+//     function swapNumber(numberA, numberB) {
+//         numberArray = [numberA, numberB];
+//         let temp = numberArray[0];
+//         numberArray[0] = numberArray[1];
+//         numberArray[1] = temp;
+//     }
+//
+//     swapNumber(2, 3);
+//     console.log(numberArray[0]);
+//     console.log(numberArray[1]);
 
-    let mangNhap = new Array();
-    for (let i=0;i<5;i++){
-        let nhapNumber = parseInt(prompt("Nhập số nguyên bất kỳ:"));
-        mangNhap.push(nhapNumber);
-    }
-    document.write("Mảng ban đầu nhập vào là : " + mangNhap + "<br>");
-    document.write(daoNguocMang(mangNhap));
-    function daoNguocMang(array) {
-        let first = 0;
-        let last = array.length - 1;
-        while (first < last) {
-            let index = array[first];
-            array[first] = array[last];
-            array[last] = index;
-            first++;
-            last--;
+
+    // bài 8: đảo ngược mảng
+    // let numberArray = [3, 2, 7, 1, 8];
+    //
+    // function reverseArray(array) {
+    //     let first = 0;
+    //     let last = array.length - 1;
+    //     let temp;
+    //     while (first < last) {
+    //         temp = array[first];
+    //         array[first] = array[last];
+    //         array[last] = temp;
+    //         first++;
+    //         last--;
+    //     }
+    //     return array;
+    // }
+    //
+    // console.log(reverseArray(numberArray));
+
+
+    // bài 9 : kiểm tra số lần xuất hiện trong mảng
+    let charArray = ['n', 'g', 'h', 'i', 'a', ' ', 'n', 'g', 'u', 'y', 'e', 'n'];
+
+    function isExist(array, anyChar) {
+        let count = 0;
+        let flag = false;
+        let charExist;
+        let i;
+
+        for (i = 0; i < array.length; i++) {
+            if (anyChar === array[i]) {
+                charExist = array[i];
+                flag = true;
+                count++;
+            }
         }
-        return "Mảng sau khi đảo ngược là : " + array;
+
+        if (flag) {
+            return (charExist + " appear " + count + " times");
+        }
+        return -1;
     }
+
+    console.log(isExist(charArray,'g'));
+
 </script>
 </body>
 </html>

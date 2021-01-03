@@ -6,18 +6,21 @@
 </head>
 <body>
 <script>
-    let celcius = parseFloat(prime"Nhập nhiệt độ hiện tại: ");
-    let input = parseFloat(prompt("Nhập n số rong dãy Fibonacci"));
-    let countfibo = 1;
-    while (countfibo <= input) {
-        count = 0;
-        for (let n = 2; n > 2; n ++) {
-            if () {
-                count++
-            }
+    let celcius;
+    let check = true;
+    do {
+         celcius = parseInt(prompt("Nhập nhiệt độ phòng hiện tại."));
+        if (celcius > 100 ) {
+            alert("Hãy giảm nhiệt độ.");
+        } else if (celcius < 20) {
+            alert("Hãy tăng nhiệt độ lên");
+        } else {
+            alert("Nhiệt độ OK.")
+            check = false;
         }
 
-    }
+    } while (check)
+
 
 </script>
 </body>

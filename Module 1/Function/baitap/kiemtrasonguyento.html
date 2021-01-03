@@ -6,9 +6,26 @@
 </head>
 <body>
 <script>
-    function prime(number) {
+    function isPrime(number) {
 
+        let flag = true;
+        for (let index = 2; index <= Math.sqrt(number); index++) {
+            if (number % index === 0) {
+                flag = false;
+                break;
+            }
+        }
 
+        if (flag) {
+            return true;
+        }
+        return false
+    }
+
+    for (let index2 = 2; index2 < 10000; index2++) {
+        if (isPrime(index2)) {
+            document.write(index2 + " ");
+        }
     }
 
 </script>

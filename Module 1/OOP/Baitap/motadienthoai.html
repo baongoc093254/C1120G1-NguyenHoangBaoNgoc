@@ -7,62 +7,99 @@
 <body>
 <script>
     class Mobile {
-        constructor(battery,name) {
+        constructor(battery, status) {
             this.battery = battery;
-            this.name = name
-            this.send = [];
-            this.receive = [];
-            this.typing = [];
-            this.turn === "off"
-            this.check();
-            this.error = "Please turn on your phone. "
+            this.status = status;
+            this.draftMessage = [];
+            this.inbox = [];
+            this.sentMessage = [];
+            // bien nay luu tin nhan dang soan thao
+            this.tempMessage = "";
         }
-        check () {
-            if (this.turn === "on") {
+
+        checkStatus() {
+            this.battery--;
+            if (this.status === 1) {
                 return true;
             } else {
                 return false;
             }
         }
-        getStatus () {
-            if(this.check()) {
-                 return "This phone" + this.turn + "Số % pin hiện tại: " + this.battery + "%";
-         } else {
-                return this.error;
+
+        turnOnOff() {
+            this.battery--;
+            if (this.status === 1) {
+                this.status = 0;
+            } else {
+                this.status = 1;
             }
         }
-        typingMessage () {
-            this.battery --;
-                let message = prompt("Nhập nội dung tin nhắn: ")
-                this.typing.push(message);
 
-        }
-        receiveMessage (message) {
-                this.receive.push(message);
-                this.battery --;
+        chargeMobile() {
+            if (this.status === 1) {
+                this.battery = 100;
             }
+        }
 
-        sendMessage (name,message) {
-                this.typingMessage(message);
-                this.send.push(this.typing);
-                name.receiveMessage(this.typing);
-                 this.battery --;
+        createMessage(message) {
+            if (this.status === 1) {
+                this.battery--;
+                this.draftMessage.push(message);
+                this.tempMessage = message;
             }
-        showSend() {
-            alert(this.send);
-        }
-        showReceived () {
-            alert(this.receive);
         }
 
+        receiveMessage() {
+            if (this.status === 1) {
+                this.battery--;
+                return this.inbox.toString();
+            }
+        }
 
+        sendMessage(mobileObj) {
+            if (this.status === 1) {
+                this.battery--;
+                this.sentMessage.push(this.draftMessage.pop());
+                mobileObj.inbox.push(this.tempMessage);
+            }
+        }
+
+        readInbox() {
+            if (this.status === 1) {
+                this.battery--;
+                console.log("IB: " + this.inbox.toString());
+            }
+        }
+
+        readSentMessage() {
+            if (this.status === 1) {
+                this.battery--;
+                console.log("Send: " + this.sentMessage.toString());
+            }
+        }
     }
-    let iphone = new Mobile();
-    let nokia  = new Mobile();
-    nokia.sendMessage(iphone,)
-    nokia.showSend();
-    iphone.showReceived();
 
+    // let iphoneBattery;
+    // let samsungBattery;
+    // do {
+    //     iphoneBattery = parseInt(prompt("Enter Iphone battery"));
+    // } while (iphoneBattery < 1 || iphoneBattery > 100);
+    //
+    // do {
+    //     samsungBattery = parseInt(prompt("Enter Samsung battery"));
+    // } while (iphoneBattery < 1 || iphoneBattery > 100);
+
+    let iphone = new Mobile(60, 1);
+    let samsung = new Mobile(70, 1);
+
+    iphone.createMessage("Message send from iphone");
+    console.log("draft: " + iphone.draftMessage);
+    iphone.sendMessage(samsung);
+    console.log("ip send: " + iphone.sentMessage);
+    console.log("draft: " + iphone.draftMessage);
+    console.log("sam: " + samsung.receiveMessage());
+    samsung.readInbox();
+    iphone.readSentMessage();
 </script>
 </body>
 </html>

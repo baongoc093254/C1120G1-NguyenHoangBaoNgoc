@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let numberArr = [1, 5, 6, 23, 8, 47, 10, 3];
+    function findPrimeNumber(arr) {
+        let primeNumberArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                primeNumberArr.push(arr[i]);
+            }
+        }
+        primeNumberArr.sort(function (a, b) {
+            return a - b;
+        });
+        return primeNumberArr;
+    }
+    function isPrime(number) {
+        let flag = true;
+        if (number < 2) {
+            flag = false;
+        }
+        if (number === 2) {
+            flag = true;
+        }
+        for (let index = 2; index <= Math.sqrt(number); index++) {
+            if (number % index === 0) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            return true;
+        }
+        return false
+    }
+    console.log(findPrimeNumber(numberArr))
+
+
+</script>
+</body>
+</html>

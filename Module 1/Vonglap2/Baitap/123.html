@@ -6,16 +6,35 @@
 </head>
 <body>
 <script>
-function swap(a, b) {
-var temp = a;
-a = b;
-b = temp;
-}
+    let f0 = 0;
+    let f1 = 1;
+    let number;
+    do {
+        number = prompt("Nhap so luong so Finonaci can in");
+    } while (number < 0);
+    document.write(f0 + " " + f1 + " ");
+    let fn;
+    for (let index = 0; index < number - 2; index++) {
+        fn = f0 + f1;
+        f0 = f1;
+        f1 = fn;
+        document.write(fn + " ");
+    }
 
-var a = 5;
-var b = 10;
-swap(a, b);
-document.write("a = " + a + ", b = " + b);
+//    tính giai thừa
+    let number;
+    let factorial = 1;
+    do {
+        number = parseInt(prompt("Nhap so can tinh giai thua"));
+    } while (number < 0);
+    if (number === 0) {
+        factorial = 1;
+    } else {
+        for (let index = 1; index <= number; index++) {
+            factorial *= index;
+        }
+    }
+    alert("Giai thua cua " + number + " = " + factorial);
 </script>
 </body>
 </html>
