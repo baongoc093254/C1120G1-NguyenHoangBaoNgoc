@@ -2,7 +2,7 @@ package bai2_vonglap_trong_java.baitap;
 
 import java.util.Scanner;
 
-public class Display_rectangle_triangle_square {
+public class DisplayRectangleTriangleSquare {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int choose;

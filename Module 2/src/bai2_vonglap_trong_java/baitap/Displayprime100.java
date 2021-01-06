@@ -2,18 +2,15 @@ package bai2_vonglap_trong_java.baitap;
 
 import java.util.Scanner;
 
-public class Display_20_prime {
+public class Displayprime100 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int number;
-        System.out.println("Nhập số nguyên tố bạn muốn in ra:");
-        number = scanner.nextInt();
-        int count = 0;
+        int count  = 0;
         int countflag = 0;
         int prime = 2;
-        while (count < number) {
+        while (prime < 100) {
             countflag = 0;
-            for (int i = 1; i <= Math.sqrt(prime); i++) {
+            for (int i = 1; i <= Math.sqrt(prime) ; i++) {
                 if (prime % i == 0) {
                     countflag++;
                 }
@@ -26,3 +23,6 @@ public class Display_20_prime {
         }
     }
 }
+
+
+
