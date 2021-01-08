@@ -27,7 +27,8 @@ public class Circle {
     public void setColor(String color) {
         this.color = color;
     }
+
     public double getArea() {
-        return Math.PI*this.radius*this.radius;
+        return Math.PI * this.radius * this.radius;
     }
 }
