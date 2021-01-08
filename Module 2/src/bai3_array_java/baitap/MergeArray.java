@@ -17,13 +17,13 @@ public class MergeArray {
         }while (m <= 0);
         int[] arrayA = new int[n];
         for (int i = 0; i < arrayA.length ; i++) {
-            System.out.println("Nhập phần tử thứ" + (i+1) + " : ");
+            System.out.println("Mảng 1 - Nhập phần tử thứ" + (i+1) + " : ");
             arrayA[i] = scanner.nextInt();
 
         }
         int[] arrayB = new int[m];
         for (int i = 0; i < arrayB.length ; i++) {
-            System.out.println("Nhập phần tử thứ " + (i+1) +" : ");
+            System.out.println("Mảng 2 - Nhập phần tử thứ " + (i+1) +" : ");
             arrayB[i] = scanner.nextInt();
 
         }
