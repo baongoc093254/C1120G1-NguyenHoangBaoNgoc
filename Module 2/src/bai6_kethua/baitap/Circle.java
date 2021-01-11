@@ -1,15 +1,25 @@
 package bai6_kethua.baitap;
 
 public class Circle {
-    private  double radius = 1.0;
+    private  double radius;
     private  String color;
+    private boolean fille;
 
     public Circle() {
     }
 
-    public Circle(double radius, String color) {
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+
+    public Circle(double radius, String color,boolean fille) {
         this.radius = radius;
         this.color = color;
+        this.fille = fille;
+    }
+
+    public Circle(double v, String blue) {
     }
 
     public double getRadius() {

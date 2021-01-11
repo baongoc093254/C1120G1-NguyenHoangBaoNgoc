@@ -20,10 +20,10 @@ public class Point3D extends Point2D {
         return z;
     }
 
-}
-    class Display3D() {
+
+    //    class Display3D() {
     public static void main(String[] args) {
-        Point3D point3D  = new Point3D();
+        Point3D point3D = new Point3D();
         System.out.println(point3D);
     }
 }
