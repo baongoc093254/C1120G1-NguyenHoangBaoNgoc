@@ -1,6 +1,6 @@
-package bai7_abstract_interface.thuchanh;
+package bai7_abstract_interface.thuchanh.animal_interface_edible;
 
-public class Chicken extends Animal implements Edible{
+public class Chicken extends Animal implements Edible {
     @Override
     public String makeSound() {
         return "Chicken: cluck - cluck!";

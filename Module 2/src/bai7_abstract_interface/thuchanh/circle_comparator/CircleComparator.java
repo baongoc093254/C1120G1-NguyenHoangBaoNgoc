@@ -1,4 +1,4 @@
-package bai7_abstract_interface.thuchanh;
+package bai7_abstract_interface.thuchanh.circle_comparator;
 
 import bai6_kethua.baitap.Circle;
 

@@ -1,4 +1,4 @@
-package bai7_abstract_interface.baitap;
+package bai7_abstract_interface.baitap.resizable;
 
 import bai6_kethua.thuchanh.Rectangle;
 
@@ -15,9 +15,8 @@ public class ResizableRectangle extends Rectangle implements Resize {
     }
 
     @Override
-    public void resize(double percent) {
-        this.setLength(getLength()+ getLength()*percent/100);
-        this.setWidth(getWidth()+getWidth()*percent/100);
+    public void reSize(double percent) {
+        this.setLength(super.getLength()+ super.getLength()*percent/100);
+        this.setWidth(super.getWidth() + super.getWidth()*percent/100);
     }
-
 }

@@ -1,4 +1,6 @@
-package bai7_abstract_interface.thuchanh;
+package bai7_abstract_interface.thuchanh.circle_comparable;
+
+import bai7_abstract_interface.thuchanh.circle_comparable.ComparableCircle;
 
 import java.util.Arrays;
 

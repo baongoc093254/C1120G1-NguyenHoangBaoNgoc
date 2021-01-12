@@ -1,4 +1,6 @@
-package bai7_abstract_interface.thuchanh;
+package bai7_abstract_interface.thuchanh.animal_interface_edible;
+
+import bai7_abstract_interface.thuchanh.animal_interface_edible.*;
 
 public class AbstractAndInterfaceTests {
     public static void main(String[] args) {

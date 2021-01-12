@@ -1,4 +1,4 @@
-package bai7_abstract_interface.baitap;
+package bai7_abstract_interface.baitap.resizable;
 
 import bai6_kethua.thuchanh.Square;
 
@@ -16,7 +16,8 @@ public class ResizableSquare extends Square implements Resize {
 
 
     @Override
-    public void Resize(double percent) {
-        super.setSide(super.getSide() + getSide()*percent/100);
+    public void reSize(double percent) {
+        this.setLength(super.getLength()+ super.getLength()*percent/100);
+        this.setWidth(super.getWidth() + super.getWidth()*percent/100);
     }
 }
