@@ -1,7 +1,7 @@
 package bai6_kethua.thuchanh;
 
-class Circle extends Shape {
-        public double radius = 1.0;
+public class Circle extends Shape {
+        private double radius = 1.0;
 
         public Circle() {
         }

@@ -16,8 +16,8 @@ public class ResizableRectangle extends Rectangle implements Resize {
 
     @Override
     public void resize(double percent) {
-        setLength(getLength()+ getLength()*percent/100);
-        setWidth(getWidth()+getLength()*percent/100);
+        this.setLength(getLength()+ getLength()*percent/100);
+        this.setWidth(getWidth()+getWidth()*percent/100);
     }
 
 }

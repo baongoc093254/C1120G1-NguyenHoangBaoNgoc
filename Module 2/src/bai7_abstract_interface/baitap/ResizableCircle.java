@@ -1,10 +1,10 @@
 package bai7_abstract_interface.baitap;
 
-import bai6_kethua.baitap.Circle;
+import bai6_kethua.thuchanh.Circle;
 
 import java.util.Random;
 
-public class ResizableCircle extends   implements Resize {
+public class ResizableCircle extends Circle implements Resize {
     public ResizableCircle() {
     }
 
@@ -14,7 +14,6 @@ public class ResizableCircle extends   implements Resize {
 
     @Override
     public void resize(double percent) {
-        Random generator = new Random(100);
-        setRadius(getRadius() +getRadius()/100);
+        this.setRadius(getRadius() +getRadius()/100);
     }
 }

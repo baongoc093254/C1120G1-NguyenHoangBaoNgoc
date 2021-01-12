@@ -42,13 +42,13 @@ public class Square extends Rectangle {
     }
     class SquareTest {
         public static void main(String[] args) {
-            bai6_kethua.thuchanh.Square square = new bai6_kethua.thuchanh.Square();
+            Square square = new Square();
             System.out.println(square);
 
-            square = new bai6_kethua.thuchanh.Square(2.3);
+            square = new Square(2.3);
             System.out.println(square);
 
-            square = new bai6_kethua.thuchanh.Square(5.8, "yellow", true);
+            square = new Square(5.8, "yellow", true);
             System.out.println(square);
         }
     }

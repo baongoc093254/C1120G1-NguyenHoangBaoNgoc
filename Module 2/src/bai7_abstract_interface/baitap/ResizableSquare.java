@@ -14,8 +14,9 @@ public class ResizableSquare extends Square implements Resize {
         super(side, color, filled);
     }
 
+
     @Override
-    public void resize(double percent) {
-        setSide(getSide()+getSide()*percent/100);
+    public void Resize(double percent) {
+        super.setSide(super.getSide() + getSide()*percent/100);
     }
 }
