@@ -1,4 +1,4 @@
-package bai9_danhsach.thuchanh;
+package bai9_danhsach.thuchanh.linkedList;
 
 public class MyLinkedList {
     private  Node head;
