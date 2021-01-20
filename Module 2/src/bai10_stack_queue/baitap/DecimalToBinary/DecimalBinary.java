@@ -1,4 +1,4 @@
-package bai10_stack_queue.baitap;
+package bai10_stack_queue.baitap.DecimalToBinary;
 
 import java.util.Scanner;
 import java.util.Stack;
