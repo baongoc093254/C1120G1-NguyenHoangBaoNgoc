@@ -28,7 +28,7 @@ public class FindMaxString {
         }
 //        Display the maximum consecutive
         for (Character character : max) {
-            System.out.println(character);
+            System.out.print(character);
         }
 
     }
