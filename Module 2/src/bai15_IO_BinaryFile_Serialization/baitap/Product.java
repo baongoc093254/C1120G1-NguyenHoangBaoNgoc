@@ -1,19 +1,14 @@
 package bai15_IO_BinaryFile_Serialization.baitap;
 
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class Product {
-    private static final AtomicInteger atomicInteger = new AtomicInteger(0);
-    private int id;
+    private String id;
     private String name;
     private String manufacter;
     private float price;
     private String anotherInfor;
 
-    public Product() {
-    }
-
-    public Product(int id, String name, String manufacter, float price, String anotherInfor) {
+    public Product(String id, String name, String manufacter, float price, String anotherInfor) {
         this.id = id;
         this.name = name;
         this.manufacter = manufacter;
@@ -21,11 +16,11 @@ public class Product {
         this.anotherInfor = anotherInfor;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -69,5 +64,8 @@ public class Product {
                 ", manufacter = '" + manufacter + '\'' +
                 ", price = " + price +
                 ", anotherInfor = '" + anotherInfor + '\'';
+    }
+    public String getInfor() {
+        return id + "," + name + "," + manufacter +  "," + price + "," + anotherInfor;
     }
 }
