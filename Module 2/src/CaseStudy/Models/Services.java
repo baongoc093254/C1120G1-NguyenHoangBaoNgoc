@@ -1,45 +1,56 @@
 package CaseStudy.Models;
 
 public class Services {
-    private String nameService;
-    private double area;
-    private double price;
+    private String id;
+    private String nameServices;
+    private float areaUsing;
+    private double prices;
     private int numberPeople;
-    private String rentDay;
+    private String rentDays;
 
     public Services() {
     }
 
-    public Services(String nameService, double area, double price, int numberPeople, String rentDay) {
-        this.nameService = nameService;
-        this.area = area;
-        this.price = price;
+    public Services(String id, String nameServices, float areaUsing,
+                    double prices, int numberPeople, String rentDays) {
+        this.id = id;
+        this.nameServices = nameServices;
+        this.areaUsing = areaUsing;
+        this.prices = prices;
         this.numberPeople = numberPeople;
-        this.rentDay = rentDay;
+        this.rentDays = rentDays;
     }
 
-    public String getNameService() {
-        return nameService;
+    public String getId() {
+        return id;
     }
 
-    public void setNameService(String nameService) {
-        this.nameService = nameService;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public double getArea() {
-        return area;
+    public String getNameServices() {
+        return nameServices;
     }
 
-    public void setArea(double area) {
-        this.area = area;
+    public void setNameServices(String nameServices) {
+        this.nameServices = nameServices;
     }
 
-    public double getPrice() {
-        return price;
+    public float getAreaUsing() {
+        return areaUsing;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setAreaUsing(float areaUsing) {
+        this.areaUsing = areaUsing;
+    }
+
+    public double getPrices() {
+        return prices;
+    }
+
+    public void setPrices(double prices) {
+        this.prices = prices;
     }
 
     public int getNumberPeople() {
@@ -50,21 +61,26 @@ public class Services {
         this.numberPeople = numberPeople;
     }
 
-    public String getRentDay() {
-        return rentDay;
+    public String getRentDays() {
+        return rentDays;
     }
 
-    public void setRentDay(String rentDay) {
-        this.rentDay = rentDay;
+    public void setRentDays(String rentDays) {
+        this.rentDays = rentDays;
     }
 
-    @Override
-    public String toString() {
-        return "Services " +
-                "nameService = '" + nameService + '\'' +
-                ", area = " + area +
-                ", price = " + price +
+
+    public String showInfor() {
+        return "Services: " +
+                "id ='" + id + '\'' +
+                ", nameServices = '" + nameServices + '\'' +
+                ", areaUsing = " + areaUsing +
+                ", prices = " + prices +
                 ", numberPeople = " + numberPeople +
-                ", rentDay = '" + rentDay + '\'';
+                ", rentDays = '" + rentDays + '\'';
+    }
+    public String toString() {
+        return  id + "," + nameServices + "," + areaUsing + "," + prices + "," +
+                numberPeople + "," + rentDays ;
     }
 }

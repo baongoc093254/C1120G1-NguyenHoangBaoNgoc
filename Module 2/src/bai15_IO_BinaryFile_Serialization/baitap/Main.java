@@ -24,7 +24,16 @@ public class Main {
                 case 2:
                     productManager.showInforProduct();
                     break;
-                case 0:
+                case 3:
+                    productManager.editInfor();
+                    break;
+                case 4:
+                    productManager.deleteProduct();
+                    break;
+                case 5:
+                    productManager.searchByName();
+                    break;
+                case 6:
                     flagMenu = false;
                     break;
 

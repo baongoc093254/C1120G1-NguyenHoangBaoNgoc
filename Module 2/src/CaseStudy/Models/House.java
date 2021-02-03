@@ -1,52 +1,64 @@
 package CaseStudy.Models;
 
-public class House extends Services {
-    private String typeRoom;
-    private String typeServices;
-    private int floor;
+public class House extends Services implements Comparable<House>{
+    private String typeRoomHouse;
+    private String otherAmenities;
+    private int floorNumber;
 
-    public House(String typeRoom, String typeServices, int floor) {
-        this.typeRoom = typeRoom;
-        this.typeServices = typeServices;
-        this.floor = floor;
+    public House(String typeRoomHouse, String otherAmenities, int floorNumber) {
+        this.typeRoomHouse = typeRoomHouse;
+        this.otherAmenities = otherAmenities;
+        this.floorNumber = floorNumber;
     }
 
-    public House(String nameService, double area, double price, int numberPeople, String rentDay, String typeRoom, String typeServices, int floor) {
-        super(nameService, area, price, numberPeople, rentDay);
-        this.typeRoom = typeRoom;
-        this.typeServices = typeServices;
-        this.floor = floor;
+    public House(String id, String nameServices, float areaUsing, double prices,
+                 int numberPeople, String rentDays, String typeRoomHouse,
+                 String otherAmenities, int floorNumber) {
+        super(id, nameServices, areaUsing, prices, numberPeople, rentDays);
+        this.typeRoomHouse = typeRoomHouse;
+        this.otherAmenities = otherAmenities;
+        this.floorNumber = floorNumber;
     }
 
-    public String getTypeRoom() {
-        return typeRoom;
+    public String getTypeRoomHouse() {
+        return typeRoomHouse;
     }
 
-    public void setTypeRoom(String typeRoom) {
-        this.typeRoom = typeRoom;
+    public void setTypeRoomHouse(String typeRoomHouse) {
+        this.typeRoomHouse = typeRoomHouse;
     }
 
-    public String getTypeServices() {
-        return typeServices;
+    public String getOtherAmenities() {
+        return otherAmenities;
     }
 
-    public void setTypeServices(String typeServices) {
-        this.typeServices = typeServices;
+    public void setOtherAmenities(String otherAmenities) {
+        this.otherAmenities = otherAmenities;
     }
 
-    public int getFloor() {
-        return floor;
+    public int getFloorNumber() {
+        return floorNumber;
     }
 
-    public void setFloor(int floor) {
-        this.floor = floor;
+    public void setFloorNumber(int floorNumber) {
+        this.floorNumber = floorNumber;
+    }
+
+    @Override
+    public String showInfor() {
+        return "House \t" + super.showInfor() +
+                " typeRoomHouse ='" + typeRoomHouse + '\'' +
+                ", otherAmenities ='" + otherAmenities + '\'' +
+                ", floorNumber =" + floorNumber;
     }
 
     @Override
     public String toString() {
-        return "House " +
-                "typeRoom = '" + typeRoom + '\'' +
-                ", typeServices = '" + typeServices + '\'' +
-                ", floor = " + floor;
+        return super.toString() + "," + typeRoomHouse + "," + otherAmenities + "," + floorNumber;
+    }
+
+    @Override
+    public int compareTo(House o) {
+        return this.getNameServices().compareTo(o.getNameServices());
     }
 }
