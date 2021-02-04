@@ -103,10 +103,11 @@ public class ManagerCustomer {
     }
     public void showCustomer() {
         List<Customer> customerList = FileUntils_Customer.readCustomer();
-        Collections.sort(customerList,new SortByNameAndBirthDay());
+        SortByNameAndBirthDay sortByNameAndBirthDay = new SortByNameAndBirthDay();
+        Collections.sort(customerList,sortByNameAndBirthDay);
         int i = 1;
-        for (Customer customer: customerList) {
-            System.out.println(i+". "+customer.showInforCustomer());
+        for (Customer sort: customerList) {
+            System.out.println(i + ". " + sort.showInforCustomer());
             i++;
         }
 

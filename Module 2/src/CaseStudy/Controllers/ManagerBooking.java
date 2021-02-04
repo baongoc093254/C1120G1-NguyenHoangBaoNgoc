@@ -2,7 +2,6 @@ package CaseStudy.Controllers;
 
 import CaseStudy.Commons.ReadAndWriteService_Customer.*;
 import CaseStudy.Models.*;
-import bai15_IO_BinaryFile_Serialization.baitap.ReadWriteProduct;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +18,6 @@ public class ManagerBooking {
         managerCustomer.showCustomer();
         System.out.println("Enter customer !");
         int choiceCustomer = Integer.parseInt(scanner.nextLine());
-
         int idCustomer = customerList.get(choiceCustomer - 1).getIdCard();
         booking.setIdCustomer(idCustomer);
         System.out.println("----Enter services you want booking----");

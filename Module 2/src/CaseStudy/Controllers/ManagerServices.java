@@ -29,7 +29,7 @@ public class ManagerServices {
         System.out.println("Enter information Villa:");
 //        Enter id
         do {
-            System.out.println("Enter id: (SVXX-YYYY) - YYYY - (0-9) - XX = (VL-villa/HO - house/RO - room)");
+            System.out.println("Enter id: (SVVL-YYYY) - YYYY - (0-9) ");
             id = scanner.nextLine();
             if(!ServicesValidator.validateIdVilla(id)) {
                 System.out.println("Invalid ID service !");
@@ -121,7 +121,7 @@ public class ManagerServices {
         String otherAminities;
         int numfloor;
         do {
-            System.out.println("Enter id:");
+            System.out.println("Enter id: (SVHO-YYYY) - YYYY - (0-9) ");
              id = scanner.nextLine();
             if (!ServicesValidator.validateIdHouse(id)) {
                 System.out.println("Invalid ID !");
@@ -198,7 +198,7 @@ public class ManagerServices {
 
         System.out.println("Enter information Room:");
         do {
-            System.out.println("Enter id:");
+            System.out.println("Enter id: (SVRO-YYYY) - YYYY - (0-9) ");
             id = scanner.nextLine();
             if (!ServicesValidator.validateIdRoom(id)) {
                 System.out.println("Invalid");

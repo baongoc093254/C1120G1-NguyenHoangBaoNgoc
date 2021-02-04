@@ -13,7 +13,6 @@ public class Main {
     static ManagerBooking managerBooking = new ManagerBooking();
     static ManagerEmployee managerEmployee = new ManagerEmployee();
     static ManagerTicket managerTicket = new ManagerTicket();
-    static Queue<Ticket> queue = new LinkedList<>();
     public static void main(String[] args) {
         displayMainMenu();
     }
