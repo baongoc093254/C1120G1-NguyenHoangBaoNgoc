@@ -1,5 +1,6 @@
 package CaseStudy.Controllers;
 
+import CaseStudy.Models.Cabinet;
 import CaseStudy.Models.Ticket;
 
 import java.util.LinkedList;
@@ -30,7 +31,8 @@ public class Main {
             System.out.println("5. Add New Booking");
             System.out.println("6. Show Information of Employee");
             System.out.println("7. Services Cinema4D");
-            System.out.println("8. Exit");
+            System.out.println("8. Cabinet Employee");
+            System.out.println("9. Exit");
             System.out.println("Enter your choice !");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
@@ -62,6 +64,9 @@ public class Main {
                     cinema4D();
                     break;
                 case 8:
+                    cabinetEmployee();
+                    break;
+                case 9:
                     System.exit(choice);
                     break;
                 default:
@@ -204,6 +209,43 @@ public class Main {
 
             }
         }while (checkCinema4D);
+    }
+    public static void cabinetEmployee() {
+        int choice;
+        boolean checkCabinet = true;
+        Scanner scanner = new Scanner(System.in);
+        do {
+            Cabinet.addCabinet();
+            System.out.println("---Cabinet Employee---");
+            System.out.println("1. Find Employee by Name");
+            System.out.println("2. Find Employee by Id Employee");
+            System.out.println("3. Back to menu");
+            System.out.println("4. Exit");
+            choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+//                    Find employee by name
+                    System.out.println("Enter name employee you want find :");
+                    String nameFind = scanner.nextLine();
+                    Cabinet.findEmployeeByName(nameFind);
+                    break;
+                case 2:
+                    System.out.println("Enter id Employee you want find :");
+                    String idEmployee = scanner.nextLine();
+                    Cabinet.findEmployeeById(idEmployee);
+                    break;
+                case 3:
+                    checkCabinet = false;
+                    break;
+                case 4:
+                    System.exit(choice);
+                    break;
+                default:
+                    System.out.println("Please try again !");
+                    break;
+            }
+        }while (checkCabinet);
+
     }
 
 }

@@ -32,7 +32,7 @@ public class ManagerTicket {
                 System.out.println(ticketList.poll().showInfo());
             }
         } else {
-            System.out.println("NOT Sold out yet"+(5 - ticketList.size())+" tickets left");
+            System.out.println("NOT Sold out yet " + (5 - ticketList.size())+" tickets left");
         }
     }
 }

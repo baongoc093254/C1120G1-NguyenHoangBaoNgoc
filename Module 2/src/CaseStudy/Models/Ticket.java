@@ -8,10 +8,10 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(String idTicket, double price, String namCustomer) {
+    public Ticket(String idTicket, double price, String nameCustomer) {
         this.idTicket = idTicket;
         this.price = price;
-        this.namCustomer = namCustomer;
+        this.namCustomer = nameCustomer;
     }
 
     public String getIdTicket() {

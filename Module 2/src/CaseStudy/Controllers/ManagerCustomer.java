@@ -3,9 +3,7 @@ package CaseStudy.Controllers;
 import CaseStudy.Commons.ReadAndWriteService_Customer.SortCustomer.SortByNameAndBirthDay;
 import CaseStudy.Commons.Validation.CustomerValidation;
 import CaseStudy.Commons.ReadAndWriteService_Customer.FileUntils_Customer;
-import CaseStudy.Commons.Validation.UserException.EmailException;
-import CaseStudy.Commons.Validation.UserException.IdcardException;
-import CaseStudy.Commons.Validation.UserException.NameException;
+import CaseStudy.Commons.Validation.UserException.*;
 import CaseStudy.Models.Customer;
 import CaseStudy.Models.Ticket;
 
@@ -26,6 +24,8 @@ public class ManagerCustomer {
 
         List<Customer> customerList = new ArrayList<>();
         System.out.println("Add Information Customer");
+
+//        Name customer
         do {
             System.out.print("Add name customer : ");
             name = scanner.nextLine();
@@ -43,9 +43,18 @@ public class ManagerCustomer {
             System.out.println("Enter Day Of Birth:");
             dayOfBirth = scanner.nextLine();
 
+            do {
+                System.out.println("Enter Gender: (Male/Female/Unknow)");
+                gender = scanner.nextLine();
+                if (!CustomerValidation.validateGender(gender)) {
+                    try {
+                        throw  new GenderException("Gender Invalid");
+                    } catch (GenderException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }while (!CustomerValidation.validateGender(gender));
 
-        System.out.println("Enter Gender:");
-        gender = scanner.nextLine();
         do {
             System.out.println("Enter id card:");
             idcard = Integer.parseInt(scanner.nextLine());
@@ -72,8 +81,18 @@ public class ManagerCustomer {
             }
         }while (!CustomerValidation.validateEmail(email));
 
-        System.out.println("Enter your rank customer:");
-        rankCustomer = scanner.nextLine();
+        do {
+            System.out.println("Enter your rank customer:");
+            rankCustomer = scanner.nextLine();
+            if (!CustomerValidation.validateRankCustomer(rankCustomer)) {
+                try {
+                    throw new RankCustomerException("Rank Customer Invalid !");
+                } catch (RankCustomerException e) {
+                    e.printStackTrace();
+                }
+            }
+        }while (!CustomerValidation.validateRankCustomer(rankCustomer));
+
         System.out.println("Enter your address:");
         address = scanner.nextLine();
         Customer customer = new Customer(name,dayOfBirth,gender,idcard,
