@@ -46,5 +46,4 @@ foreign key(id_employee) references Employees(id_employee),
 foreign key(id_construction) references Constructions(id_construction)
 );
 
-
  
