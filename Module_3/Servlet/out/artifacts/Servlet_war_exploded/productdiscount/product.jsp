@@ -11,15 +11,11 @@
     <title>Product Discount Calculator</title>
 </head>
 <body>
-<form>
-    <h2>Product Discount Calculator</h2>
-    <label>Product Description: </label><br/>
-    <input type="text" name="productDescription" size="40" placeholder="productDescription"/><br/>
-    <label>List Price: </label><br/>
-    <input type="text" name="price" size="30" placeholder="price"/><br/>
-    <label>Discount Percent: </label><br/>
-    <input type="text" name="discountPercent" size="30" placeholder="discountPercent"/><br/><br/>
-    <input type="submit" id="submit" value="Calculator Discount">
-</form>
+    <h1>Product Discount Calculator</h1>
+    <h3>Product Description: ${description}</h3>
+    <h3>List price: ${price}</h3>
+    <h3>Discount Percent: ${percent}</h3>
+    <h3>Discount Amount: ${amount}</h3>
+    <h3>Total Price: ${total}</h3>
 </body>
 </html>

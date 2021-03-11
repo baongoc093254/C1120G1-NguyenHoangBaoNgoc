@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.persistence.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.servlet.jsp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.servlet.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.jms.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.resource.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.annotation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.ejb.jar!/" />
+      <root url="jar://$PROJECT_DIR$/Baitap/lib/javax.transaction.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

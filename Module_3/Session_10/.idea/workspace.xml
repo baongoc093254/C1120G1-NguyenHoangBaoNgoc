@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1868262e-00fa-456c-979f-f30827c0024e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Servlet/web/productdiscount/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Baitap/src/Controller/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Baitap/src/Model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Baitap/web/WEB-INF/lib/taglibs-standard-impl-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Baitap/web/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Baitap/web/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bai 1/Bai Tap/bai tap 1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bai 2/Thuc Hanh/Course 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bai 2/Thuc Hanh/Course 3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bai 2/Thuc Hanh/Course 4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Bai 2/Thuc Hanh/Course2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/out/artifacts/Servlet_war_exploded/WEB-INF/classes/Controller/ProductDiscountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/out/artifacts/Servlet_war_exploded/WEB-INF/classes/Controller/ProductDiscountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/out/artifacts/Servlet_war_exploded/productdiscount/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/out/artifacts/Servlet_war_exploded/productdiscount/product.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/out/production/Servlet/Controller/ProductDiscountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/out/production/Servlet/Controller/ProductDiscountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/src/Controller/ProductDiscountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/src/Controller/ProductDiscountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Servlet/web/productdiscount/product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Servlet/web/productdiscount/product.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1pbNam6nVOnwWLZJhi23bVrPoXs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1868262e-00fa-456c-979f-f30827c0024e" name="Default Changelist" comment="" />
+      <created>1615447895545</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615447895545</updated>
+      <workItem from="1615447896792" duration="21000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>
