@@ -37,8 +37,10 @@
         <td><a href="/customers?action=view&id=${customer.getId()}">${customer.getName()}</a></td>
         <td>${customer.getEmail()}</td>
         <td>${customer.getAddress()}</td>
-        <td><a href="/customers?action=edit&id=${customer.getId()}"></a></td>
-        <td><a href="/customers?action=delete&id=${customer.getId()}"></a></td>
+        <td><a href="/customers?action=edit&id=${customer.getId()}"><button type="button" class="btn btn-primary">Edit</button></a>
+            </td>
+        <td><a href="/customers?action=delete&id=${customer.getId()}"><button type="button" class="btn btn-danger btn-lg">Delete</button></a>
+        </td>
     </tr>
     </c:forEach>
     </tr>
@@ -49,4 +51,3 @@
 
 </body>
 </html>
-    
