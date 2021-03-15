@@ -11,21 +11,30 @@
     <title>Create New User</title>
 </head>
 <body>
-<form method="post" action="/users">
-    <div class="form-group row">
-        <label for="name" >Name:</label>
-        <input type="text" class="col-sm-3 col-form-label"  id="name" name="name" placeholder="Enter your name">
-    </div>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email:</label>
-        <input type="text" class="col-sm-3 col-form-label" name="email" id="exampleInputEmail1" placeholder="Enter your email">
-    </div>
-    <div class="form-group">
-        <label for="country">Country: </label>
-        <input type="text" class="col-sm-3 col-form-label" id="country" name="email" style="display: inline">
-    </div>
-    <input type="hidden" name="action" value="create">
-    <button type="submit" value="Create" class="btn btn-primary">Submit</button>
+<form method="post">
+    <fieldset>
+        <%--        Tag <fieldset> được dùng để nhóm các thành phần bên trong <form> một cách hợp lý.--%>
+        <%--        Tag <fieldset> tạo đường bao ngoài bao quanh các thành phần trong <form>.--%>
+        <legend>User information</legend>
+        <table>
+            <tr>
+                <td>Name: </td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td><input type="text" name="email" id="email"></td>
+            </tr>
+            <tr>
+                <td>Address: </td>
+                <td><input type="text" name="address" id="address"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Create customer"></td>
+            </tr>
+        </table>
+    </fieldset>
 </form>
 </body>
 </html>

@@ -59,6 +59,7 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
                 break;
             case "update":
                 //
+                showDeleteForm(request,response);
                 break;
             case "delete":
                 //
@@ -66,6 +67,10 @@ public class UserServlet extends javax.servlet.http.HttpServlet {
             default:
                 showUserList(response,request);
         }
+    }
+
+    private void showDeleteForm(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.sendRedirect("user/delete.jsp");
     }
 
     private void showUserList(HttpServletResponse response, HttpServletRequest request) throws ServletException, IOException {
