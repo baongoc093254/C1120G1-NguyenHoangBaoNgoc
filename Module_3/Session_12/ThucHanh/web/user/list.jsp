@@ -15,34 +15,35 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-<h1>User List</h1>
+<h1>User Manager</h1>
 <p>
-    <a href="/users?action=create">Create New User</a>
+    <a href="/users?action=create"><button name="action" value="create">Create New User</button></a>
 </p>
 
 <table class="table">
     <thead class="thead-dark">
     <tr>
+        <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
         <th scope="col">Country</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
 
     </tr>
     </thead>
-    <tbody>
+    <c:forEach items="${userList}" var="user">
     <tr>
-        <c:forEach items='${requestScope["user"]}' var="user">
-
-    <tr>
-        <td><a href="/users?action=view&id=${user.getId()}">${user.getName()}</a></td>
-        <td>${user.getEmail()}</td>
-        <td>${user.getCountry()}</td>
-        <td><a href="/users?action=edit&id=${user.getId()}"><button ></button></a></td>
-        <td><a href="/users?action=delete&id=${user.getId()}"></a></td>
+        <td><c:out value="${user.getId()}"></c:out> </td>
+        <td><c:out value="${user.getName()}"></c:out></td>
+        <td><c:out value="${user.getEmail()}"></c:out></td>
+        <td><c:out value="${user.getCountry()}"></c:out></td>
+        <td><a href="/users?action=edit&id=${user.getId()}"><button type="button" class="btn btn-primary">Edit</button></a></td>
+        <td><a href="/users?action=delete&id=${user.getId()}"><button type="button" class="btn btn-primary">Delete</button></a></td>
     </tr>
     </c:forEach>
     </tr>
-    </tbody>
+
 
 </table>
 </body>

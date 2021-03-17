@@ -13,4 +13,6 @@ public interface UserService {
 
     void remove(int id);
 
+    User findByID(int id);
+
 }

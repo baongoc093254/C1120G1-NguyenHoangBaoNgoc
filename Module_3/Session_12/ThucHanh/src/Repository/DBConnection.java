@@ -10,13 +10,14 @@ public class DBConnection {
     private static final String HOST = "localhost";
     private static final String DATABASE = "user";
     private static final String PORT = "3306";
+    private static final String URL = "jdbc:mysql://"+HOST+":"+PORT+"/"+DATABASE+"?useSSL=false";
 
     private static Connection connection;
 
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE, USER_NAME, PASSWORD);
+            connection = DriverManager.getConnection(URL,USER_NAME,PASSWORD);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

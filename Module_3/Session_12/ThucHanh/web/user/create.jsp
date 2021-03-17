@@ -11,7 +11,8 @@
     <title>Create New User</title>
 </head>
 <body>
-<form method="post">
+<form method="post" action="/users">
+    <h2>Create New User</h2>
     <fieldset>
         <%--        Tag <fieldset> được dùng để nhóm các thành phần bên trong <form> một cách hợp lý.--%>
         <%--        Tag <fieldset> tạo đường bao ngoài bao quanh các thành phần trong <form>.--%>
@@ -27,14 +28,16 @@
             </tr>
             <tr>
                 <td>Address: </td>
-                <td><input type="text" name="address" id="address"></td>
+                <td><input type="text" name="country" id="country"></td>
             </tr>
             <tr>
-                <td></td>
-                <td><input type="submit" value="Create customer"></td>
+                <td>
+                <input type="hidden" name="action" value="create">
+                <button type="submit" value="submit">Submit</button></td>
             </tr>
         </table>
     </fieldset>
+    <p><a href="/users">Back to user list</a><p>
 </form>
 </body>
 </html>
