@@ -27,7 +27,7 @@ public class DictionaryController {
 
         model.addAttribute("result", map.getOrDefault(key1, "Not found"));
 
-        return "result";
+        return "translate";
     }
 
 }

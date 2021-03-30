@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import sun.security.pkcs11.Secmod;
 
 @Controller
-public class ConvertMoney {
+public class ConvertMoneyController {
     @GetMapping("/")
     public String index() {
         return "index";
