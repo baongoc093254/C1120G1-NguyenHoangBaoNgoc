@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Create New Product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+<h2>Create New Product</h2>
+<a th:href="@{/}">
+    <button class="btn btn-success">Back to list customer</button>
+</a>
+<div id="form">
+    <form th:action="@{/product/create}" th:object="${product}" method="post">
+        <div>
+            <label>ID:</label>
+        <input type="number" th:field="*{id}">
+        </div>
+
+        <div>
+            <label>Name:</label>
+            <input type="number" th:field="*{name}">
+        </div>
+
+        <div>
+            <label>Price:</label>
+            <input type="number" th:field="*{price}">
+        </div>
+
+        <div>
+            <label>Manufacturer:</label>
+            <input type="number" th:field="*{manufacturer}">
+        </div>
+
+        <div>
+
+            <input type="submit" value="Save"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
