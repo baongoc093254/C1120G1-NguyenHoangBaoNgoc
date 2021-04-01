@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h3>Add New Customer</h3>
+    <p>
+        <a th:href="@{/}">
+            <button class="btn btn-success">Back to list customer</button>
+        </a>
+    </p>
+    <div id="form" class="d-flex justify-content-center">
+        <form th:action="@{/views/save}" th:object="${customer}" method="post">
+<!--                <label>ID: </label>-->
+            <div>
+                <label>ID:</label>
+            <input type="number" th:field="*{id}"/>
+            </div>
+            <div>
+                <label>Name :</label>
+                <input type="text" th:field="*{name}">
+            </div>
+            <div>
+                <label>Email :</label>
+                <input type="text" th:field="*{email}">
+            </div>
+            <div>
+                <label>Address :</label>
+                <input type="text" th:field="*{address}">
+            </div>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

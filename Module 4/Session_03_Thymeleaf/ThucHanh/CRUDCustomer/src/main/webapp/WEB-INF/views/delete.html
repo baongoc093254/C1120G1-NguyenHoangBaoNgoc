@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Delete Customer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style type="text/css">
+        .deleteCus:hover {
+
+        }
+    </style>
+</head>
+<body>
+<div class="deleteCus">
+    <form th:action="@{/customer/delete}" th:object="${delete}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label>Name :</label>
+            <input type="text" th:field="*{name}">
+        </div>
+        <div>
+            <label>Email :</label>
+            <input type="text" th:field="*{email}">
+        </div>
+        <div>
+            <label>Address :</label>
+            <input type="text" th:field="*{address}">
+        </div>
+        <div>
+            <input type="submit" value="Delete"/>
+        </div>
+    </form>
+</div>
+
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

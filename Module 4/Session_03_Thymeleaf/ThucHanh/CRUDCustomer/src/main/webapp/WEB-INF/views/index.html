@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" >
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/layout :: header">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+    <h2 align="center">Customer Manager</h2>
+    <p>
+        <a th:href="@{/views/create}"><button class="btn btn-success">Add New Customer</button>
+
+        </a>
+    </p>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th scope="col">No.</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">View</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <div th:each="customer,rowStat : ${customerList}">
+            <tr>
+                <td th:text="${rowStat.count}"></td>
+                <td th:text="${customer.getId()}"></td>
+                <td th:text="${customer.getName()}"></td>
+                <td th:text="${customer.getEmail()}"></td>
+                <td th:text="${customer.getAddress()}"></td>
+                <td><a th:href="@{/customer/{id}/view(id=${customer.getId()})}">View</a></td>
+                <td><a th:href="@{/customer/{id}/edit(id=${customer.getId()})}">Edit</a></td>
+                <td><a th:href="@{/customer/{id}/delete(id=${customer.getId()})}">Delete</a></td>
+            </tr>
+        </div>
+        </tbody>
+    </table>
+    </div>
+    <footer th:replace="/layout :: footer"></footer>
+</body>
+</html>
