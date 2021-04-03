@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head th:replace="/layout :: header">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
 <h2>List Product</h2>
@@ -11,7 +20,7 @@
    <a th:href="@{/product/create}"><button class="btn btn-success">Add New Product</button></a>
 </div>
 <div id="product-table">
-    <table class="table">
+    <table class="table" id="product">
         <thead class="thead-dark">
         <tr>
             <th scope="col">No.</th>
@@ -32,15 +41,63 @@
             <td th:text="${product.getPrice()}"></td>
             <td th:text="${product.getManufacturer()}"></td>
             <td><a th:href="@{/product/{id}/edit(id=${product.getId()})}">Edit</a> </td>
-            <td><a th:href="@{/product/{id}/delete(id=${product.getId()})}">Delete</a> </td>
+            <td>
+
+<!--                <button class="btn btn-danger" type="button" onclick="productSetId('${product.getId()}')" data-toggle="modal" data-targer="#modalDelete"><i class="fas fa-trash"></i></button>
+-->
+                <button class="btn btn-danger" data-target="#modalDelete" data-toggle="modal"
+                        th:onclick="'productSetId(\'' + ${product.getId()} +'\');'"><i class="fas fa-trash"></i>
+                </button>
+            </td>
         </tr>
         </div>
         </tbody>
     </table>
 
 
+
+<!--    modal delete customer-->
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-confirm" role="document">
+            <div class="modal-content">
+                <div class="modal-header flex-column">
+                    <div class="icon-box">
+                    <i class="fas fa-user-times"></i>
+                    </div>
+                    <h4 class="modal-tittle w-100" id="exampleModalLabel">Delete Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="modelId" size="50" disabled style="border: none;background: white">
+                        <p>Are you want delete this product ? </p>
+                    <small style="color: orange">This process can't be undone.</small>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <form th:action="@{/product/delete}" method="get" id="deleteProduct">
+                        <input type="hidden" name="id" id="idProductDelete" >
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" onclick="submitDelete()" >Yes, Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer th:replace="/layout :: footer"></footer>
+<script>
+    function productSetId(id) {
+        document.getElementById("idProductDelete").value = id;
+
+    }
+    function submitDelete() {
+        document.getElementById("deleteProduct").submit();
+    }
+
+
+
+</script>
 </body>
 </html>
