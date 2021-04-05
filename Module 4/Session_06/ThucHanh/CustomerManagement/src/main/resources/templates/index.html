@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+<h2>Customer List</h2>
+<a th:href="@{/customer/create}"><button class="btn btn-success">Add New Customer</button></a>
+<div>
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">View</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+
+
+    </tr>
+    </thead>
+    <tbody>
+   <tr th:each="customer : ${customerList}">
+
+       <td th:text="${customer.id}"></td>
+       <td th:text="${customer.firstName}"></td>
+       <td th:text="${customer.lastName}"></td>
+       <td><a th:href="@{/customer/{id}/view(id=${customer.id})}">View</a> </td>
+       <td><a th:href="@{/customer/{id}/edit(id=${customer.id})}">Edit</a> </td>
+       <td>
+       <button class="btn btn-danger" data-target="#modalDelete" data-toggle="modal"
+               th:onclick="'customerSetId(\'' + ${customer.id} +'\');'"><i class="fas fa-user-minus"></i>
+       </button>
+       </td>
+   </tr>
+
+    </tbody>
+</table>
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-confirm" role="document">
+            <div class="modal-content">
+                <div class="modal-header flex-column">
+                    <div class="icon-box">
+                        <i class="fas fa-user-times"></i>
+                    </div>
+                    <h4 class="modal-tittle w-100" id="exampleModalLabel">Delete Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="modelId" size="50" disabled style="border: none;background: white">
+                    <p>Are you want delete this product ? </p>
+                    <small style="color: orange">This process can't be undone.</small>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <form th:action="@{/delete}" method="get" id="deleteCustomer">
+                        <input type="hidden" name="id" id="idCustomerDelete" >
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" onclick="submitDelete()" >Yes, Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function customerSetId(id) {
+        document.getElementById("idCustomerDelete").value = id;
+
+    }
+    function submitDelete() {
+        document.getElementById("deleteCustomer").submit();
+    }
+
+
+
+</script>
+</html>
