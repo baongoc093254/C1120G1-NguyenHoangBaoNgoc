@@ -36,17 +36,17 @@
         <div th:each="product,rowStat : ${productList}">
         <tr>
             <td th:text="${rowStat.count}"></td>
-            <td th:text="${product.getId()}"></td>
-            <td th:text="${product.getName()}"></td>
-            <td th:text="${product.getPrice()}"></td>
-            <td th:text="${product.getManufacturer()}"></td>
-            <td><a th:href="@{/product/{id}/edit(id=${product.getId()})}">Edit</a> </td>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.manufacturer}"></td>
+            <td><a th:href="@{/product/{id}/edit(id=${product.id})}">Edit</a> </td>
             <td>
 
 <!--                <button class="btn btn-danger" type="button" onclick="productSetId('${product.getId()}')" data-toggle="modal" data-targer="#modalDelete"><i class="fas fa-trash"></i></button>
 -->
                 <button class="btn btn-danger" data-target="#modalDelete" data-toggle="modal"
-                        th:onclick="'productSetId(\'' + ${product.getId()} +'\');'"><i class="fas fa-trash"></i>
+                        th:onclick="'productSetId(\'' + ${product.id} +'\');'"><i class="fas fa-trash"></i>
                 </button>
             </td>
         </tr>
