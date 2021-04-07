@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+<h2>User Register</h2>
+<div>
+    <a th:href="@{/create}">Register New User</a>
+</div>
+<table class="table table-hover">
+    <thead>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+    </thead>
+    <tbody>
+        <tr th:each="us : ${userList}">
+            <td th:text="${us.firstName}"></td>
+            <td th:text="${us.lastName}"></td>
+            <td th:text="${us.phoneNumber}"></td>
+            <td th:text="${us.email}"></td>
+        </tr>
+    </tbody>
+</table>
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>
