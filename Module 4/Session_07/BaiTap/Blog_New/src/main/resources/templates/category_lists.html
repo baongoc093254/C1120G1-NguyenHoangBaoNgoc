@@ -8,7 +8,7 @@
 <p >
     <a th:href="@{/category/create}" >Add new category</a>
 </p>
-<table id="products">
+<table class="table table-hover">
     <thead>
     <tr>
         <th>Category</th>
@@ -20,9 +20,9 @@
     <tbody>
     <tr th:each="row,rowStat: ${category}">
         <td th:text="${row.name}"></td>
-        <td><a th:href="@{/category/{id}/edit(id=${row.categoryId})}">edit</a></td>
-        <td><a th:href="@{/category/{id}/delete(id=${row.categoryId})}">delete</a></td>
-        <td><a th:href="@{/category/{id}/view(id=${row.categoryId})}">view</a></td>
+        <td><a th:href="@{/category/{id}/edit(id=${row.id})}"><i class="fas fa-marker"></i></a></td>
+        <td><a th:href="@{/category/{id}/delete(id=${row.id})}"><i class="fas fa-trash-alt"></i></a></td>
+        <td><a th:href="@{/category/{id}/view(id=${row.id})}"><i class="fas fa-binoculars"></i></a></td>
     </tr>
     </tbody>
 </table>

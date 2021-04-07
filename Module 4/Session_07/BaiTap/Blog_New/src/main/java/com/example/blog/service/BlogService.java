@@ -12,6 +12,5 @@ public interface BlogService {
     Blog findById(Integer id);
     void save(Blog blog);
     void remove(Integer id);
-    List<Blog> findByTitleContaining(String title);
-    Page<Blog> findByTitleContaining(String title,Pageable pageable);
+    Page<Blog> findAllByAuthorContaining(String author,Pageable pageable);
 }

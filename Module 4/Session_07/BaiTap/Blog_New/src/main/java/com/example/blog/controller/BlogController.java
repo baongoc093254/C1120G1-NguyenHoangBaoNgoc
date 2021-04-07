@@ -23,7 +23,7 @@ public class BlogController {
     CategoryService categoryService;
 
     @GetMapping("/")
-    public String blogList(Model model, @PageableDefault(size = 5,sort = "writeDate")Pageable pageable) {
+    public String blogList(Model model, @PageableDefault(size = 2,sort = "writeDate")Pageable pageable) {
         model.addAttribute("blog", blogService.findAll(pageable));
         return "list";
     }
@@ -67,8 +67,8 @@ public class BlogController {
         return "redirect:/";
     }
     @GetMapping("/blog/search")
-    public String findByTitle(@RequestParam String title, Model model, @PageableDefault(size = 1,sort = "writeDate")Pageable pageable){
-        model.addAttribute("blog",blogService.findByTitleContaining(title,pageable));
+    public String findByTitle(@RequestParam(name = "author") String author, Model model, @PageableDefault(size = 1,sort = "writeDate")Pageable pageable){
+        model.addAttribute("blog",blogService.findAllByAuthorContaining(author,pageable));
         return "search";
     }
 }

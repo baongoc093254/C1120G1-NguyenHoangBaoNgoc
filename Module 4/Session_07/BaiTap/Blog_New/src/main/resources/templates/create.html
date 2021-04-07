@@ -5,30 +5,42 @@
 <nav th:replace="/layout :: navbar"></nav>
 <h3>Add Blog</h3>
 <p>
-    <a th:href="@{/blog/}">
+    <a th:href="@{/}">
         Back to blog list
     </a>
 </p>
-<div id="form">
+
+<div>
+
     <form action="#" th:action="@{/blog/save}" th:object="${blog}"
           method="POST" novalidate="novalidate">
-        <input type="hidden" th:field="*{id}"/>
-        <div>
-            <label>Title</label>
-            <input type="email" th:field="*{title}"/>
-        </div>
-        <div>
-            <label>Content</label>
-            <input type="text" th:field="*{content}"/>
-        </div>
-            <input type="hidden" th:field="*{writeDate}"/>
-        <div>
-            <label>Category</label>
-            <select th:field="*{category}">
-                <option th:each="c : ${category}" th:value="${c.categoryId}" th:text="${c.name}"></option>
-            </select>
-        </div>
-        <input type="submit" value="Save"/>
+        <table class="table table-hover">
+            <thead></thead>
+            <tr>
+                <th>ID</th>
+                <td><input type="hidden" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td><input type="text" th:field="*{author}"></td>
+            </tr>
+            <tr>
+                <th>Blog Page</th>
+                <td><input type="text" th:field="*{blogPage}"></td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>
+                    <select th:field="*{category}">
+                        <option th:each="cate : ${category}" th:value="${cate.id}" th:text="${cate.name}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Save"/></td>
+            </tr>
+        </table>
+
     </form>
 </div>
 </body>

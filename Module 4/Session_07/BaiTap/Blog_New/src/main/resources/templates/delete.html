@@ -13,12 +13,12 @@
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}" />
         <div>
-            <label>Title</label>
-            <input type="text" th:field="*{title}"/>
+            <label>Author</label>
+            <input type="text" th:field="*{author}"/>
         </div>
         <div>
-            <label>Content</label>
-            <input type="email" th:field="*{content}" />
+            <label>Blog Page</label>
+            <input type="email" th:field="*{blogPage}" />
         </div>
         <input type="submit" value="Delete"/>
     </form>

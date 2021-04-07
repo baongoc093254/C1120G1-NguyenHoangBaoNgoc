@@ -7,7 +7,7 @@
     <a th:href="@{/category/}">Back to category list</a>
 </p>
 <h2 th:text="${category.name}"></h2>
-<p th:each="b : ${category.getBlogs()}" ><a th:href="@{/blog/{id}/view(id=${b.getId()})}" th:text="${b.title}"></a></p>
+<p th:each="b : ${category.getBlogs()}" ><a th:href="@{/blog/{id}/view(id=${b.getId()})}" th:text="${b.}"></a></p>
 
 </body>
 </html>

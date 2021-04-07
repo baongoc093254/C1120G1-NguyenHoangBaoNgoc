@@ -14,18 +14,18 @@
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}" />
         <div>
-            <label>Title</label>
-            <input type="text" th:field="*{title}"/>
+            <label>Author</label>
+            <input type="text" th:field="*{author}"/>
         </div>
         <div>
-            <label>Content</label>
-            <textarea  th:field="*{content}" />
+            <label>Blog Page</label>
+            <textarea  th:field="*{blogPage}" />
         </div>
             <input type="hidden" th:field="*{writeDate}"/>
         <div>
             <label>Category</label>
             <select th:field="*{category}">
-                <option th:each="c : ${category}" th:value="${c.categoryId}" th:text="${c.name}"></option>
+                <option th:each="c : ${category}" th:value="${c.id}" th:text="${c.name}"></option>
             </select>
         </div>
         <input type="submit" value="Update"/>

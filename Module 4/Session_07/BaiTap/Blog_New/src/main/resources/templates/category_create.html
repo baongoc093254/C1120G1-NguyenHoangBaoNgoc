@@ -10,14 +10,23 @@
     </a>
 </p>
 <div id="form">
-    <form action="#" th:action="@{/category/save}" th:object="${category}"
+    <form  th:action="@{/category/save}" th:object="${category}"
           method="POST" novalidate="novalidate">
-        <input type="hidden" th:field="*{categoryId}"/>
-        <div>
-            <label>Name</label>
-            <input type="email" th:field="*{name}"/>
-        </div>
-        <input type="submit" value="Save"/>
+        <table>
+            <thead></thead>
+            <tr>
+                <th>ID</th>
+                <td><input type="hidden" th:field="*{id}"></td>
+            </tr>
+            <tr>
+                <th>Name Category</th>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Save"></td>
+            </tr>
+
+        </table>
     </form>
 </div>
 </body>

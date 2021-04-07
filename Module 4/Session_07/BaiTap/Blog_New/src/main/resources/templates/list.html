@@ -8,10 +8,15 @@
 <p >
     <a th:href="@{/blog/create}" >Add new Blog</a>
 </p>
-<table id="products">
+<div th:insert="~{layout :: search-fragment}"></div>
+<table class="table table-hover">
     <thead>
     <tr>
-        <th>Title</th>
+        <th>Author</th>
+        <th>Blog Page</th>
+        <th>Date Write </th>
+        <th>Category</th>
+        <th>Description</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>View</th>
@@ -19,7 +24,11 @@
     </thead>
     <tbody>
     <tr th:each="row,rowStat: ${blog}">
-        <td th:text="${row.title}"></td>
+        <td th:text="${row.author}"></td>
+        <td th:text="${row.blogPage}"></td>
+        <td th:text="${row.writeDate}"></td>
+        <td th:text="${row.category.name}"></td>
+        <td th:text="${row.description}"></td>
         <td><a th:href="@{/blog/{id}/edit(id=${row.getId()})}">edit</a></td>
         <td><a th:href="@{/blog/{id}/delete(id=${row.getId()})}">delete</a></td>
         <td><a th:href="@{/blog/{id}/view(id=${row.getId()})}">view</a></td>
@@ -31,9 +40,7 @@
     <span th:text="${blog.number + 1}"></span>/<span th:text="${blog.totalPages}"></span>
     <a th:href="@{'/'(page=${blog.number + 1})}" th:if="${blog.hasNext()}">Next</a>
 </div>
-<form method="get" action="/blog/search">
-    <div th:replace="layout :: search"></div>
-</form>
+
 
 </body>
 </html>
