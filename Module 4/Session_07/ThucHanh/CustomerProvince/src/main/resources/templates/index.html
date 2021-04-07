@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+</head>
+<body>
+<h2 align="center">Customer Management - Province</h2>
+<div>
+    <a th:href="@{/create}"><button class="btn btn-primary">Create new customer</button></a>
+</div>
+<div>
+    <table class="table table-hover">
+        <thead>
+        <th scope="col">No.</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Age</th>
+        <th scope="col">Provinces</th>
+        <th scope="col">Option</th>
+        </thead>
+        <tbody>
+        <tr th:each="customer,cusStat : ${customerList}">
+            <td th:text="${cusStat.count}"></td>
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.name}"></td>
+            <td th:text="${customer.email}"></td>
+            <td th:text="${customer.age}"></td>
+            <td th:text="${customer.province.name}"></td>
+            <td>
+
+                    <a th:href="@{/customer/{id}/edit(id=${customer.id})}" class="btn btn-success"><i class="fas fa-user-edit"></i></a>
+                </button>
+                    <button class="btn btn-danger" data-target="#modalDelete" data-toggle="modal"
+                            th:onclick="'customerSetId(\'' + ${customer.id} +'\');'"><i class="fas fa-trash"></i>
+                    </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-confirm" role="document">
+            <div class="modal-content">
+                <div class="modal-header flex-column">
+                    <div class="icon-box">
+                        <i class="fas fa-user-times"></i>
+                    </div>
+                    <h4 class="modal-tittle w-100" id="exampleModalLabel">Delete Product</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="modelId" size="50" disabled style="border: none;background: white">
+                    <p>Are you want delete this product ? </p>
+                    <small style="color: orange">This process can't be undone.</small>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <form th:action="@{/delete}" method="get" id="deleteCustomer">
+                        <input type="hidden" name="id" id="idCustomerDelete" >
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" onclick="submitDelete()" >Yes, Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div>-->
+<!--    <a th:href="@{'/customer'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">-->
+<!--        <button class="btn btn-info">-->
+<!--            <i class="fas fa-fast-backward"></i>-->
+<!--        </button>-->
+<!--    </a>-->
+<!--    <button class="btn btn-light">-->
+<!--        <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>-->
+<!--    </button>-->
+<!--    <a th:href="@{'/customer'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}">-->
+<!--        <button class="btn btn-info">-->
+<!--            <i class="fas fa-fast-forward"></i>-->
+<!--        </button>-->
+<!--    </a>-->
+<!--</div>-->
+
+<div>
+    <a th:href="@{'/'(page=${customerList.number - 1})}" th:if="${customerList.hasPrevious()}">Previous</a>
+    <span th:text="${customerList.number + 1}"></span>/<span th:text="${customerList.totalPages}"></span>
+    <a th:href="@{'/'(page=${customerList.number + 1})}" th:if="${customerList.hasNext()}">Next</a>
+</div>
+
+</div>
+<footer th:insert="/layout ::footer"></footer>
+<script>
+    function customerSetId(id) {
+        document.getElementById("idCustomerDelete").value = id;
+
+    }
+    function submitDelete() {
+        document.getElementById("deleteCustomer").submit();
+    }
+
+
+
+</script>
+</body>
+</html>

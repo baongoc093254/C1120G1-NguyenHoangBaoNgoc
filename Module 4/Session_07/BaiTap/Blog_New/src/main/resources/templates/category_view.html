@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<nav th:replace="/layout :: navbar"></nav>
+<p>
+    <a th:href="@{/category/}">Back to category list</a>
+</p>
+<h2 th:text="${category.name}"></h2>
+<p th:each="b : ${category.getBlogs()}" ><a th:href="@{/blog/{id}/view(id=${b.getId()})}" th:text="${b.title}"></a></p>
+
+</body>
+</html>
