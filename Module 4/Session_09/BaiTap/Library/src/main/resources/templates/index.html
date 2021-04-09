@@ -7,8 +7,9 @@
 </head>
 <body>
 <h2 class="text-center" >Library Management</h2>
-<form method="get" action="/give_back">
-    <div th:replace="layout :: search"></div>
+<div th:insert="/layout :: search">
+<form method="get" th:action="@{/book/give_back}">
+</div>
 </form>
 <div>
     <table class="table table-hover">
@@ -27,18 +28,13 @@
                 <td th:text="${book.nameBook}"></td>
                 <td th:text="${book.quantity}"></td>
                 <td>
-                    <button class="btn btn-success" th:href="@{/book/{id}/borrow(id=${book.id})}"><i class="fas fa-shopping-cart"></i></button>
-                    
+                    <a th:href="@{/book/{id}/borrow(id=${book.id})}"><button class="btn btn-success"><i class="fas fa-shopping-cart"></i></button></a>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
-<!--<div class="input-group" th:fragment="search">
-    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-           aria-describedby="search-addon" name="id"/>
-    <button type="submit" class="btn btn-outline-primary">Give book back</button>
-</div>-->
+
 
 <footer th:insert="/layout :: footer"></footer>
 </body>
