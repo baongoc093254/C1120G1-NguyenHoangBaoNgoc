@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a th:href="@{/}">Back to customer list</a>
+</div>
+<div>
+    <form th:action="@{/edit}" th:object="${editCustomer}" method="post">
+        <table class="table table-hover">
+            <thead></thead>
+
+            <tr>
+                <th>Name</th>
+                <td><input type="text" th:field="*{name}"></td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td><input type="number" th:field="*{age}"></td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td><input type="text" th:field="*{email}"></td>
+            </tr>
+            <tr>
+                <th>Province</th>
+                <td>
+                    <select th:field="*{province}">
+                        <option th:each="province : ${provinceList}" th:value="${province.id}" th:text="${province.name}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <input type="submit" value="Save"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>

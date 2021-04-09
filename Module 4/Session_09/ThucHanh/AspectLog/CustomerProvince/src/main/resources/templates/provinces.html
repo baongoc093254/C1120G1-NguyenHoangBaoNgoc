@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a th:href="@{/provinces/create}">Create New Province</a>
+<h1>Provinces</h1>
+<div>
+<table class="table table-striped">
+    <thead>
+    <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="provinces : ${provinceList}">
+        <td th:text="${provinces.name}"></td>
+        <td th:href="@{/provinces/{id}/edit(id=${provinces.id})}"></td>
+        <td>
+            <button class="btn btn-danger" data-target="#modalDelete" data-toggle="modal"
+                    th:onclick="'provinceSetId(\'' + ${provinces.id} +'\');'"><i class="fas fa-trash"></i>
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-confirm" role="document">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <div class="icon-box">
+                    <i class="fas fa-user-times"></i>
+                </div>
+                <h4 class="modal-tittle w-100" id="exampleModalLabel">Delete Product</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="modelId" size="50" disabled style="border: none;background: white">
+                <p>Are you want delete this province ? </p>
+                <small style="color: orange">This process can't be undone.</small>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <form th:action="@{/delete}" method="get" id="deleteProvince">
+                    <input type="hidden" name="id" id="idProvinceDelete" >
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" onclick="submitDelete()" >Yes, Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    function provinceSetId(id) {
+        document.getElementById("idProvinceDelete").value = id;
+
+    }
+    function submitDelete() {
+        document.getElementById("deleteProvince").submit();
+    }
+
+
+
+</script>
+<footer th:insert="layout :: footer"></footer>
+</body>
+</html>

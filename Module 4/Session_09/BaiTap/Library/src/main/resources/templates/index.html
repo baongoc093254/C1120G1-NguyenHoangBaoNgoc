@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Library Management</title>
+</head>
+<body>
+<h2 class="text-center" >Library Management</h2>
+<form method="get" action="/give_back">
+    <div th:replace="layout :: search"></div>
+</form>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <th scope="col">No.</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Option</th>
+
+        </thead>
+        <tbody>
+            <tr th:each="book, bookstat : ${bookList}">
+                <td th:text="${bookstat.count}"></td>
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.nameBook}"></td>
+                <td th:text="${book.quantity}"></td>
+                <td>
+                    <button class="btn btn-success" th:href="@{/book/{id}/borrow(id=${book.id})}"><i class="fas fa-shopping-cart"></i></button>
+                    
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--<div class="input-group" th:fragment="search">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+           aria-describedby="search-addon" name="id"/>
+    <button type="submit" class="btn btn-outline-primary">Give book back</button>
+</div>-->
+
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>
