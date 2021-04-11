@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+<div th:insert="/layout :: header-menu">
+</div>
+<div th:insert="/layout :: logo"></div>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <th scope="col">No.</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Detail</th>
+        </thead>
+        <tbody>
+        <tr th:each="product, productStat : ${list}">
+            <td th:text="${productStat.count}"></td>
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td>
+                <a th:href="@{/product/{id}/detail(id=${product.id})}">
+                    <button class="btn btn-success"><i class="fas fa-binoculars"></i></button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>
