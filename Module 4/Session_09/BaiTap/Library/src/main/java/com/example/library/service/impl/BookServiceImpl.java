@@ -10,11 +10,13 @@ import java.util.List;
 
 @Service
 public class BookServiceImpl implements BookService {
+    private int count;
     @Autowired
     BookRepository bookRepository;
     @Override
     public List<Book> findAll() {
         return bookRepository.findAll();
+
     }
 
     @Override

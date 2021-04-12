@@ -11,6 +11,7 @@ public class Book {
     private Integer id;
     private String nameBook;
     private Integer quantity;
+    private int count;
 
     public Book() {
     }
@@ -27,6 +28,14 @@ public class Book {
         return nameBook;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public void setNameBook(String nameBook) {
         this.nameBook = nameBook;
     }
@@ -37,5 +46,9 @@ public class Book {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public int increment() {
+        return  count++;
     }
 }

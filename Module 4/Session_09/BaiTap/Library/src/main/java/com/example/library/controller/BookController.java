@@ -11,10 +11,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@SessionAttributes("mycounter")
 public class BookController {
 
     @Autowired
     BookService bookService;
+    @ModelAttribute("mycounter")
+    public Book setUpCounter() {
+        return new Book();
+    }
+
 
 //    @GetMapping("/")
 //    public String getHomePage(Model model) {
@@ -62,8 +68,9 @@ public class BookController {
 //    }
 
     @GetMapping("")
-    public String list(Model model){
+    public String list(@ModelAttribute("mycounter") Book book, Model model){
         model.addAttribute("bookList",bookService.findAll());
+        book.increment();
         return "index";
     }
     @GetMapping("/book/{id}/borrow")

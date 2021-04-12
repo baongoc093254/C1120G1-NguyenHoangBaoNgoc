@@ -9,8 +9,9 @@
 <h2 class="text-center" >Library Management</h2>
 <div th:insert="/layout :: search">
 <form method="get" th:action="@{/book/give_back}">
-</div>
 </form>
+</div>
+<button th:text="${'View count: ' + mycounter.getCount()}" class="btn btn-primary"></button>
 <div>
     <table class="table table-hover">
         <thead>

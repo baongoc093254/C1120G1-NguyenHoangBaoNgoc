@@ -17,4 +17,9 @@ public class Logger {
     public void afterGiveBack(JoinPoint joinPoint) {
         System.out.println("Give back book: " + joinPoint.getSignature().getName());
     }
+
+    @AfterReturning("execution(* com.example.library.controller.BookController.list(..))")
+    public void countViewer(JoinPoint joinPoint) {
+        System.out.println("View count : " + joinPoint.getSignature().getName());
+    }
 }
