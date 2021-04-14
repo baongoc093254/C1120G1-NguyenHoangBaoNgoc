@@ -33,11 +33,9 @@
     </div>
 </nav>
 <div class="input-group col-3 float-right" th:fragment="search">
-    <form th:action="@{/blog/search}" method="get">
             <input id="search" type="text" class="form-control rounded" placeholder="Search" aria-label="Search"
                    aria-describedby="search-addon" name="author"/>
-            <button type="button" class="btn btn-outline-primary"><i class="fas fa-search"></i></button>
-    </form>
+            <button id="buttonsearch" type="button" class="btn btn-outline-primary"><i class="fas fa-search"></i></button>
 </div>
 
 

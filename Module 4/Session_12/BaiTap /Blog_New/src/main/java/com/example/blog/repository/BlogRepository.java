@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface BlogRepository extends JpaRepository<Blog, Integer> {
     Page<Blog> findAll(Pageable pageable);
-    Page<Blog> findAllByAuthorContaining(String author,Pageable pageable);
+    Page<Blog> findByAuthorContaining(String author,Pageable pageable);
     List<Blog> findByAuthorContaining(String author);
 }

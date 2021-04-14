@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="/layout :: head">
-<body>
+<body id="dataSearch">
 <nav th:replace="/layout :: navbar"></nav>
 <h3 class="text-center">Blog Management</h3>
 <!--<h3 style="color: red" th:text="${message}"></h3>-->
@@ -13,7 +13,7 @@
 </button>
 <div th:insert="/layout :: search"></div>
 
-<table class="table table-hover" id="dataSearch">
+<table class="table table-hover">
     <thead>
         <th scope="col">No.</th>
         <th scope="col">ID</th>
@@ -121,24 +121,19 @@
         });
 
     //    search
-        $("#search").on("keyup",function (){
-            let search = document.getElementById("search").value;
+        $("#buttonsearch").click(function (ev){
+            let inputSearch = document.getElementById("search").value;
 
             $.ajax({
                 type: "GET",
-                url: "/blog/search/" + search,
+                url: "/search?inputSearch=" + inputSearch,
                 dataType: "HTML",
                 success: function (data) {
-                    console.log(data)
-                    let string = "";
-                    for (let i of data ) {
-                        string += "<tr>"+"<td>"+i.author +"</td>"+"</tr>";
-                    }
-                    $("#dataSearch").html(string);
+                    $("#dataSearch").html(data);
 
                 },
-                error: function (data){
-                    console.log(data)
+                error: function () {
+                    alert('error !');
                 }
             })
         })
