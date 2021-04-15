@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body id="dataSearch">
+<nav th:replace="/layout :: navbar"></nav>
+<h3 class="text-center">Blog Management</h3>
+<!--<h3 style="color: red" th:text="${message}"></h3>-->
+<!-- Button trigger modal -->
+
+
+<button type="button" class="btn btn-primary" id="btnModalCreate">
+    Create New Blog
+</button>
+<div th:insert="/layout :: search"></div>
+
+<table class="table table-hover">
+    <thead>
+        <th scope="col">No.</th>
+        <th scope="col">ID</th>
+        <th scope="col">Author</th>
+        <th scope="col">Blog Page</th>
+        <th scope="col">Date Write </th>
+        <th scope="col">Category</th>
+        <th scope="col">Description</th>
+        <th scope="col">Option</th>
+
+    </thead>
+    <tbody>
+    <tr th:each="row,rowStat: ${blog}">
+        <td th:text="${rowStat.count}"></td>
+        <td th:text="${row.id}"></td>
+        <td th:text="${row.author}"></td>
+        <td th:text="${row.blogPage}"></td>
+        <td th:text="${row.writeDate}"></td>
+        <td th:text="${row.category.name}"></td>
+        <td th:text="${row.description}"></td>
+
+        <td>
+            <button class="editButton btn btn-warning" type="button" th:value="${row.id}"><i class="far fa-edit"></i></button>
+
+            <button class="viewButton btn btn-info" type="button" th:value="${row.id}"><i class="far fa-eye"></i></button>
+
+            <button class="deleteButton btn btn-danger" type="button" th:value="${row.id}"><i class="fas fa-trash"></i></i></button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div>
+    <a th:href="@{'/'(page=${blog.number - 1})}" th:if="${blog.hasPrevious()}">Previous</a>
+    <span th:text="${blog.number + 1}"></span>/<span th:text="${blog.totalPages}"></span>
+    <a th:href="@{'/'(page=${blog.number + 1})}" th:if="${blog.hasNext()}">Next</a>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        // edit button modal
+        $(".editButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog/edit/" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        // view
+        $(".viewButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog/view/" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+    //    delete
+        $(".deleteButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/blog/delete/" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+
+    //    search
+        $("#buttonsearch").click(function (ev){
+            let inputSearch = document.getElementById("search").value;
+
+            $.ajax({
+                type: "GET",
+                url: "/search?inputSearch=" + inputSearch,
+                dataType: "HTML",
+                success: function (data) {
+                    $("#dataSearch").html(data);
+
+                },
+                error: function () {
+                    alert('error !');
+                }
+            })
+        })
+    });
+</script>
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>

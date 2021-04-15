@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+
+<div id="form">
+    <form action="#" th:action="@{/blog/delete}" th:object="${blog}"
+          method="POST" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}" />
+        <div>
+            <label>Author</label>
+            <input type="text" th:field="*{author}"/>
+        </div>
+        <div>
+            <label>Blog Page</label>
+            <input type="email" th:field="*{blogPage}" />
+        </div>
+        <div>
+            <label>Write Upload</label>
+            <input type="date" th:field="*{writeDate}">
+        </div>
+        <input type="submit" value="Delete"/>
+    </form>
+</div>
+
+</body>
+</html>

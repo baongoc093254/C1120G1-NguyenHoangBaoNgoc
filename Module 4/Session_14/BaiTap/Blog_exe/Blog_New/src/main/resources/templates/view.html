@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+<body>
+<div>
+    <form th:action="@{/blog/view/{id}}" method="get" th:object="${blog}">
+<!--        <div>-->
+<!--            <label>ID</label>-->
+<!--            <p  th:text="*{id}">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label>Author</label>-->
+<!--            <p th:text="*{author}">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label>Blog Page</label>-->
+<!--            <p th:text="*{blogPage}">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <labe>Description</labe>-->
+<!--            <p  th:text="*{description}">-->
+<!--        </div>-->
+<!--        <div>-->
+<!--            <label>Write Upload</label>-->
+<!--            <p th:text="*{writeDate}"/>-->
+<!--        </div>-->
+        <table class="table table-hover">
+            <thead></thead>
+            <tr>
+                <th>ID</th>
+                <td th:text="*{id}"></td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td th:text="*{author}"></td>
+            </tr>
+            <tr>
+                <th>Blog Page</th>
+                <td th:text="*{blogPage}"></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td th:text="*{description}"></td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td th:text="*{category.getName()}"></td>
+            </tr>
+            <tr>
+                <th>Date Upload</th>
+                <td th:text="*{writeDate}"></td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+</body>
+</html>
