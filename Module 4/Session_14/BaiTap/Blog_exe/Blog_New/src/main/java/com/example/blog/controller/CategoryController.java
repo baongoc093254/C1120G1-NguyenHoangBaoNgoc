@@ -11,8 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/category")
 public class CategoryController {
 
     @Autowired
@@ -20,45 +22,45 @@ public class CategoryController {
     @Autowired
     BlogService blogService;
 
-    @GetMapping({"/category"})
+    @GetMapping("/list")
     public String listCategory(Model model, @PageableDefault(size = 5) Pageable pageable){
         model.addAttribute("category",categoryService.findAll(pageable));
         return "category_lists";
     }
-    @GetMapping("/category/create")
+    @GetMapping("/create")
     public String createForm(Model model){
         model.addAttribute("category",new Category());
         return "category_create";
     }
-    @PostMapping("/category/save")
+    @PostMapping("/save")
     public String create(Category category){
         categoryService.save(category);
-        return "redirect:/category";
+        return "redirect:/category/list";
     }
-    @GetMapping("/category/{id}/delete")
+    @GetMapping("/delete/{id}")
     public String deleteForm(Model model, @PathVariable Integer id){
         model.addAttribute("category",categoryService.findById(id));
         return "category_delete";
     }
-    @PostMapping("/category/delete")
+    @PostMapping("/delete")
     public String delete(Integer id){
         categoryService.remove(id);
-        return "redirect:/category";
+        return "redirect:/category/list";
     }
-    @GetMapping("/category/{id}/view")
+    @GetMapping("/view/{id}")
     public String view(@PathVariable Integer id,Model model){
         model.addAttribute("category",categoryService.findById(id));
         return "category_view";
     }
-    @GetMapping("/category/{id}/edit")
+    @GetMapping("/edit/{id}")
     public String editForm(@PathVariable Integer id,Model model){
         model.addAttribute("category",categoryService.findById(id));
         return "category_edit";
     }
-    @PostMapping("/category/edit")
+    @PostMapping("/edit")
     public String edit(Category category){
         categoryService.save(category);
-        return "redirect:/category";
+        return "redirect:/category/list";
     }
 
 }

@@ -2,12 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Login</title>
-</head>
-<body>
-<!-- Include _menu.html -->
-<th:block th:include="/_menu"></th:block>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+            crossorigin="anonymous"
+    />
 
-<h1>Login</h1>
+</head>
+<body class=" img js-fullheight" style="background-image: url(/img/af8d63a477078732b79ff9d9fc60873f.jpeg)">
 
 <!-- /login?error=true -->
 <div th:if="${#request.getParameter('error') == 'true'}"
@@ -21,26 +29,70 @@
 
 </div>
 
-<h3>Enter user name and password:</h3>
-<form name='f' th:action="@{/j_spring_security_check}" method='POST'>
-    <table>
-        <tr>
-            <td>User:</td>
-            <td><input type='text' name='username' value=''></td>
-        </tr>
-        <tr>
-            <td>Password:</td>
-            <td><input type='password' name='password' /></td>
-        </tr>
-        <tr>
-            <td>Remember Me?</td>
-            <td><input type="checkbox" name="remember-me" /></td>
-        </tr>
-        <tr>
-            <td><input name="submit" type="submit" value="submit" /></td>
-        </tr>
-    </table>
-</form>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Login</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="login-wrap p-0">
+                    <h3 class="mb-4 text-center">Have an account ? </h3>
+                    <form class="signin-form" th:action="@{/j_spring_security_check}" method='POST'>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input id="password-field" type="password" name="password" class="form-control" placeholder="Password" required>
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+                        </div>
+                        <div class="form-group d-md-flex">
+                            <div class="w-50">
+                                <label class="checkbox-wrap checkbox-primary">Remember Me
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="w-50 text-md-right">
+                                <a href="#" style="color: #fff">Forgot Password</a>
+                            </div>
+                        </div>
+                    </form>
+                    <p class="w-100 text-center">&mdash; Or Sign In With &mdash;</p>
+                    <div class="social d-flex text-center">
+                        <a href="#" class="px-2 py-2 mr-md-1 rounded"><span class="ion-logo-facebook mr-2"></span> Facebook</a>
+                        <a href="#" class="px-2 py-2 ml-md-1 rounded"><span class="ion-logo-twitter mr-2"></span> Twitter</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td>User:</td>-->
+<!--            <td><input type='text' name='username' value=''></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Password:</td>-->
+<!--            <td><input type='password' name='password' /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Remember Me?</td>-->
+<!--            <td><input type="checkbox" name="remember-me" /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><input name="submit" type="submit" value="submit" /></td>-->
+<!--        </tr>-->
+<!--    </table>-->
 
 <!--<br>-->
 <!--Username/pass:-->
@@ -48,26 +100,6 @@
 <!--    <li>user/123456</li>-->
 <!--    <li>admin/123456</li>-->
 <!--</ul>-->
-
-<!--<div class="container">-->
-<!--    <div class="row">-->
-<!--        <div class="col-md-6">-->
-<!--            <div class="card">-->
-<!--                <form onsubmit="event.preventDefault()" class="box">-->
-<!--                    <h1>Login</h1>-->
-<!--                    <p class="text-muted"> Please enter your login and password!</p> <input type="text" name="" placeholder="Username"> <input type="password" name="" placeholder="Password"> <a class="forgot text-muted" href="#">Forgot password?</a> <input type="submit" name="" value="Login" href="#">-->
-<!--                    <div class="col-md-12">-->
-<!--                        <ul class="social-network social-circle">-->
-<!--                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>-->
-<!--                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>-->
-<!--                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 
 </body>
 

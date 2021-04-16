@@ -17,7 +17,7 @@ public class Blog {
     private String writeDate;
 //    private LocalDate writeDate;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;
 

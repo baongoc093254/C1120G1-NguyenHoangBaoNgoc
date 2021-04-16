@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="/layout :: head">
 <body id="dataSearch">
 <nav th:replace="/layout :: navbar"></nav>
@@ -36,11 +36,11 @@
         <td th:text="${row.description}"></td>
 
         <td>
-            <button class="editButton btn btn-warning" type="button" th:value="${row.id}"><i class="far fa-edit"></i></button>
+            <button class="editButton btn btn-warning" type="button" th:value="${row.id}" sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><i class="far fa-edit"></i></button>
 
             <button class="viewButton btn btn-info" type="button" th:value="${row.id}"><i class="far fa-eye"></i></button>
 
-            <button class="deleteButton btn btn-danger" type="button" th:value="${row.id}"><i class="fas fa-trash"></i></i></button>
+            <button class="deleteButton btn btn-danger" type="button" th:value="${row.id}" sec:authorize="hasAnyAuthority('ROLE_ADMIN')"><i class="fas fa-trash"></i></i></button>
         </td>
     </tr>
     </tbody>

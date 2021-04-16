@@ -18,11 +18,11 @@ public class UserRole {
     @Column(name = "Id", nullable = false)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "User_Id", nullable = false)
     private com.example.blog.model.AppUser appUser;
 
-    @ManyToOne
+    @ManyToOne(cascade =  CascadeType.ALL)
     @JoinColumn(name = "Role_Id", nullable = false)
     private com.example.blog.model.AppRole appRole;
 

@@ -35,18 +35,48 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+//        http.authorizeRequests()
+//                .antMatchers("/login").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
+//                .antMatchers("/blog/list").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
+//                .antMatchers("/blog/create").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/blog/delete/**").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/blog/view/**").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/blog/edit/**").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/blog/search").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/category/list").hasAnyAuthority("ROLE_ADMIN", "ROLE_USER")
+//                .antMatchers("/category/create").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/category/delete/**").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/category/view/**").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/category/edit/**").hasAuthority("ROLE_ADMIN")
+//                .anyRequest().authenticated()
+//                .and()
+//                .formLogin().permitAll()
+//                .and()
+//                .logout().permitAll()
+//                .and().exceptionHandling().accessDeniedPage("/403");
+
 
         http.csrf().disable();
 
         // Các trang không yêu cầu login
-        http.authorizeRequests().antMatchers("/", "/login", "/logout").permitAll();
+        http.authorizeRequests().antMatchers("/login").permitAll();
 
         // Trang /userInfo yêu cầu phải login với vai trò ROLE_USER hoặc ROLE_ADMIN.
         // Nếu chưa login, nó sẽ redirect tới trang /login.
-        http.authorizeRequests().antMatchers("/userInfo").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/blog/list",
+                "/blog/view/**",
+                "/category/list",
+                "/blog/search",
+                "/category/view/**",
+                "/user").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 
         // Trang chỉ dành cho ADMIN
-        http.authorizeRequests().antMatchers("/admin").access("hasRole('ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/blog/create",
+                "/blog/delete/**",
+                "/blog/edit/**",
+                "/category/create",
+                "/category/delete/**",
+                "/category/edit/**").access("hasRole('ROLE_ADMIN')");
 
         // Khi người dùng đã login, với vai trò XX.
         // Nhưng truy cập vào trang yêu cầu vai trò YY,
@@ -58,7 +88,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 // Submit URL của trang login
                 .loginProcessingUrl("/j_spring_security_check") // Submit URL
                 .loginPage("/login")//
-                .defaultSuccessUrl("/userAccountInfo")//
+                .defaultSuccessUrl("/blog/list")//
                 .failureUrl("/login?error=true")//
                 .usernameParameter("username")//
                 .passwordParameter("password")
@@ -66,7 +96,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutUrl("/logout").logoutSuccessUrl("/logoutSuccessful");
 
         // Cấu hình Remember Me.
-        http.authorizeRequests().and() //
+        http.authorizeRequests().and()
                 .rememberMe().tokenRepository(this.persistentTokenRepository()) //
                 .tokenValiditySeconds(1 * 24 * 60 * 60); // 24h
 
