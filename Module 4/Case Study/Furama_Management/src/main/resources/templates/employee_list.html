@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Employee Management</title>
+</head>
+<body>
+<div th:insert="/layout :: nav-bar"></div>
+<div>
+    <a th:href="@{/employee/create}"><button class="btn-primary"></button></a>
+</div>
+<div class="container">
+    <table class="table-hover">
+        <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col">Position</th>
+        <th scope="col">Division</th>
+        <th scope="col">Education Degree</th>
+        <th scope="col">Option</th>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employeeList}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.birthday}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.phoneNumber}"></td>
+            <td th:text="${employee.email}"></td>
+            <td th:text="${employee.address}"></td>
+            <td th:text="${employee.position.name}"></td>
+            <td th:text="${employee.division.name}"></td>
+            <td th:text="${employee.educationDegree.name}"></td>
+            <td>
+                <button class="editButton btn btn-warning" type="button" th:value="${employee.id}" ><i class="far fa-edit"></i></button>
+
+                <button class="viewButton btn btn-info" type="button" th:value="${employee.id}"><i class="far fa-eye"></i></button>
+
+                <button class="deleteButton btn btn-danger" type="button" th:value="${employee.id}" ><i class="fas fa-trash"></i></i></button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <a th:href="@{'/employee'(page=${employeeList.number - 1})}" th:if="${employeeList.hasPrevious()}">Previous</a>
+    <span th:text="${employeeList.number + 1}"></span>/<span th:text="${employeeList.totalPages}"></span>
+    <a th:href="@{'/employee'(page=${employeeList.number + 1})}" th:if="${employeeList.hasNext()}">Next</a>
+</div>
+
+<footer th:insert="/layout :: footer"></footer>
+<footer th:insert="/layout :: footer"></footer>
+<script>
+    $(document).ready(function () {
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/employee/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        // edit button modal
+        $(".editButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/employee/edit?id=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        // // view
+        // $(".viewButton").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/customer/view?id=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        //    delete
+        $(".deleteButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/employee/delete?id=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+
+        //    search
+        $("#buttonsearch").click(function (ev){
+            let inputSearch = document.getElementById("search").value;
+
+            $.ajax({
+                type: "GET",
+                url: "/search?inputSearch=" + inputSearch,
+                dataType: "HTML",
+                success: function (data) {
+                    $("#dataSearch").html(data);
+
+                },
+                error: function () {
+                    alert('error !');
+                }
+            })
+        })
+    });
+</script>
+</body>
+</html>
