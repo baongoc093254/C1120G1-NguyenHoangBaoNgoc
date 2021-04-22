@@ -16,6 +16,15 @@
             <input type="text" th:field="*{title}">
         </div>
         <div>
+            <input type="hidden" th:field="*{nameOwner}">
+        </div>
+        <div>
+            <label>Date Upload</label>
+            <span th:text="${editBlog.dateUpload}"></span>
+            <input type="hidden" th:field="*{dateUpload}">
+
+        </div>
+        <div>
             <label>Content</label>
             <input type="text" th:field="*{content}">
         </div>

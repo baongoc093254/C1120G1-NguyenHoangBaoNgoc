@@ -24,9 +24,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void updateById(Integer id, Product product) {
-        productRepos.updateById(id, product);
+    public void updateById(Product product) {
+
     }
+
 
     @Override
     public void deleteById(Integer id) {

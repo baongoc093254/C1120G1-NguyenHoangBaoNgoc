@@ -32,7 +32,7 @@ public class Employee {
     @Column(name = "employee_address",nullable = false)
     private String address;
 
-    @ManyToOne
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name = "position_id", referencedColumnName = "position_id")
     private Position position;
 
@@ -47,8 +47,31 @@ public class Employee {
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Contract> contracts;
 
-
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "employee")
+    private User user;
     public Employee() {
+    }
+
+    public Employee(String name, String birthday, Double salary, String phoneNumber, String email, String address, Position position, Division division, EducationDegree educationDegree, List<Contract> contracts, User user) {
+        this.name = name;
+        this.birthday = birthday;
+        this.salary = salary;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
+        this.position = position;
+        this.division = division;
+        this.educationDegree = educationDegree;
+        this.contracts = contracts;
+        this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Integer getId() {

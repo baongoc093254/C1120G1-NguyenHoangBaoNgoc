@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9d9c1c8-205a-4a6f-8180-87020524b63f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/until/DateUntil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../FromRegister/src/main/resources/templates/errorduplicate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Session_13/BaiTap/Cart/src/main/java/com/example/cart/config/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../Bai 1/Bai Tap/bai tap 1.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../Bai 2/Thuc Hanh/Course 1.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../Bai 2/Thuc Hanh/Course 3.png" beforeDir="false" />
@@ -51,6 +50,7 @@
       <change beforePath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/controller/BlogController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/model/Blog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/service/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/service/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/until/DateUntil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/java/com/example/blog/until/DateUntil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/resources/templates/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/resources/templates/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/resources/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/resources/templates/edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_06/BaiTap/BlogManagement/src/main/resources/templates/index.html" afterDir="false" />
@@ -65,6 +65,10 @@
       <change beforePath="$PROJECT_DIR$/../../../../Session_07/ThucHanh/ProvinceCustomer/src/main/java/com/example/provincecustomer/model/Customer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Session_07/ThucHanh/ProvinceCustomer/src/main/resources/application.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Session_07/ThucHanh/ProvinceCustomer/src/test/java/com/example/provincecustomer/ProvincecustomerApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BaiTap/Library/log/mylog.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BaiTap/Library/log/mylog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BaiTap/Library/src/main/java/com/example/library/aop/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../BaiTap/Library/src/main/java/com/example/library/aop/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Session_10/BaiTap/Cart/src/main/resources/templates/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_10/BaiTap/Cart/src/main/resources/templates/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Session_11/BaiTap/Blog_New/src/main/java/com/example/blog/model/Blog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Session_11/BaiTap/Blog_New/src/main/java/com/example/blog/model/Blog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/WEB-INF/classes/Common/Validate/Validate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/WEB-INF/classes/Common/Validate/Validate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/list.jsp" afterDir="false" />
@@ -204,6 +208,7 @@
       <workItem from="1617595807031" duration="1172000" />
       <workItem from="1617854170408" duration="130000" />
       <workItem from="1617864915997" duration="30000" />
+      <workItem from="1618394882814" duration="47000" />
     </task>
     <servers />
   </component>
@@ -219,54 +224,54 @@
       <screen x="0" y="23" width="1440" height="828" />
     </state>
     <state x="430" y="150" key="#com.intellij.ide.util.MemberChooser/0.23.1440.828@0.23.1440.828" timestamp="1617595866115" />
-    <state width="731" height="544" key="GridCell.Tab.0.bottom" timestamp="1617586694229">
+    <state width="958" height="544" key="GridCell.Tab.0.bottom" timestamp="1618394929693">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.0.bottom/0.23.1440.828@0.23.1440.828" timestamp="1617586694229" />
-    <state width="731" height="544" key="GridCell.Tab.0.center" timestamp="1617586694229">
+    <state width="958" height="544" key="GridCell.Tab.0.bottom/0.23.1440.828@0.23.1440.828" timestamp="1618394929693" />
+    <state width="958" height="544" key="GridCell.Tab.0.center" timestamp="1618394929693">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.0.center/0.23.1440.828@0.23.1440.828" timestamp="1617586694228" />
-    <state width="731" height="544" key="GridCell.Tab.0.left" timestamp="1617586694228">
+    <state width="958" height="544" key="GridCell.Tab.0.center/0.23.1440.828@0.23.1440.828" timestamp="1618394929693" />
+    <state width="958" height="544" key="GridCell.Tab.0.left" timestamp="1618394929692">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.0.left/0.23.1440.828@0.23.1440.828" timestamp="1617586694228" />
-    <state width="731" height="544" key="GridCell.Tab.0.right" timestamp="1617586694229">
+    <state width="958" height="544" key="GridCell.Tab.0.left/0.23.1440.828@0.23.1440.828" timestamp="1618394929692" />
+    <state width="958" height="544" key="GridCell.Tab.0.right" timestamp="1618394929693">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1617586694229" />
-    <state width="731" height="544" key="GridCell.Tab.1.bottom" timestamp="1617586694231">
+    <state width="958" height="544" key="GridCell.Tab.0.right/0.23.1440.828@0.23.1440.828" timestamp="1618394929693" />
+    <state width="958" height="544" key="GridCell.Tab.1.bottom" timestamp="1618394929695">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.1.bottom/0.23.1440.828@0.23.1440.828" timestamp="1617586694231" />
-    <state width="731" height="544" key="GridCell.Tab.1.center" timestamp="1617586694230">
+    <state width="958" height="544" key="GridCell.Tab.1.bottom/0.23.1440.828@0.23.1440.828" timestamp="1618394929695" />
+    <state width="958" height="544" key="GridCell.Tab.1.center" timestamp="1618394929694">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.1.center/0.23.1440.828@0.23.1440.828" timestamp="1617586694230" />
-    <state width="731" height="544" key="GridCell.Tab.1.left" timestamp="1617586694230">
+    <state width="958" height="544" key="GridCell.Tab.1.center/0.23.1440.828@0.23.1440.828" timestamp="1618394929694" />
+    <state width="958" height="544" key="GridCell.Tab.1.left" timestamp="1618394929694">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.1.left/0.23.1440.828@0.23.1440.828" timestamp="1617586694230" />
-    <state width="731" height="544" key="GridCell.Tab.1.right" timestamp="1617586694231">
+    <state width="958" height="544" key="GridCell.Tab.1.left/0.23.1440.828@0.23.1440.828" timestamp="1618394929694" />
+    <state width="958" height="544" key="GridCell.Tab.1.right" timestamp="1618394929694">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.1.right/0.23.1440.828@0.23.1440.828" timestamp="1617586694231" />
-    <state width="731" height="544" key="GridCell.Tab.2.bottom" timestamp="1617586694232">
+    <state width="958" height="544" key="GridCell.Tab.1.right/0.23.1440.828@0.23.1440.828" timestamp="1618394929694" />
+    <state width="958" height="544" key="GridCell.Tab.2.bottom" timestamp="1618394929695">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.2.bottom/0.23.1440.828@0.23.1440.828" timestamp="1617586694232" />
-    <state width="731" height="544" key="GridCell.Tab.2.center" timestamp="1617586694231">
+    <state width="958" height="544" key="GridCell.Tab.2.bottom/0.23.1440.828@0.23.1440.828" timestamp="1618394929695" />
+    <state width="958" height="544" key="GridCell.Tab.2.center" timestamp="1618394929695">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.2.center/0.23.1440.828@0.23.1440.828" timestamp="1617586694231" />
-    <state width="731" height="544" key="GridCell.Tab.2.left" timestamp="1617586694231">
+    <state width="958" height="544" key="GridCell.Tab.2.center/0.23.1440.828@0.23.1440.828" timestamp="1618394929695" />
+    <state width="958" height="544" key="GridCell.Tab.2.left" timestamp="1618394929695">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.2.left/0.23.1440.828@0.23.1440.828" timestamp="1617586694231" />
-    <state width="731" height="544" key="GridCell.Tab.2.right" timestamp="1617586694231">
+    <state width="958" height="544" key="GridCell.Tab.2.left/0.23.1440.828@0.23.1440.828" timestamp="1618394929695" />
+    <state width="958" height="544" key="GridCell.Tab.2.right" timestamp="1618394929695">
       <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state width="731" height="544" key="GridCell.Tab.2.right/0.23.1440.828@0.23.1440.828" timestamp="1617586694231" />
+    <state width="958" height="544" key="GridCell.Tab.2.right/0.23.1440.828@0.23.1440.828" timestamp="1618394929695" />
     <state width="497" height="544" key="GridCell.Tab.3.bottom" timestamp="1617581497765">
       <screen x="0" y="23" width="1440" height="828" />
     </state>

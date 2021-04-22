@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-primary" type="submit" value="success">Submit form</button>
+    <button class="btn btn-primary" type="submit" value="validate">Submit</button>
 </form>
 
 </body>

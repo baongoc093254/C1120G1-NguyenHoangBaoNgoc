@@ -19,14 +19,15 @@
         <tr>
             <th>ID</th>
             <td><input type="text" th:field="*{id}"></td>
+            <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red">ID Error</td>
         </tr>
             <tr>
                 <th>Name</th>
-                <td><input type="text" th:field="*{name}"></td>
+                <td><input type="text" th:field="*{name}"></td><td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red">Name Error</td>
             </tr>
             <tr>
                 <th>Birthday</th>
-                <td><input type="text" th:field="*{birthday}"></td>
+                <td><input type="date" th:field="*{birthday}"></td>
             </tr>
             <tr>
                 <th>Gender</th>

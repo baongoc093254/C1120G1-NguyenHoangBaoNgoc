@@ -24,8 +24,8 @@ public class BlogController {
     }
 
     @GetMapping("/create")
-    public String getCreateBlog(Model model) {
-        model.addAttribute("blog", new Blog());
+    public String getCreatePage(Model model){
+        model.addAttribute( "blog",new Blog());
         return "create";
     }
     @PostMapping("/save")

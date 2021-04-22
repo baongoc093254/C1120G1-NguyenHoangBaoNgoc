@@ -4,11 +4,12 @@
 <head th:insert="~{layout :: head}">
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
 <div th:replace="/layout :: nav-bar"></div>
 <div>
-<a th:href="@{/customer/create}"><button class="btn btn-primary" id="btnModalCreate"><i class="fas fa-user-plus"></i></button></a>
+<a th:href="@{/customer/create}"><button class="btn btn-primary mt-5" id="btnModalCreate" style="margin-left: 10rem!important;"><i class="fas fa-user-plus"></i></button></a>
 </div>
 <div class="container">
     <h2 class="text-center">Customer Detail</h2>
@@ -37,11 +38,11 @@
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.address}"></td>
             <td>
-                <button class="editButton btn btn-warning" type="button" th:value="${customer.id}" ><i class="far fa-edit"></i></button>
+                <button class="editButton btn btn-warning" type="button" th:value="${customer.id}"><i class="far fa-edit"></i></button></a>
 
-                <button class="viewButton btn btn-info" type="button" th:value="${customer.id}"><i class="far fa-eye"></i></button>
+                <button class="btn btn-info" type="button"><i class="far fa-eye"></i></button>
 
-                <button class="deleteButton btn btn-danger" type="button" th:value="${customer.id}" ><i class="fas fa-trash"></i></i></button>
+                <button class="deleteButton btn btn-danger" type="button" th:value="${customer.id}"><i class="fas fa-trash"></i></button></a>
             </td>
         </tr>
         </tbody>
@@ -68,11 +69,18 @@
         </div>
     </div>
 </div>
-<div>
-    <a th:href="@{'/customer'(page=${listCustomer.number - 1})}" th:if="${listCustomer.hasPrevious()}">Previous</a>
-    <span th:text="${listCustomer.number + 1}"></span>/<span th:text="${listCustomer.totalPages}"></span>
-    <a th:href="@{'/customer'(page=${listCustomer.number + 1})}" th:if="${listCustomer.hasNext()}">Next</a>
-</div>
+<!--<div>-->
+<!--    <a th:href="@{'/customer'(page=${listCustomer.number - 1})}" th:if="${listCustomer.hasPrevious()}">Previous</a>-->
+<!--    <span th:text="${listCustomer.number + 1}"></span>/<span th:text="${listCustomer.totalPages}"></span>-->
+<!--    <a th:href="@{'/customer'(page=${listCustomer.number + 1})}" th:if="${listCustomer.hasNext()}">Next</a>-->
+<!--</div>-->
+<nav aria-label="Page navigation example">
+<ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link" th:href="@{'/customer'(page=${listCustomer.number - 1})}" th:if="${listCustomer.hasPrevious()}">Previous</a></li>
+    <li class="page-item"><a class="page-link"><span th:text="${listCustomer.number + 1}"></span>/<span th:text="${listCustomer.totalPages}"></span></a></li>
+    <li class="page-item"><a class="page-link" th:href="@{'/customer'(page=${listCustomer.number + 1})}" th:if="${listCustomer.hasNext()}">Next</a></li>
+</ul>
+</nav>
 
 
 <footer th:replace="~{layout :: footer} "></footer>

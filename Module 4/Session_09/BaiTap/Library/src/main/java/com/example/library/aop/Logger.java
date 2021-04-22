@@ -22,4 +22,6 @@ public class Logger {
     public void countViewer(JoinPoint joinPoint) {
         System.out.println("View count : " + joinPoint.getSignature().getName());
     }
+
+
 }

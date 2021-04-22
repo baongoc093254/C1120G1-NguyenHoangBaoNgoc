@@ -4,6 +4,10 @@ import com.management.model.Product;
 import com.management.repository.ProductRepos;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -11,44 +15,50 @@ import java.util.Map;
 
 @Repository
 public class ProductReposImpl implements ProductRepos {
-    private static Map<Integer, Product> productMap = new HashMap<>();
-
-    static {
-        productMap.put(1, new Product(1,"Bphone",1000,"nothing", "Xiaomi"));
-        productMap.put(2, new Product(2,"Mac Pro X",2000,"nothing", "Apple"));
-        productMap.put(3, new Product(3,"Iphone 11",1500,"nothing", "Apple"));
-        productMap.put(4, new Product(4,"Samsung S20",3800,"nothing", "Samsung"));
-        productMap.put(5, new Product(5,"Sony 3",1210,"nothing", "Sony"));
-    }
+    @PersistenceContext
+    EntityManager entityManager;
 
     @Override
     public List<Product> findAll() {
-        return new ArrayList<>(productMap.values());
+        String queryStr = "SELECT p FROM Product AS p";
+        TypedQuery<Product> query = entityManager.createQuery(queryStr, Product.class);
+        return query.getResultList();
     }
 
     @Override
     public void create(Product product) {
-        productMap.put(product.getId(), product);
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+        entityManager.persist(product);
+        entityTransaction.commit();
     }
 
     @Override
-    public void updateById(Integer id, Product product) {
-        productMap.put(id,product);
+    public void updateById(Product product) {
+
+
     }
 
     @Override
     public void deleteById(Integer id) {
-        productMap.remove(id);
+        Product product = entityManager.find(Product.class,id);
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+        entityManager.remove(product);
+        entityTransaction.commit();
     }
 
     @Override
     public Product showDetailInfo(Integer id) {
-        return productMap.get(id);
+        return null;
     }
 
     @Override
     public Product findById(Integer id) {
-        return productMap.get(id);
+        String queryStr = "SELECT p FROM Product AS p WHERE p.id = :id";
+        TypedQuery<Product> query = entityManager.createQuery(queryStr, Product.class);
+        query.setParameter("id", id);
+        return query.getSingleResult();
     }
 
     @Override

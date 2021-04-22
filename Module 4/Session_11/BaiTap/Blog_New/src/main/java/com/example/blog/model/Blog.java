@@ -26,7 +26,7 @@ public class Blog {
 
     public Blog() {
     }
-
+                                                            1       12
     public Integer getId() {
         return id;
     }

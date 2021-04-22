@@ -1,18 +1,21 @@
 package com.example.service.contractdetail;
 
 import com.example.model.contract.Contract;
+import com.example.model.contract.ContractDetail;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface ContractDetailService {
-    List<Contract> findAll ();
+    List<ContractDetail> findAll();
+    Page<ContractDetail> findAll(Pageable pageable);
 
-    Contract findById(Integer id);
+    ContractDetail findById(Integer id);
 
-    void save(Contract contract);
+    void save(ContractDetail contractDetail);
 
-    List<Contract> findAllByStartDateBeforeAndEndDateAfter(String currentDate);
 
-    List<Contract> findAllByStartDateBeforeAndEndDateAfterAndCustomer_Name(String currentDate, String name);
+
 
 }

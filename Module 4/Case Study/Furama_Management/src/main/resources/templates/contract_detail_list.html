@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Contract Detail Management</title>
+</head>
+<body>
+<div th:insert="/layout :: nav-bar"></div>
+<h2 class="text-center">Contract Detail Management</h2>
+<div>
+    <a th:href="@{/contractdetail/create}"><button class="btn btn-primary">Create New ContractDetail</button></a>
+</div>
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Attach Service</th>
+        <th scope="col">Contract</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Option</th>
+        </thead>
+        <tbody>
+        <tr th:each="contractDetail : ${contractDetailList}">
+            <td th:text="${contractDetail.id}"></td>
+            <td th:text="${contractDetail.attachService.name}"></td>
+            <td th:text="${contractDetail.contract.service.name}"></td>
+            <td th:text="${contractDetail.quantity}"></td>
+            <td>
+                <!--                <a th:href="@{/contract/edit/{id}(id=${contract.id})}"><button class="editButton btn btn-warning" type="button" th:value="${contract.id}" ><i class="far fa-edit"></i></button></a>-->
+
+                                <button class="viewButton btn btn-info" type="button" th:value="${contractDetail.id}"><i class="far fa-eye"></i></button>
+
+                <!--                <a th:href="@{/contract/delete/{id}(id=${contract.id})}"><button class="deleteButton btn btn-danger" type="button" th:value="${contract.id}" ><i class="fas fa-trash"></i></i></button></a>-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" th:href="@{'/contractdetail'(page=${contractDetailList.number - 1})}" th:if="${contractDetailList.hasPrevious()}">Previous</a></li>
+        <li class="page-item"><a class="page-link"><span th:text="${contractDetailList.number + 1}"></span>/<span th:text="${contractDetailList.totalPages}"></span></a></li>
+        <li class="page-item"><a class="page-link" th:href="@{'/contractdetail'(page=${contractDetailList.number + 1})}" th:if="${contractDetailList.hasNext()}">Next</a></li>
+    </ul>
+</nav>
+
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>

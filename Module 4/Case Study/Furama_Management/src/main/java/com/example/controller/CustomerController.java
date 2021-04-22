@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.model.contract.Contract;
 import com.example.model.customer.Customer;
 import com.example.service.contract.ContractService;
 import com.example.service.customer.CustomerService;
@@ -10,6 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 @RequestMapping("/customer")
@@ -72,23 +76,23 @@ public class CustomerController {
         model.addAttribute("customer",customerService.findAllByNameContaining(name,pageable));
         return "list";
     }
-//    @GetMapping("/active")
-//    public String getListActiveCustomer(Model model){
-//        List<Contract> contracts = contractService.findAllByStartDateBeforeAndEndDateAfter(LocalDate.now().toString());
-//
-//        model.addAttribute("contracts", contracts);
-//
-//        return "/customer/active-customer";
-//    }
-//
-//    @GetMapping("/search-active")
-//    public String searchActiveCustomer(Model model, @RequestParam("search-data") String input){
-//        List<Contract> contracts = contractService.findAllByStartDateBeforeAndEndDateAfterAndCustomer_Name(LocalDate.now().toString(), input);
-//
-//        model.addAttribute("contracts", contracts);
-//
-//        return "/customer/active-customer";
-//    }
+    @GetMapping("/active")
+    public String getListActiveCustomer(Model model){
+        List<Contract> contracts = contractService.findAllByStartDateBeforeAndEndDateAfter(LocalDate.now().toString());
+
+        model.addAttribute("contracts", contracts);
+
+        return "customer/booking_customer";
+    }
+
+    @GetMapping("/search-active")
+    public String searchActiveCustomer(Model model, @RequestParam("inputSearch") String input){
+        List<Contract> contracts = contractService.findAllByStartDateBeforeAndEndDateAfterAndCustomerName(LocalDate.now().toString(), input);
+
+        model.addAttribute("contracts", contracts);
+
+        return "customer/booking_customer";
+    }
 
 
 

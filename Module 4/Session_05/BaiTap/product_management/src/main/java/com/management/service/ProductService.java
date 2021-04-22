@@ -9,7 +9,7 @@ public interface ProductService {
 
     void create(Product product);
 
-    void updateById(Integer id, Product product);
+    void updateById(Product product);
 
     void deleteById(Integer id);
 

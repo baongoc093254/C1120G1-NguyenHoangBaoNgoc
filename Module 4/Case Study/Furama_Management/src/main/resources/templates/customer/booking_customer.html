@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="/layout :: nav-bar"></div>
+<div class="container-fluid">
+    <table class="table-hover" id="table-page">
+        <thead>
+        <th scope="col">Customer</th>
+        <th scope="col">Service</th>
+        <th scope="col">Employee</th>
+        <th scope="col">StartDate</th>
+        <th scope="col">EndDate</th>
+        <th scope="col">Total</th>
+        <th scope="col">Option</th>
+        </thead>
+        <tbody>
+        <tr th:each="contract : ${contracts}">
+            <td th:text="${contract.customer.name}"></td>
+            <td th:text="${contract.service.id}"></td>
+            <td th:text="${contract.employee.name}"></td>
+            <td th:text="${contract.startDate}"></td>
+            <td th:text="${contract.endDate}"></td>
+            <td th:text="${contract.total}"></td>
+            <td>
+                <button class="editButton btn btn-warning" type="button" th:value="${contract.id}"><i class="far fa-edit"></i></button></a>
+
+                <button class="btn btn-info" type="button"><i class="far fa-eye"></i></button>
+
+                <button class="deleteButton btn btn-danger" type="button" th:value="${contract.id}"><i class="fas fa-trash"></i></button></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer th:insert="/layout :: footer"></footer>
+
+<script>
+    $(document).ready(function () {
+        // $('#table-page').dataTable(
+        //     {
+        //         "dom": 'lrtip',
+        //         "lengthChange": false,
+        //         "pageLength": 4
+        //     }
+        // );
+        $("#btnModalCreate").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/customer/create",
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        // edit button modal
+        $(".editButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/customer/edit?id=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        // // view
+        // $(".viewButton").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/customer/view?id=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        //    delete
+        $(".deleteButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/customer/delete?id=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+
+        //    search
+        $("#buttonsearch").click(function (ev){
+            let inputSearch = document.getElementById("search").value;
+
+            $.ajax({
+                type: "GET",
+                url: "/search?inputSearch=" + inputSearch,
+                dataType: "HTML",
+                success: function (data) {
+                    $("#dataSearch").html(data);
+
+                },
+                error: function () {
+                    alert('error !');
+                }
+            })
+        })
+    });
+</script>
+</body>
+</html>

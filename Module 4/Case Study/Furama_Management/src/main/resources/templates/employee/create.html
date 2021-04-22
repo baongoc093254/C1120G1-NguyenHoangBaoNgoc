@@ -7,40 +7,43 @@
 </head>
 <body>
 <div th:insert="/layout :: nav-bar"></div>
+<div>
+    <a th:href="@{/employee}"><button class="btn btn-primary" style="margin-left: 10rem!important;">Back</button></a>
+</div>
 <div class="container">
-    <table class="table-hover">
-        <form th:action="@{employee/create}" method="post" th:object="${employee}">
+    <table class="table table-hover">
+        <form th:action="@{employee/save}" method="post" th:object="${employee}">
             <thead></thead>
             <tr>
 
                 <td><input type="hidden" th:field="*{id}"></td>
             </tr>
             <tr>
-                <td>Name</td>
+                <th>Name</th>
                 <td><input type="text" th:field="*{name}"></td>
             </tr>
             <tr>
-                <td>Birthday</td>
+                <th>Birthday</th>
                 <td><input type="date" th:field="*{birthday}"></td>
             </tr>
             <tr>
-                <td>Salary</td>
+                <th>Salary</th>
                 <td><input type="number" th:field="*{salary}"></td>
             </tr>
             <tr>
-                <td>Phone Number</td>
+                <th>Phone Number</th>
                 <td><input type="number" th:field="*{phoneNumber}"></td>
             </tr>
             <tr>
-                <td>Email</td>
+                <th>Email</th>
                 <td><input type="text" th:field="*{email}"></td>
             </tr>
             <tr>
-                <td>Address</td>
+                <th>Address</th>
                 <td><input type="text" th:field="*{address}"></td>
             </tr>
             <tr>
-                <td>Position</td>
+                <th>Position</th>
                 <td>
                     <select th:field="*{position.id}" class="form-control">
                         <option value="1">Receptionist</option>
@@ -53,7 +56,7 @@
                 </td>
             </tr>
             <tr>
-                <td>Division</td>
+                <th>Division</th>
                 <td>
                     <select th:field="*{division.id}" class="form-control">
                         <option value="1">Sale-marketing</option>
@@ -75,7 +78,9 @@
                 </td>
             </tr>
             <tr>
+                <td>
                 <input type="submit" value="Save" class="btn-success">
+                </td>
             </tr>
         </form>
     </table>

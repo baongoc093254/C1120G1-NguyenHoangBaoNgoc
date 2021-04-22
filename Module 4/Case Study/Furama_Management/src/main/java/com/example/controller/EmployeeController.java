@@ -1,6 +1,6 @@
 package com.example.controller;
 
-import com.example.model.customer.Customer;
+
 import com.example.model.employee.Employee;
 import com.example.service.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,10 +33,10 @@ public class EmployeeController {
     public String createEmployee(Employee employee, RedirectAttributes redirectAttributes) {
             employeeService.save(employee);
             redirectAttributes.addFlashAttribute("message", "Create Successfully !");
-            return "redirect:/employee";
+            return "redirect:/employee/";
         }
 
-    @GetMapping("/edit")
+    @GetMapping("/edit/{id}")
     public String getEditPage(@PathVariable("id") Integer id, Model model) {
         Employee  employee = employeeService.findById(id);
         model.addAttribute("employee", employee);
@@ -50,8 +50,8 @@ public class EmployeeController {
         model.addAttribute("message", "Update Successfully !");
         return "employee/edit";
     }
-    @GetMapping("/delete")
-    public String deleteForm(@RequestParam("id") Integer id, Model model){
+    @GetMapping("/delete/{id}")
+    public String deleteForm(@PathVariable("id") Integer id, Model model){
         model.addAttribute("employee",employeeService.findById(id));
         return "employee/delete";
     }

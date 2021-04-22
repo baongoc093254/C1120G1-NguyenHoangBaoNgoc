@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:insert="/layout :: nav-bar"></div>
+<div>
+    <a th:href="@{/contractdetail/}"><button class="btn btn-primary" style="margin-left: 10rem!important;">Back</button></a>
+</div>
+<div class="container">
+    <table class="table table-hover">
+        <form th:action="@{/contracdetail/save}" method="post" th:object="${contractDetail}">
+            <thead></thead>
+            <input type="hidden" th:field="*{id}">
+            <tr>
+                <th>Attach Service</th>
+                <td><input type="text" th:field="*{attachService}"></td>
+            </tr>
+            <tr>
+                <th>Contract</th>
+                <td><input type="text" th:field="*{contract}"></td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td><input type="number" th:field="*{quantity}"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>
+                <input type="submit" value="Save" class="btn-primary">
+                </td>
+            </tr>
+        </form>
+    </table>
+</div>
+
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>

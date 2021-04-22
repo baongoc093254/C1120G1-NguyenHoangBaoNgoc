@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a th:href="@{/contract/}"><button class="btn btn-primary" style="margin-left: 10rem!important;">Back</button></a>
+</div>
+<div th:insert="/layout :: nav-bar"></div>
+<h2 class="text-center">Create New Contract</h2>
+<div class="container-fluid">
+    <table>
+        <form th:action="@{/contract/save}" method="post" th:object="${contract}">
+            <thead></thead>
+            <input type="hidden" th:field="*{id}">
+            <tr>
+                <th>Employee</th>
+                <td><input type="text" th:field="*{employee}"></td>
+            </tr>
+            <tr>
+                <th>Customer</th>
+                <td><input type="text" th:field="*{customer}"></td>
+            </tr>
+            <tr>
+                <th>Start Date</th>
+                <td><input type="date" th:field="*{startDate}"></td>
+            </tr>
+            <tr>
+                <th>End Date</th>
+                <td><input type="date" th:field="*{endDate}"></td>
+            </tr>
+            <tr>
+                <th>Service</th>
+                <td><input type="text" th:field="*{startDate}"></td>
+            </tr>
+            <tr>
+                <th>Deposit</th>
+                <td><input type="number" th:field="*{deposit}"></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td><input type="number" th:field="*{total}"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Save" class="btn btn-primary"></td>
+            </tr>
+        </form>
+    </table>
+</div>
+
+
+<footer th:insert="/layout :: footer"></footer>
+</body>
+</html>

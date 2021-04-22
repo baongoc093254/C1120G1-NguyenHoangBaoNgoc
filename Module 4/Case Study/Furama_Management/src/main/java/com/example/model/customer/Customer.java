@@ -3,13 +3,15 @@ package com.example.model.customer;
 import com.example.model.contract.Contract;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
 @Table(name = "customer")
 public class Customer {
     @Id
-    @Column(name = "customer_id")
+    @Pattern(regexp = "^(KH-)\\d{4}$", message = "Code must be KH-XXXX")
+    @Column(name = "customer_id", length = 45)
     private String id;
 
     @ManyToOne
@@ -17,25 +19,29 @@ public class Customer {
     private CustomerType customerType;
 
 
-    @Column(name = "customer_name")
+    @Column(name = "customer_name", length = 45, nullable = false)
     private String name;
 
-    @Column(name = "customer_birthday")
+    @Column(name = "customer_birthday", nullable = false)
     private String birthday;
 
     @Column(name = "customer_gender")
     private String gender;
 
-    @Column(name = "customer_id_card")
+    @Pattern(regexp = "(^\\d{9}$)|(^\\d{12}$)", message = "ID Card is not valid")
+    @Column(name = "customer_id_card", nullable = false)
     private String idCard;
 
-    @Column(name = "customer_phone")
+
+    @Pattern(regexp = "(^(090)\\d{7}$)|(^(091)\\d{7}$)|(^(\\+\\(84\\) 90)\\d{7}$)|(^(\\+\\(84\\) 91)\\d{7}$)", message = "Phone number is not valid")
+    @Column(name = "customer_phone", nullable = false)
     private String phoneNumber;
 
+    @Pattern(regexp = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$", message = "Email is not valid")
     @Column(name = "customer_email")
     private String email;
 
-    @Column(name = "customer_address")
+    @Column(name = "customer_address", length = 45)
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")

@@ -27,7 +27,7 @@ public class EmailController {
     }
 
     @PostMapping("/login")
-    public String validateEmail(@RequestParam String email,@RequestParam String password, Model model) {
+    public String validateEmail(@RequestParam String email, Model model) {
         boolean invalids = this.validate(email);
         if (!invalids) {
             model.addAttribute("message","Email is invalid");
@@ -35,7 +35,6 @@ public class EmailController {
         }
 
         model.addAttribute("email",email);
-        model.addAttribute("password",password);
         return "success";
     }
     private boolean validate(String regex) {

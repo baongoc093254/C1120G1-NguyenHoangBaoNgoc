@@ -1,9 +1,7 @@
 package com.example.blog.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -13,10 +11,19 @@ public class Blog {
     private Integer id;
     private String title;
     private String nameOwner;
-    private Date dateUpload;
+    @Column(columnDefinition = "date")
+    private String dateUpload;
     private String content;
 
     public Blog() {
+    }
+
+    public String getDateUpload() {
+        return dateUpload;
+    }
+
+    public void setDateUpload(String dateUpload) {
+        this.dateUpload = dateUpload;
     }
 
     public Integer getId() {
@@ -44,13 +51,7 @@ public class Blog {
         this.nameOwner = nameOwner;
     }
 
-    public Date getDateUpload() {
-        return dateUpload;
-    }
 
-    public void setDateUpload(Date dateUpload) {
-        this.dateUpload = dateUpload;
-    }
 
     public String getContent() {
         return content;

@@ -15,7 +15,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class HibernateProductReposImpl implements ProductRepos {
+public class HibernateProductReposImpl {
 
     private static SessionFactory sessionFactory;
     private static EntityManager entityManager;
@@ -30,61 +30,5 @@ public class HibernateProductReposImpl implements ProductRepos {
             e.printStackTrace();
         }
     }
-    @Override
-    public List<Product> findAll() {
-        String queryStr = "SELECT p FROM Product AS p";
-        TypedQuery<Product> query = entityManager.createQuery(queryStr, Product.class);
-        return query.getResultList();
-    }
 
-    @Override
-    public void create(Product product) {
-        EntityTransaction entityTransaction = entityManager.getTransaction();
-        entityTransaction.begin();
-        entityManager.persist(product);
-        entityTransaction.commit();
-    }
-
-    @Override
-    public void updateById(Integer id, Product product) {
-        Transaction transaction = null;
-        try (Session session = sessionFactory.openSession()) {
-            transaction = session.beginTransaction();
-            Product origin = findById(id);
-            origin.setName(product.getName());
-            origin.setPrice(product.getPrice());
-            origin.setDescription(product.getDescription());
-            origin.setProducer(product.getProducer());
-            session.saveOrUpdate(origin);
-            transaction.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (transaction != null) {
-                transaction.rollback();
-            }
-        }
-    }
-
-    @Override
-    public void deleteById(Integer id) {
-
-    }
-
-    @Override
-    public Product showDetailInfo(Integer id) {
-        return null;
-    }
-
-    @Override
-    public Product findById(Integer id) {
-        String queryStr = "SELECT p FROM Product AS p WHERE p.id = :id";
-        TypedQuery<Product> query = entityManager.createQuery(queryStr, Product.class);
-        query.setParameter("id", id);
-        return query.getSingleResult();
-    }
-
-    @Override
-    public int getIdProduct() {
-        return 0;
-    }
 }

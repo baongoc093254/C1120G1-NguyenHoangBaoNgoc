@@ -2,8 +2,10 @@ package com.example.blog.service;
 
 import com.example.blog.model.Blog;
 import com.example.blog.repository.BlogRepository;
+import com.example.blog.until.DateUntil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.DateUtils;
 
 import java.util.List;
 
@@ -29,6 +31,9 @@ public class BlogServiceImpl  implements BlogService{
 
     @Override
     public void save(Blog blog) {
+        if (blog.getId() == null) {
+            blog.setDateUpload(DateUntil.getCurrentDate());
+        }
         blogRepository.save(blog);
     }
 

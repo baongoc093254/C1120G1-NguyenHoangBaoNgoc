@@ -1,15 +1,17 @@
 package com.example.model.service;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "service")
 public class Service {
     @Id
+    @Pattern(regexp = "^(DV-)\\d{4}$", message = "Code must be DV-XXXX")
     @Column(name = "service_id")
     private String id;
 
-    @Column(name = "service_name")
+    @Column(name = "service_name", length = 45, nullable = false)
     private String name;
 
     @Column(name = "service_area")
@@ -22,17 +24,17 @@ public class Service {
     private Integer maxPeople;
 
     @ManyToOne
-    @JoinColumn(name = "rent_type_id", referencedColumnName = "rent_type_id")
+    @JoinColumn(name = "rent_type_id", referencedColumnName = "rent_type_id", nullable = false)
     private RentType rentType;
 
     @ManyToOne
-    @JoinColumn(name = "service_type_id", referencedColumnName = "service_type_id")
+    @JoinColumn(name = "service_type_id", referencedColumnName = "service_type_id", nullable = false)
     private ServiceType serviceType;
 
-    @Column(name = "standard_room")
+    @Column(name = "standard_room", length = 45)
     private String standardRoom;
 
-    @Column(name = "description_other_convenience")
+    @Column(name = "description_other_convenience", length = 45)
     private String description;
 
     @Column(name = "pool_area")
