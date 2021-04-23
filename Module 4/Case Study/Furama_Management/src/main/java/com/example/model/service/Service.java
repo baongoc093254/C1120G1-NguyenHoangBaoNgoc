@@ -1,6 +1,7 @@
 package com.example.model.service;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 @Entity
@@ -14,14 +15,20 @@ public class Service {
     @Column(name = "service_name", length = 45, nullable = false)
     private String name;
 
+    @NotBlank(message = "Area not empty")
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Area must be XXXX")
     @Column(name = "service_area")
-    private Integer area;
+    private String area;
 
+    @NotBlank(message = "Cost service not empty")
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Cost invalid")
     @Column(name = "service_cost")
-    private Double cost;
+    private String cost;
 
+    @NotBlank(message = "Number people not empty")
+    @Pattern(regexp = "^\\d{2}$", message = "Max people must be < 100")
     @Column(name = "service_max_people")
-    private Integer maxPeople;
+    private String maxPeople;
 
     @ManyToOne
     @JoinColumn(name = "rent_type_id", referencedColumnName = "rent_type_id", nullable = false)
@@ -37,11 +44,15 @@ public class Service {
     @Column(name = "description_other_convenience", length = 45)
     private String description;
 
+    @NotBlank(message = "Pool area not empty")
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Pool area must be < 1000")
     @Column(name = "pool_area")
-    private Double poolArea;
+    private String poolArea;
 
+    @NotBlank(message = "Number floor not empty")
+    @Pattern(regexp = "^\\d{2}$", message = "Number floor invalid")
     @Column(name = "number_floors")
-    private Integer numberFloor;
+    private String numberFloor;
 
     public Service() {
     }
@@ -62,27 +73,27 @@ public class Service {
         this.name = name;
     }
 
-    public Integer getArea() {
+    public String getArea() {
         return area;
     }
 
-    public void setArea(Integer area) {
+    public void setArea(String area) {
         this.area = area;
     }
 
-    public Double getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(Double cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
-    public Integer getMaxPeople() {
+    public String getMaxPeople() {
         return maxPeople;
     }
 
-    public void setMaxPeople(Integer maxPeople) {
+    public void setMaxPeople(String maxPeople) {
         this.maxPeople = maxPeople;
     }
 
@@ -118,19 +129,19 @@ public class Service {
         this.description = description;
     }
 
-    public Double getPoolArea() {
+    public String getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(Double poolArea) {
+    public void setPoolArea(String poolArea) {
         this.poolArea = poolArea;
     }
 
-    public Integer getNumberFloor() {
+    public String getNumberFloor() {
         return numberFloor;
     }
 
-    public void setNumberFloor(Integer numberFloor) {
+    public void setNumberFloor(String numberFloor) {
         this.numberFloor = numberFloor;
     }
 }

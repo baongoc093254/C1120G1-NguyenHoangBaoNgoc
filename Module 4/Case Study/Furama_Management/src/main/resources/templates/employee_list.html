@@ -6,10 +6,15 @@
     <meta charset="UTF-8">
     <title>Employee Management</title>
 </head>
-<body>
+<body id="dataSearch">
 <div th:insert="/layout :: nav-bar"></div>
 <div>
     <a th:href="@{/employee/create}"><button class="btn-primary mt-3" style="margin-left: 10rem!important;"><i class="far fa-address-card"></i></button></a>
+</div>
+<div class="notify">
+    <div th:if="${message}">
+        <p th:text="${message}"></p>
+    </div>
 </div>
 <h2 class="text-center">Employee Management</h2>
 <div class="container">
@@ -25,6 +30,7 @@
         <th scope="col">Position</th>
         <th scope="col">Division</th>
         <th scope="col">Education Degree</th>
+        <th scope="col">User Name</th>
         <th scope="col">Option</th>
         </thead>
         <tbody>
@@ -39,6 +45,7 @@
             <td th:text="${employee.position.name}"></td>
             <td th:text="${employee.division.name}"></td>
             <td th:text="${employee.educationDegree.name}"></td>
+            <td th:text="${employee.user.name}"></td>
             <td>
                 <a th:href="@{/employee/edit/{id}(id=${employee.id})}"><button class="editButton btn btn-warning" type="button" th:value="${employee.id}" ><i class="far fa-edit"></i></button></a>
 
@@ -116,14 +123,14 @@
 
             $.ajax({
                 type: "GET",
-                url: "/search?inputSearch=" + inputSearch,
+                url: "/employee/search?inputSearch=" + inputSearch,
                 dataType: "HTML",
                 success: function (data) {
                     $("#dataSearch").html(data);
 
                 },
                 error: function () {
-                    alert('error !');
+                    alert('error not found Customer name ' + inputSearch + " in list !");
                 }
             })
         })

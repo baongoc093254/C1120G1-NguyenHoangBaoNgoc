@@ -2,6 +2,7 @@ package com.example.controller;
 
 
 import com.example.model.employee.Employee;
+import com.example.model.employee.User;
 import com.example.service.employee.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -24,8 +25,9 @@ public class EmployeeController {
         }
 
         @GetMapping("/create")
-    public String getCreateEmployee(Model model) {
+    public String getCreateEmployee( Model model) {
             model.addAttribute("employee", new Employee());
+            User user = new User();
             return "employee/create";
         }
 
@@ -55,7 +57,7 @@ public class EmployeeController {
         model.addAttribute("employee",employeeService.findById(id));
         return "employee/delete";
     }
-    @PostMapping("/employee/delete")
+    @PostMapping("/delete")
     public String delete(@RequestParam("id") Integer id, RedirectAttributes redirectAttributes){
         Employee employee = this.employeeService.findById(id);
         employeeService.delete(employee);
@@ -64,8 +66,10 @@ public class EmployeeController {
     }
 
     @GetMapping("/search")
-    public String findByAuthor(@RequestParam("inputSearch") String keyword, Model model, @PageableDefault(size = 4) Pageable pageable){
-        model.addAttribute("customer",employeeService.findAllByNameContaining(keyword,pageable));
+    public String findByAuthor(@RequestParam("inputSearch") String name, Model model, @PageableDefault(size = 4) Pageable pageable){
+        model.addAttribute("employeeList",employeeService.findAllByNameContaining(name,pageable));
         return "employee_list";
     }
+
+
 }

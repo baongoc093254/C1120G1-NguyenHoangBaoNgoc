@@ -6,6 +6,8 @@ import com.example.model.service.Service;
 import org.springframework.beans.factory.annotation.CustomAutowireConfigurer;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 
 import java.util.List;
 
@@ -18,19 +20,24 @@ public class Contract {
     @Column(name = "contract_id")
     private Integer id;
 
-
+    @Pattern(regexp = "((19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])",message = " Right format YYYY-MM-DD")
     @Column(name = "contract_start_date", columnDefinition = "date")
     private String startDate;
 
-
+    @Pattern(regexp = "((19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])",message = "Right format YYYY-MM-DD")
     @Column(name = "contract_end_date", columnDefinition = "date")
     private String endDate;
 
+    @NotBlank(message = "Deposit not empty")
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Deposit invalid")
     @Column(name = "contract_deposit")
-    private Double deposit;
+    private String deposit;
 
+
+    @NotBlank(message = "No no ! not free, we'll poor at tomorrow")
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Total money invalid")
     @Column(name = "contract_total_money")
-    private Double total;
+    private String total;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
@@ -82,19 +89,19 @@ public class Contract {
         this.endDate = endDate;
     }
 
-    public Double getDeposit() {
+    public String getDeposit() {
         return deposit;
     }
 
-    public void setDeposit(Double deposit) {
+    public void setDeposit(String deposit) {
         this.deposit = deposit;
     }
 
-    public Double getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 

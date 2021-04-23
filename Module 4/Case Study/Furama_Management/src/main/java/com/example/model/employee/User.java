@@ -14,8 +14,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @OneToOne
-    @JoinColumn(name = "employee_id", referencedColumnName = "employee_id")
+    @OneToOne(mappedBy = "user")
     private Employee employee;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
@@ -24,11 +23,6 @@ public class User {
     public User() {
     }
 
-    public User(String name, String password, Employee employee) {
-        this.name = name;
-        this.password = password;
-        this.employee = employee;
-    }
 
 
     public String getName() {

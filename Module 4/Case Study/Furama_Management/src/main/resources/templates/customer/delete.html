@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:insert="/layout :: header">
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div class="container">
-    <form th:action="@{/customer/delete}" method="get" th:object="${customer}">
+<div class="container" xmlns:th="http://www.thymeleaf.org">
+    <form th:action="@{/customer/delete}" method="post" th:object="${customer}">
         <table class="table-hover">
         <thead></thead>
+            <input type="hidden" name="id" th:value="*{id}">
             <tr>
             <th>ID</th>
-            <td><input type="text" th:field="*{id}"></td>
+            <td th:text="${customer.id}"></td>
             </tr>
 
         <tr>
             <th>Name</th>
-            <td><input type="text" th:field="*{name}"></td>
+            <td th:text="${customer.name}"></td>
         </tr>
             <tr>
-                <input type="submit" value="Delete"/>
+                <th></th>
+                <td>
+                <button class="btn btn-danger" type="submit">Delete</button>
+                </td>
             </tr>
         </table>
     </form>
 </div>
-
-<footer th:insert="/layout :: footer"></footer>
-</body>
-</html>

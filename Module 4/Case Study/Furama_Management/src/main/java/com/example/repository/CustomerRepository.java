@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface CustomerRepository  extends JpaRepository<Customer, String> {
     Page<Customer> findAll(Pageable pageable);
-    Page<Customer> findByNameContaining(String name,Pageable pageable);
-    List<Customer> findByNameContaining(String name);
+    Page<Customer> findAllByNameContaining(String name,Pageable pageable);
+    List<Customer> findAllByNameContaining(String name);
 }

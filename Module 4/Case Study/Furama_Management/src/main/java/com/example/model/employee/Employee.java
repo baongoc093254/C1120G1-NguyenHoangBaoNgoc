@@ -3,6 +3,7 @@ package com.example.model.employee;
 import com.example.model.contract.Contract;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 @Entity
@@ -20,12 +21,15 @@ public class Employee {
     @Column(name = "employee_birthday",nullable = false)
     private String birthday;
 
-    @Column(name = "employee_salary",nullable = false)
-    private Double salary;
 
+    @Column(name = "employee_salary",nullable = false)
+    private String salary;
+
+    @Pattern(regexp = "(^(090)\\d{7}$)|(^(091)\\d{7}$)|(^(\\+\\(84\\) 90)\\d{7}$)|(^(\\+\\(84\\) 91)\\d{7}$)", message = "Phone number is not valid")
     @Column(name = "employee_phone",nullable = false)
     private String phoneNumber;
 
+    @Pattern(regexp = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$", message = "Email is not valid")
     @Column(name = "employee_email",nullable = false)
     private String email;
 
@@ -47,12 +51,14 @@ public class Employee {
     @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
     private List<Contract> contracts;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "employee")
+    @OneToOne(cascade =  CascadeType.ALL)
+    @JoinColumn(name = "username", referencedColumnName = "username")
     private User user;
+
     public Employee() {
     }
 
-    public Employee(String name, String birthday, Double salary, String phoneNumber, String email, String address, Position position, Division division, EducationDegree educationDegree, List<Contract> contracts, User user) {
+    public Employee(String name, String birthday, String salary, String phoneNumber, String email, String address, Position position, Division division, EducationDegree educationDegree, List<Contract> contracts, User user) {
         this.name = name;
         this.birthday = birthday;
         this.salary = salary;
@@ -98,11 +104,11 @@ public class Employee {
         this.birthday = birthday;
     }
 
-    public Double getSalary() {
+    public String getSalary() {
         return salary;
     }
 
-    public void setSalary(Double salary) {
+    public void setSalary(String salary) {
         this.salary = salary;
     }
 

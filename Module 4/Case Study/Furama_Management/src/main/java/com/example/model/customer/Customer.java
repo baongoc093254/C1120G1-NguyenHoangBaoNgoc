@@ -3,7 +3,9 @@ package com.example.model.customer;
 import com.example.model.contract.Contract;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -18,11 +20,12 @@ public class Customer {
     @JoinColumn(name = "customer_type_id", referencedColumnName = "customer_type_id")
     private CustomerType customerType;
 
-
-    @Column(name = "customer_name", length = 45, nullable = false)
+    @NotBlank(message = "Name is not empty")
+    @Size(min = 5, max = 45, message =  "Name must be 5 to 45 characters")
+    @Column(name = "customer_name", nullable = false)
     private String name;
 
-    @Column(name = "customer_birthday", nullable = false)
+    @Column(name = "customer_birthday", nullable = false, columnDefinition = "DATE")
     private String birthday;
 
     @Column(name = "customer_gender")
@@ -141,4 +144,6 @@ public class Customer {
     public void setContracts(List<Contract> contracts) {
         this.contracts = contracts;
     }
+
+
 }

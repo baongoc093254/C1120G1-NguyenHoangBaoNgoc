@@ -2,6 +2,7 @@ package com.example.model.contract;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "attach_service")
@@ -14,11 +15,13 @@ public class AttachService {
     @Column(name = "attach_service_name")
     private String name;
 
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Cost invalid !")
     @Column(name = "attach_service_cost")
-    private Double cost;
+    private String cost;
 
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Unit invalid, unit must be > 0 !")
     @Column(name = "attach_service_unit")
-    private Integer unit;
+    private String unit;
 
     @Column(name = "attach_service_status")
     private String status;
@@ -42,19 +45,19 @@ public class AttachService {
         this.name = name;
     }
 
-    public Double getCost() {
+    public String getCost() {
         return cost;
     }
 
-    public void setCost(Double cost) {
+    public void setCost(String cost) {
         this.cost = cost;
     }
 
-    public Integer getUnit() {
+    public String getUnit() {
         return unit;
     }
 
-    public void setUnit(Integer unit) {
+    public void setUnit(String unit) {
         this.unit = unit;
     }
 

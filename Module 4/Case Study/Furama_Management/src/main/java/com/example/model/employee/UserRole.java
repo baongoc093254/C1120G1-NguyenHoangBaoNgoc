@@ -22,10 +22,6 @@ public class UserRole implements Serializable {
     public UserRole() {
     }
 
-    public UserRole(User user, AppRole appRole) {
-        this.user = user;
-        this.appRole = appRole;
-    }
 
     public User getAppUser() {
         return user;

@@ -35,11 +35,11 @@ public class ContractImpl implements ContractService {
 
     @Override
     public List<Contract> findAllByStartDateBeforeAndEndDateAfter(String currentDate) {
-        return null;
+        return contractRepository.findAllByStartDateBeforeAndEndDateAfter(currentDate, currentDate);
     }
 
     @Override
     public List<Contract> findAllByStartDateBeforeAndEndDateAfterAndCustomerName(String currentDate, String name) {
-        return null;
+        return contractRepository.findAllByStartDateBeforeAndEndDateAfterAndCustomerName(currentDate,currentDate,name);
     }
 }

@@ -9,6 +9,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -38,7 +40,11 @@ public class CustomerController {
     }
 
     @PostMapping("/save")
-    public String createCustomer(@ModelAttribute("customer") Customer customer, RedirectAttributes redirectAttributes) {
+    public String createCustomer(@Validated  @ModelAttribute("customer") Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("listCustomer", customerService.findAll());
+            return "customer/create";
+        }
         customerService.save(customer);
         redirectAttributes.addFlashAttribute("message", "Create Successfully !");
         return  "redirect:/customer/";
@@ -59,21 +65,21 @@ public class CustomerController {
         return "customer/edit";
     }
     @GetMapping("/delete")
-    public String deleteForm(@RequestParam("id") String id, Model model){
-        model.addAttribute("customer",customerService.findById(id));
+    public String deleteForm(@RequestParam(name = "id") String id, Model model){
+        Customer customer = this.customerService.findById(id);
+        model.addAttribute("customer", customer);
         return "customer/delete";
     }
-    @PostMapping("/customer/delete")
-    public String delete(@RequestParam("id") String id, RedirectAttributes redirectAttributes){
-       Customer customer = this.customerService.findById(id);
-        customerService.delete(customer);
+    @PostMapping("/delete")
+    public String delete(@RequestParam(name = "id") String id, RedirectAttributes redirectAttributes){
+        this.customerService.remove(id);
         redirectAttributes.addFlashAttribute("message", "Delete Successfully !");
-        return "redirect:/";
+        return "redirect:/customer/";
     }
 
     @GetMapping("/search")
-    public String findByAuthor(@RequestParam("inputSearch") String name, Model model, @PageableDefault(size = 3)Pageable pageable){
-        model.addAttribute("customer",customerService.findAllByNameContaining(name,pageable));
+    public String findByCustomerName(@RequestParam("inputSearch") String name, Model model, @PageableDefault(size = 3)Pageable pageable){
+        model.addAttribute("listCustomer",customerService.findAllByNameContaining(name,pageable));
         return "list";
     }
     @GetMapping("/active")

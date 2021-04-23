@@ -12,13 +12,14 @@
 <div th:insert="/layout :: nav-bar"></div>
 <h2 class="text-center">Create New Contract</h2>
 <div class="container-fluid">
-    <table>
+    <table class="table table-hover">
         <form th:action="@{/contract/save}" method="post" th:object="${contract}">
             <thead></thead>
             <input type="hidden" th:field="*{id}">
             <tr>
                 <th>Employee</th>
                 <td><input type="text" th:field="*{employee}"></td>
+
             </tr>
             <tr>
                 <th>Customer</th>
@@ -45,6 +46,7 @@
                 <td><input type="number" th:field="*{total}"></td>
             </tr>
             <tr>
+                <th></th>
                 <td><input type="submit" value="Save" class="btn btn-primary"></td>
             </tr>
         </form>

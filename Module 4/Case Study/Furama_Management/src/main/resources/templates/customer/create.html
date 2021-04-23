@@ -23,11 +23,13 @@
         </tr>
             <tr>
                 <th>Name</th>
-                <td><input type="text" th:field="*{name}"></td><td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red">Name Error</td>
+                <td><input type="text" th:field="*{name}"></td>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red">Name Invalid</td>
             </tr>
             <tr>
                 <th>Birthday</th>
                 <td><input type="date" th:field="*{birthday}"></td>
+                <td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" style="color: red">Birthday Invalid</td>
             </tr>
             <tr>
                 <th>Gender</th>
@@ -41,19 +43,23 @@
             <tr>
                 <th>Id Card</th>
                 <td><input type="text" th:field="*{idCard}"></td>
+                <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}" style="color: red">ID Card Invalid</td>
             </tr>
 
             <tr>
                 <th>Email</th>
                 <td><input type="text" th:field="*{email}"></td>
+                <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red">Email Invalid</td>
             </tr>
             <tr>
                 <th>Phone Number</th>
                 <td><input type="text" th:field="*{phoneNumber}"></td>
+                <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" style="color: red">Phone Invalid</td>
             </tr>
             <tr>
                 <th>Address</th>
                 <td><input type="text" th:field="*{address}"></td>
+                <td th:if="${#fields.hasErrors('address')}" th:errors="*{address}" style="color: red">ID Card Invalid</td>
             </tr>
             <tr>
                 <th>Customer Type</th>

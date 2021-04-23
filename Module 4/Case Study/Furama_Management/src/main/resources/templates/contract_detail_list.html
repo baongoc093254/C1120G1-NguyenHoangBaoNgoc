@@ -11,6 +11,11 @@
 <div>
     <a th:href="@{/contractdetail/create}"><button class="btn btn-primary">Create New ContractDetail</button></a>
 </div>
+<div class="notify">
+    <div th:if="${message}">
+        <p th:text="${message}"></p>
+    </div>
+</div>
 <div class="container-fluid">
     <table class="table table-hover">
         <thead>

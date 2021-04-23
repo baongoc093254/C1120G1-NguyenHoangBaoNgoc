@@ -9,7 +9,7 @@
 <body>
 <div th:insert="/layout :: nav-bar"></div>
 <div class="container-fluid">
-    <table class="table-hover" id="table-page">
+    <table class="table table-hover" id="table-page">
         <thead>
         <th scope="col">Customer</th>
         <th scope="col">Service</th>
@@ -63,13 +63,13 @@
 
 <script>
     $(document).ready(function () {
-        // $('#table-page').dataTable(
-        //     {
-        //         "dom": 'lrtip',
-        //         "lengthChange": false,
-        //         "pageLength": 4
-        //     }
-        // );
+        $('#table-page').dataTable(
+            {
+                "dom": 'lrtip',
+                "lengthChange": false,
+                "pageLength": 4
+            }
+        );
         $("#btnModalCreate").click(function () {
             $.ajax({
                 type: "GET",
@@ -137,5 +137,8 @@
         })
     });
 </script>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 </body>
 </html>

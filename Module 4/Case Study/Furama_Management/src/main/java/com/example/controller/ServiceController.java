@@ -5,6 +5,8 @@ import com.example.service.service.ServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,7 +32,11 @@ public class ServiceController {
     }
 
     @PostMapping("/save")
-    public String createService(Service service, RedirectAttributes redirectAttributes) {
+    public String createService(@Validated Service service, BindingResult bindingResult,Model model, RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("serviceList", serviceService.findAll());
+            return "service/create";
+        }
         serviceService.save(service);
         redirectAttributes.addFlashAttribute("message", "Create Successfully !");
         return "list_service";

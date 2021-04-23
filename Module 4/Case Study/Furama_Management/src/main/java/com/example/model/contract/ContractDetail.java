@@ -1,6 +1,7 @@
 package com.example.model.contract;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "contract_detail")
@@ -18,8 +19,9 @@ public class ContractDetail {
     @JoinColumn(name = "attach_service_id", referencedColumnName = "attach_service_id")
     private AttachService  attachService;
 
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Quantity invalid")
     @Column(name = "quantity")
-    private Integer quantity;
+    private String quantity;
 
     public ContractDetail() {
     }
@@ -50,11 +52,11 @@ public class ContractDetail {
         this.attachService = attachService;
     }
 
-    public Integer getQuantity() {
+    public String getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(String quantity) {
         this.quantity = quantity;
     }
 }

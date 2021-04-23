@@ -12,6 +12,7 @@
     <form th:action="@{/employee/delete}" method="post" th:object="${employee}">
     <table class="table table-hover">
         <thead></thead>
+        <input type="hidden" name="id" th:value="${id}">
         <tr>
             <th>ID</th>
             <td><input type="text" th:field="*{id}"></td>
@@ -21,6 +22,7 @@
             <td><input type="text" th:field="*{name}"></td>
         </tr>
         <tr>
+            <th></th>
             <td>
             <input type="submit" value="Delete">
             </td>
