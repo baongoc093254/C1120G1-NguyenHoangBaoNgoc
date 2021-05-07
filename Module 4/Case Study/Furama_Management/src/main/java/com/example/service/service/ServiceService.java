@@ -9,7 +9,7 @@ public interface ServiceService {
 
     void save(Service service);
 
-    Service findById(Integer id);
+    Service findById(String id);
 
     List<Service> findAllByNameContaining(String name);
 

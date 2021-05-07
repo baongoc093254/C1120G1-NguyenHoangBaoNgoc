@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:fragment="header">
@@ -49,23 +49,22 @@
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
                 <a class="nav-link" href="/home">
-                    <i class="fa fa-cube"></i>Home <span class="sr-only">(current)</span></a>
+                    <i class="fab fa-reddit"></i>Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/customer/">
-                    <i class="fa fa-users"></i>Customer</a>
+                    Customer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/employee/">
-                    <i class="far fa-id-card"></i>Employee</a>
+                    Employee</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/service/">
-                    <i class="fab fa-servicestack"></i>Service</a>
+                    Service</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-file-contract"></i>
                     Contract
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -73,9 +72,13 @@
                         <i class="fas fa-file-contract"></i>Contract</a>
                     <a class="nav-link" href="/contractdetail/">
                         <i class="fas fa-file-contract"></i>Contract Detail</a>
-                    <a class="nav-link" href="/customer/active/">
+                    <a class="nav-link" href="/customer/active">
                         <i class="fas fa-file-contract"></i>Customer Booking Service</a>
                 </div>
+            </li>
+            <li></li>
+            <li class="nav-item">
+                Welcome ! <span th:utext="${#request.userPrincipal.name}"></span>
             </li>
 
 <!--            <li class="nav-item">-->
@@ -90,13 +93,13 @@
 <!--                <a class="nav-link" href="/customer/active/">-->
 <!--                    <i class="fas fa-file-contract"></i>Customer Booking Service</a>-->
 <!--            </li>-->
-            <a href="#" class="nav-item nav-link" >
-                <i class="fas fa-sign-in-alt"></i><span>Log in</span>
+            <a href="/logoutSuccessful" class="nav-item nav-link" >
+                <i class="fas fa-sign-in-alt"></i><span>Log Out</span>
                  </a>
                         </ul>
                         <form class="form-inline my-2 my-lg-0">
-                            <input id="search"  class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
-                            <button id="buttonsearch" class="btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
+                            <input class="search form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name="search">
+                            <button class="buttonSearch btn btn-outline-success my-2 my-sm-0" type="button">Search</button>
                         </form>
                     </div>
                 </nav>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:insert="/layout :: header">
     <meta charset="UTF-8">
@@ -8,13 +8,15 @@
 <body>
 <div th:insert="/layout :: nav-bar"></div>
 <div>
-    <a th:href="@{/contract/create}"><button class="btn btn-primary">Create New Contract</button></a>
+    <a th:href="@{/contract/create}"><button class="btn btn-primary" sec:authorize="hasAnyAuthority('ROLE_MANAGE', 'ROLE_PRINCIPAL')">Create New Contract</button></a>
 </div>
-<div class="notify">
-    <div th:if="${message}">
-        <p th:text="${message}"></p>
+<div th:if="${message}">
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong><p th:text="${message}"></p></strong>
     </div>
 </div>
+<h2 class="text-center">Contract Management</h2>
 <div class="container-fluid">
     <table class="table table-hover">
         <thead>
@@ -26,7 +28,7 @@
         <th scope="col">Service</th>
         <th scope="col">Deposit</th>
         <th scope="col">Total Money</th>
-<!--        <th scope="col">Option</th>-->
+        <th scope="col">Option</th>
         </thead>
         <tbody>
         <tr th:each="contract : ${contractLists}">
@@ -38,16 +40,51 @@
             <td th:text="${contract.service.name}"></td>
             <td th:text="${contract.deposit}"></td>
             <td th:text="${contract.total}"></td>
-<!--            <td>-->
-<!--                <a th:href="@{/contract/edit/{id}(id=${contract.id})}"><button class="editButton btn btn-warning" type="button" th:value="${contract.id}" ><i class="far fa-edit"></i></button></a>-->
+            <td>
+                <button class="viewButton btn btn-info" type="button" th:value="${contract.id}"><i class="far fa-eye"></i></button>
 
-<!--                <button class="viewButton btn btn-info" type="button" th:value="${contract.id}"><i class="far fa-eye"></i></button>-->
-
-<!--                <a th:href="@{/contract/delete/{id}(id=${contract.id})}"><button class="deleteButton btn btn-danger" type="button" th:value="${contract.id}" ><i class="fas fa-trash"></i></i></button></a>-->
-<!--            </td>-->
+                <button class="createAttachService btn btn-success" type="button" th:value="${contract.id}"><i class="far fa-plus-square"></i></button>
+            </td>
         </tr>
         </tbody>
     </table>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modelIdView" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
 </div>
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-center">
@@ -58,5 +95,70 @@
 </nav>
 
 <footer th:insert="/layout :: footer"></footer>
+<script>
+    $(document).ready(function () {
+        $(".createAttachService").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/contractdetail/create?idContract=" +$(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelId").modal('show');
+                }
+            });
+        });
+        // // edit button modal
+        // $(".editButton").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/customer/edit?id=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+        // view
+        $(".viewButton").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/contractdetail/view?idContract=" + $(this).val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $(".modal-body").html(data);
+                    $("#modelIdView").modal('show');
+                }
+            });
+        });
+        // //    delete
+        // $(".deleteButton").click(function () {
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "/customer/delete?id=" + $(this).val(),
+        //         dataType: "HTML",
+        //         success: function (data) {
+        //             $(".modal-body").html(data);
+        //             $("#modelId").modal('show');
+        //         }
+        //     });
+        // });
+
+        //    search
+        $(".buttonSearch").click(function (ev){
+
+            $.ajax({
+                type: "GET",
+                url: "/customer/search?inputSearch=" + $(".search").val(),
+                dataType: "HTML",
+                success: function (data) {
+                    $("#dataSearch").html(data);
+
+                }
+            })
+        })
+    });
+</script>
 </body>
 </html>

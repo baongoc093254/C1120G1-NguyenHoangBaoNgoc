@@ -39,6 +39,6 @@ public class ServiceController {
         }
         serviceService.save(service);
         redirectAttributes.addFlashAttribute("message", "Create Successfully !");
-        return "list_service";
+        return "redirect:/service/";
     }
 }

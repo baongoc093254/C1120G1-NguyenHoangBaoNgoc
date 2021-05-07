@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b06b52e4-a449-4431-a44f-1b653c062492" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai 1/Bai Tap/bai tap 1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai 2/Thuc Hanh/Course 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai 2/Thuc Hanh/Course 3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai 2/Thuc Hanh/Course 4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bai 2/Thuc Hanh/Course2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/config/ConfigValidate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/config/ConfigValidate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/ContractDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/ContractDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/ServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/controller/ServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/contract/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/contract/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/contract/ContractDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/contract/ContractDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/AppRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/AppRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/employee/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/model/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/ContractDetailRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/ContractDetailRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/ContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/CustomerTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/CustomerTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/ServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/ServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/repository/UserRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contract/AttachServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contract/AttachServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contract/ContractImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contract/ContractImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contract/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contract/ContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contractdetail/ContractDetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contractdetail/ContractDetailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contractdetail/ContractDetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/contractdetail/ContractDetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/customerType/CustomerTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/customerType/CustomerTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/customerType/CustomerTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/customerType/CustomerTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/employee/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/employee/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/employee/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/employee/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/employee/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/employee/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/service/ServiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/service/ServiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/service/ServiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/service/service/ServiceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/utils/WebUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/java/com/example/utils/WebUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/static/css/loginpage.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/static/css/loginpage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contractDetail/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contractDetail/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract_detail_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract_detail_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/contract_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/customer/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/customer/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/customer/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/customer/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/employee/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/employee/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/employee/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/employee/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/employee_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/employee_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/list_service.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/list_service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/service/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Case Study/Furama_Management/src/main/resources/templates/service/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/config/ValidateConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/config/ValidateConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/controller/ContractController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/controller/ContractController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/model/ProductType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/model/ProductType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/repository/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/repository/ContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/repository/ProductTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/repository/ProductTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/service/impl/ContractServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/service/impl/ContractServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/service/impl/ProductTypeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/java/com/example/demo/service/impl/ProductTypeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/contract_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/contract_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/searchLimit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/searchLimit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/view_contract.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Practice/src/main/resources/templates/view_contract.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Session_12/BaiTap /Blog_New/src/main/java/com/example/blog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Session_12/BaiTap /Blog_New/src/main/java/com/example/blog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Session_14/BaiTap/Blog_exe/Blog_New/src/main/java/com/example/blog/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Session_14/BaiTap/Blog_exe/Blog_New/src/main/java/com/example/blog/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module 4/Session_14/BaiTap/Blog_exe/Blog_New/src/main/resources/templates/page/loginPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Module 4/Session_14/BaiTap/Blog_exe/Blog_New/src/main/resources/templates/page/loginPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/WEB-INF/classes/Common/Validate/Validate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/WEB-INF/classes/Common/Validate/Validate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/artifacts/CaseStudyJSP_Servlet_war_exploded/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/production/CaseStudyJSP_Servlet/Common/Validate/Validate.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/CaseStudy/CaseStudyJSP_Servlet/out/production/CaseStudyJSP_Servlet/Common/Validate/Validate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Repository/ProductRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Repository/ProductRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_3/TestModule_3/src/Service/ProductServiceImpl.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1s98gVM8HBKXXtIr9U9mVQEDaHJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b06b52e4-a449-4431-a44f-1b653c062492" name="Default Changelist" comment="" />
+      <created>1620273555728</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620273555728</updated>
+      <workItem from="1620273557030" duration="152000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Session_02/ThucHanh/TypeScript_Variable/src/index.js" />
+        <option value="$PROJECT_DIR$/Session_02/ThucHanh/TypeScript_If_else/src/index.js" />
+        <option value="$PROJECT_DIR$/Session_02/ThucHanh/TypeScript_CheckPrime/src/index.js" />
+        <option value="$PROJECT_DIR$/Session_02/BaiTap/Fibonacci/src/index.js" />
+      </list>
+    </option>
+  </component>
+</project>

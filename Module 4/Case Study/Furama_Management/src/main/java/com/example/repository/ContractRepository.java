@@ -13,10 +13,13 @@ public interface ContractRepository extends JpaRepository<Contract, Integer> {
     Page<Contract> findContractByEmployeeContaining(String name,Pageable pageable);
     List<Contract> findContractByEmployeeContaining(String name);
 
-//    @Query(value =  "select * from contract " +
-//            "where contract_end_date >= ?1 " +
-//            "group by customer_id",
-//            nativeQuery = true)
+
+    @Query(value =  "select * from contract " +
+            "where contract_end_date >= ?1 " +
+            "group by customer_id",
+            nativeQuery = true)
+    Page<Contract> getCustomerUsing(String date, Pageable pageable);
+
     List<Contract> findAllByStartDateBeforeAndEndDateAfter(String startDate, String endDate);
 
 

@@ -4,16 +4,19 @@ import com.example.model.customer.Customer;
 import com.example.model.employee.Employee;
 import com.example.model.service.Service;
 import org.springframework.beans.factory.annotation.CustomAutowireConfigurer;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "contract")
-public class Contract {
+public class Contract implements Validator {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,8 +37,6 @@ public class Contract {
     private String deposit;
 
 
-    @NotBlank(message = "No no ! not free, we'll poor at tomorrow")
-    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Total money invalid")
     @Column(name = "contract_total_money")
     private String total;
 
@@ -52,7 +53,7 @@ public class Contract {
     private Service service;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "contract")
-    private List<ContractDetail> contractDetails;
+    private Set<ContractDetail> contractDetails;
 
     public Contract() {
     }
@@ -121,11 +122,21 @@ public class Contract {
         this.service = service;
     }
 
-    public List<ContractDetail> getContractDetails() {
+    public Set<ContractDetail> getContractDetails() {
         return contractDetails;
     }
 
-    public void setContractDetails(List<ContractDetail> contractDetails) {
+    public void setContractDetails(Set<ContractDetail> contractDetails) {
         this.contractDetails = contractDetails;
+    }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+
     }
 }

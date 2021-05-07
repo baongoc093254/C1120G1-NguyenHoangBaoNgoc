@@ -67,7 +67,7 @@ public class BlogController {
         return "redirect:/";
     }
     @GetMapping("/search")
-    public String findByAuthor(@RequestParam("inputSearch") String author, Model model, @PageableDefault(size = 3,sort = "writeDate")Pageable pageable){
+    public String findByAuthor(@RequestParam("inputSearch") String author, Model model, @PageableDefault(size = 4,sort = "writeDate")Pageable pageable){
         model.addAttribute("blog",blogService.findByAuthorContaining(author,pageable));
         return "list";
     }

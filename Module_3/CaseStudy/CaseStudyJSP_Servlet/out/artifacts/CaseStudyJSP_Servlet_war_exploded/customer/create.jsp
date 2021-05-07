@@ -83,9 +83,9 @@
                 <tr>
                     <td>Gender:</td>
                     <td>
-                        <select name="customer_gender" id="customer_gender">
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
+                        <select name="gender" class="form-control" id="gender">
+                            <option value="true" ${customer.isCustomer_gender() == 'true' ? 'selected':''}>Nam</option>
+                            <option value="false" ${customer.isCustomer_gender() == 'false' ? 'selected':''}>Nữ</option>
                         </select>
                     </td>
                 </tr>
@@ -108,12 +108,20 @@
                 <tr>
                     <td>Customer Type:</td>
                     <td>
-                        <select id="customer_type_id" name="customer_type_id">
-                            <option value="1">Diamond</option>
-                            <option value="2">Platinum</option>
-                            <option value="3">Gold</option>
-                            <option value="4">Silver</option>
-                            <option value="5">Member</option>
+                        <select name="cusType" class="form-control" id="custype">
+                            <c:forEach var="customerType" items="${customerTypeList}">
+                                <c:choose>
+                                    <c:when test="${customerType.idCustomerType.equals(customer.customerType.idCustomerType)}">
+                                        <option value="<c:out value='${customerType.idCustomerType}'/>" selected><c:out
+                                                value="${customerType.nameCustomerType}"></c:out></option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="<c:out value='${customerType.idCustomerType}'/>"><c:out
+                                                value="${customerType.nameCustomerType}"></c:out></option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:forEach>
+
                         </select>
                     </td>
 

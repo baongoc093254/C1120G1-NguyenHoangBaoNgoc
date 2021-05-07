@@ -14,13 +14,9 @@
 </div>
 <div class="container">
     <table class="table table-hover">
-        <form th:action="@{employee/save}" method="post" th:object="${employee}">
+        <form th:action="@{/employee/save}" method="post" th:object="${employee}">
             <thead></thead>
-            <tr>
-                <th>ID</th>
-                <td><input type="text" th:field="*{id}"></td>
-                <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red">ID Error</td>
-            </tr>
+                <input type="hidden" th:field="*{id}">
             <tr>
                 <th>Name</th>
                 <td><input type="text" th:field="*{name}"></td>
@@ -29,21 +25,31 @@
             <tr>
                 <th>Birthday</th>
                 <td><input type="date" th:field="*{birthday}"></td>
+                <td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" style="color: red">ID Error</td>
+            </tr>
+            <tr>
+                <th>Id Card</th>
+                <td><input type="number" th:field="*{idCard}"></td>
+                <td th:if="${#fields.hasErrors('idCard')}" th:errors="*{idCard}" style="color: red">Id Card Error</td>
 
             </tr>
+
             <tr>
                 <th>Salary</th>
                 <td><input type="number" th:field="*{salary}"></td>
+                <td th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}" style="color: red">ID Error</td>
 
             </tr>
             <tr>
                 <th>Phone Number</th>
                 <td><input type="number" th:field="*{phoneNumber}"></td>
+                <td th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}" style="color: red">Phone Error</td>
 
             </tr>
             <tr>
                 <th>Email</th>
                 <td><input type="text" th:field="*{email}"></td>
+                <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color: red">ID Error</td>
             </tr>
             <tr>
                 <th>Address</th>
@@ -87,15 +93,16 @@
             </tr>
             <tr>
                 <th>User Name</th>
-                <td><input type="text" th:field="*{name}"></td>
+                <td><input type="text" th:field="*{user.name}"></td>
             </tr>
             <tr>
                 <th>PassWord</th>
-                <td><input type="text" th:field="*{}"></td>
+                <td><input type="password" th:field="*{user.password}" ></td>
             </tr>
             <tr>
+                <th></th>
                 <td>
-                <input type="submit" value="Save" class="btn-success">
+                    <button type="submit" class="btn-success">Save</button>
                 </td>
             </tr>
         </form>

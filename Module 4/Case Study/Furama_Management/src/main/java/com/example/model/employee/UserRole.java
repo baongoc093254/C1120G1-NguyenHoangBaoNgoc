@@ -4,7 +4,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "user_role")
+@Table(name = "user_role",
+ //
+        uniqueConstraints = {
+                @UniqueConstraint(name = "USER_ROLE_UK", columnNames = {"username", "role_id"})
+        })
 public class UserRole implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,12 +27,20 @@ public class UserRole implements Serializable {
     }
 
 
-    public User getAppUser() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public User getUser() {
         return user;
     }
 
-    public void setAppUser(User appUser) {
-        this.user = appUser;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public AppRole getAppRole() {

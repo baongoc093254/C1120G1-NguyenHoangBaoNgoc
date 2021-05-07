@@ -4,7 +4,10 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "user")
+@Table(name = "user",
+        uniqueConstraints = {
+                @UniqueConstraint(name = "USER_UK", columnNames = "username")
+        })
 public class User {
 
     @Id
@@ -13,6 +16,8 @@ public class User {
 
     @Column(name = "password")
     private String password;
+    @Column(name = "enabled", length = 1, columnDefinition = "BIT DEFAULT 1")
+    private boolean enabled;
 
     @OneToOne(mappedBy = "user")
     private Employee employee;
@@ -22,7 +27,6 @@ public class User {
 
     public User() {
     }
-
 
 
     public String getName() {
@@ -39,6 +43,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
     public Employee getEmployee() {

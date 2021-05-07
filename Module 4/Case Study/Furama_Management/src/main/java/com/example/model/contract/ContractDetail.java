@@ -23,9 +23,11 @@ public class ContractDetail {
     @Column(name = "quantity")
     private String quantity;
 
-    public ContractDetail() {
-    }
 
+
+    public ContractDetail() {
+
+    }
 
 
     public Integer getId() {

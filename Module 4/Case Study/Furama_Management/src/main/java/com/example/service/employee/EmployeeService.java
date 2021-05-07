@@ -21,5 +21,5 @@ public interface EmployeeService {
 
     Boolean emailIsUnique(String email);
 
-    List<Employee> findAllInputTex(String keyword);
+    Page<Employee> findAllInputTex(String search,Pageable pageable);
 }

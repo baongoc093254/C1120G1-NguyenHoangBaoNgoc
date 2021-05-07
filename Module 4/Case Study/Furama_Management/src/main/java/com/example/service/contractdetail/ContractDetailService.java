@@ -14,6 +14,7 @@ public interface ContractDetailService {
     ContractDetail findById(Integer id);
 
     void save(ContractDetail contractDetail);
+    List<ContractDetail> findAllByContract(Contract contract);
 
 
 

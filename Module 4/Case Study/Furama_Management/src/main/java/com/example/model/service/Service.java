@@ -1,8 +1,11 @@
 package com.example.model.service;
 
+import com.example.model.contract.Contract;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.util.Set;
 
 @Entity
 @Table(name = "service")
@@ -26,7 +29,7 @@ public class Service {
     private String cost;
 
     @NotBlank(message = "Number people not empty")
-    @Pattern(regexp = "^\\d{2}$", message = "Max people must be < 100")
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Max people must be < 100")
     @Column(name = "service_max_people")
     private String maxPeople;
 
@@ -38,19 +41,22 @@ public class Service {
     @JoinColumn(name = "service_type_id", referencedColumnName = "service_type_id", nullable = false)
     private ServiceType serviceType;
 
+    @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)
+    private Set<Contract> contractSet;
+
     @Column(name = "standard_room", length = 45)
     private String standardRoom;
 
     @Column(name = "description_other_convenience", length = 45)
     private String description;
 
-    @NotBlank(message = "Pool area not empty")
+
     @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Pool area must be < 1000")
     @Column(name = "pool_area")
     private String poolArea;
 
     @NotBlank(message = "Number floor not empty")
-    @Pattern(regexp = "^\\d{2}$", message = "Number floor invalid")
+    @Pattern(regexp = "^[0-9]*[1-9][0-9]*(\\.[0-9]+)?$", message = "Number floor invalid")
     @Column(name = "number_floors")
     private String numberFloor;
 
@@ -143,5 +149,13 @@ public class Service {
 
     public void setNumberFloor(String numberFloor) {
         this.numberFloor = numberFloor;
+    }
+
+    public Set<Contract> getContractSet() {
+        return contractSet;
+    }
+
+    public void setContractSet(Set<Contract> contractSet) {
+        this.contractSet = contractSet;
     }
 }

@@ -1,6 +1,7 @@
 package com.example.service.contractdetail;
 
 
+import com.example.model.contract.Contract;
 import com.example.model.contract.ContractDetail;
 import com.example.repository.ContractDetailRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,11 @@ public class ContractDetailServiceImpl  implements ContractDetailService {
     @Override
     public void save(ContractDetail contractDetail) {
             contractDetailRepository.save(contractDetail);
+    }
+
+    @Override
+    public List<ContractDetail> findAllByContract(Contract contract) {
+        return contractDetailRepository.findAllByContract(contract);
     }
 
 

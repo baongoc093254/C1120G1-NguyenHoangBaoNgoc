@@ -3,14 +3,16 @@ package com.example.model.employee;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "role")
+@Table(name = "role", uniqueConstraints = {
+        @UniqueConstraint(name = "ROLE_UK", columnNames = "role_name")
+})
 public class AppRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
     private Integer id;
 
-    @Column(name = "role_name")
+    @Column(name = "role_name", columnDefinition = "VARCHAR(45)" , nullable = false)
     private String name;
 
     public AppRole() {

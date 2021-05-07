@@ -51,7 +51,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public List<Employee> findAllInputTex(String keyword) {
-        return null;
+    public Page<Employee> findAllInputTex(String search, Pageable pageable) {
+        return employeeRepository.findAllInputTex(search,pageable);
     }
+
+
 }

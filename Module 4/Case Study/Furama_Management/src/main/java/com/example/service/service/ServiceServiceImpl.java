@@ -21,7 +21,7 @@ public class ServiceServiceImpl implements ServiceService {
     }
 
     @Override
-    public Service findById(Integer id) {
+    public Service findById(String id) {
         return serviceRepository.findById(id).orElse(null);
     }
 

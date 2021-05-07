@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "fontSizeProject"
+    }
+  },
+  "defaultProject": "fontSizeProject",
+  "cli": {
+    "analytics": "181b3061-7965-433a-9589-2d223386b592"
+  }
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:insert="~{layout :: head}">
     <meta charset="UTF-8">
@@ -9,17 +9,16 @@
 <body id="dataSearch">
 <div th:replace="/layout :: nav-bar"></div>
 <div>
-<a th:href="@{/customer/create}"><button class="btn btn-primary mt-5" id="btnModalCreate" style="margin-left: 10rem!important;"><i class="fas fa-user-plus"></i></button></a>
+<a th:href="@{/customer/create}"><button class="btn btn-primary mt-5" id="btnModalCreate" style="margin-left: 10rem!important;" sec:authorize="hasAnyAuthority('ROLE_MANAGE', 'ROLE_PRINCIPAL')"><i class="fas fa-user-plus"></i></button></a>
 </div>
+<div th:if="${message}">
 <div class="alert alert-success alert-dismissible">
     <button type="button" class="close" data-dismiss="alert">&times;</button>
-    <th:block th:if="${message}">
-
         <strong><p th:text="${message}"></p></strong>
-    </th:block>
+</div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <h2 class="text-center">Customer Detail</h2>
     <table class="table table-hover" >
         <thead>
@@ -46,11 +45,11 @@
             <td th:text="${customer.email}"></td>
             <td th:text="${customer.address}"></td>
             <td>
-                <button class="editButton btn btn-warning" type="button" th:value="${customer.id}"><i class="far fa-edit"></i></button></a>
+                <button class="editButton btn btn-warning" type="button" th:value="${customer.id}" sec:authorize="hasAnyAuthority('ROLE_MANAGE', 'ROLE_PRINCIPAL')"><i class="far fa-edit"></i></button></a>
 
                 <button class="btn btn-info" type="button"><i class="far fa-eye"></i></button>
 
-                <button class="deleteButton btn btn-danger" type="button" th:value="${customer.id}"><i class="fas fa-trash"></i></button></a>
+                <button class="deleteButton btn btn-danger" type="button" th:value="${customer.id}" sec:authorize="hasAnyAuthority('ROLE_MANAGE', 'ROLE_PRINCIPAL')"><i class="fas fa-trash"></i></button></a>
             </td>
         </tr>
         </tbody>
@@ -144,19 +143,15 @@
         });
 
         //    search
-        $("#buttonsearch").click(function (ev){
-            let inputSearch = document.getElementById("search").value;
+        $(".buttonSearch").click(function (ev){
 
             $.ajax({
                 type: "GET",
-                url: "/customer/search?inputSearch=" + inputSearch,
+                url: "/customer/search?inputSearch=" + $(".search").val(),
                 dataType: "HTML",
                 success: function (data) {
                     $("#dataSearch").html(data);
 
-                },
-                error: function () {
-                    alert('Not found ' + inputSearch + " in list !");
                 }
             })
         })

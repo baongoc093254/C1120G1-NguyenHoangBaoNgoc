@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ContractDetailRepository  extends JpaRepository<ContractDetail, Integer> {
+    List<ContractDetail> findAllByContract(Contract contract);
     Page<ContractDetail> findAll(Pageable pageable);
     Page<ContractDetail> findByAttachServiceContaining(String name,Pageable pageable);
     List<ContractDetail> findByAttachServiceContaining(String name);

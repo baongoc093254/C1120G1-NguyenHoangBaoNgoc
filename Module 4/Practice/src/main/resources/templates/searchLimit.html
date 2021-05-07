@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="/layout :: header">
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Search Product By Limit</title>
 </head>
 <body>
-$END$
+<h2 class="text-center">Search By Limit</h2>
+<div>
+    <a th:href="@{/contract}">
+    <button class="btn btn-primary">Back</button>
+    </a>
+</div>
+<div class="container-fluid">
+    <table class="table table-hover">
+        <thead>
+        <th scope="col">No.</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Product Type</th>
+        <th scope="col">Date Buy</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Total</th>
+
+        </thead>
+        <tbody>
+        <tr th:each="contract, contracStat : ${contractLimit}">
+            <td th:text="${contracStat.count}"></td>
+            <td th:text="${contract.id}"></td>
+            <td th:text="${contract.product.name}"></td>
+            <td th:text="${contract.product.productType.name}"></td>
+            <td th:text="${contract.date_buy}"></td>
+            <td th:text="${contract.quantity}"></td>
+            <td th:text="${contract.total}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+<footer th:insert="/layout :: footer"></footer>
 </body>
 </html>

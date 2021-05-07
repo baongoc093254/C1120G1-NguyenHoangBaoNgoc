@@ -18,8 +18,13 @@ public class Employee {
     @Column(name = "employee_name",nullable = false)
     private String name;
 
+    @Pattern(regexp = "((19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])",message = " Right format YYYY-MM-DD")
     @Column(name = "employee_birthday",nullable = false)
     private String birthday;
+
+    @Pattern(regexp = "(^\\d{9}$)|(^\\d{12}$)", message = "ID Card is not valid")
+    @Column(name = "employee_id_card", nullable = false)
+    private String idCard;
 
 
     @Column(name = "employee_salary",nullable = false)
@@ -58,18 +63,13 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String name, String birthday, String salary, String phoneNumber, String email, String address, Position position, Division division, EducationDegree educationDegree, List<Contract> contracts, User user) {
-        this.name = name;
-        this.birthday = birthday;
-        this.salary = salary;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.address = address;
-        this.position = position;
-        this.division = division;
-        this.educationDegree = educationDegree;
-        this.contracts = contracts;
-        this.user = user;
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
     public User getUser() {

@@ -9,7 +9,7 @@
 <body>
 <div th:insert="/layout :: nav-bar"></div>
 <div>
-    <a th:href="@{/service}"><button class="btn btn-success" th:colspan="2">Back</button></a>
+    <a th:href="@{/service}"><button class="btn btn-success" th:colspan="2" style="margin-left: 10rem!important;">Back</button></a>
 </div>
 <div class="container">
     <table class="table table-hover">
@@ -18,22 +18,27 @@
         <tr>
             <th>ID</th>
             <td><input type="text" th:field="*{id}"></td>
+            <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}" style="color: red">ID Error</td>
         </tr>
         <tr>
             <th>Name</th>
             <td><input type="text" th:field="*{name}"></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color: red"></td>
         </tr>
         <tr>
             <th>Area</th>
             <td><input type="number" th:field="*{area}"></td>
+            <td th:if="${#fields.hasErrors('area')}" th:errors="*{area}" style="color: red"></td>
         </tr>
         <tr>
             <th>Cost</th>
             <td><input type="number" th:field="*{cost}"></td>
+            <td th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}" style="color: red">ID Error</td>
         </tr>
         <tr>
             <th>Max People</th>
             <td><input type="number" th:field="*{maxPeople}"></td>
+            <td th:if="${#fields.hasErrors('maxPeople')}" th:errors="*{maxPeople}" style="color: red">ID Error</td>
         </tr>
         <tr>
             <th>Rent Type</th>
@@ -47,7 +52,7 @@
             </td>
         </tr>
         <tr>
-            <th>Service Type </th>
+            <th>Service Type</th>
             <td>
                 <select th:field="*{serviceType.id}" class="form-control">
                     <option value="1">Villa</option>
@@ -67,14 +72,18 @@
         <tr>
             <th>Pool Area</th>
             <td><input type="number" th:field="*{poolArea}"></td>
+            <td th:if="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}" style="color: red"></td>
         </tr>
         <tr>
             <th>Number Floor</th>
             <td><input type="number" th:field="*{numberFloor}"></td>
+            <td th:if="${#fields.hasErrors('numberFloor')}" th:errors="*{numberFloor}" style="color: red"></td>
         </tr>
             <tr>
-                <th colspan="3"></th>
-                <td><input type="submit" value="Save" class="btn btn-primary"></td>
+                <th></th>
+                <td>
+                    <button type="submit" class="btn btn-success">Save</button>
+                </td>
             </tr>
         </form>
     </table>

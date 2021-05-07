@@ -4,7 +4,9 @@ import com.example.model.contract.Contract;
 import com.example.model.customer.Customer;
 import com.example.service.contract.ContractService;
 import com.example.service.customer.CustomerService;
+import com.example.service.customerType.CustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,8 @@ public class CustomerController {
     private CustomerService customerService;
     @Autowired
     private ContractService contractService;
+    @Autowired
+    private CustomerTypeService customerTypeService;
 
 
     @GetMapping("")
@@ -59,11 +63,16 @@ public class CustomerController {
     }
 
     @PostMapping("/update")
-    public String updateCustomer(Customer customer, Model model) {
+    public String updateCustomer(@Validated @ModelAttribute("customer") Customer customer,BindingResult bindingResult ,Model model,RedirectAttributes redirectAttributes) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("customer", customer);
+            return "customer/edit";
+        }
         customerService.save(customer);
-        model.addAttribute("message", "Update Successfully !");
-        return "customer/edit";
+        redirectAttributes.addFlashAttribute("message", "Update Successfully !");
+        return "redirect:/customer/";
     }
+
     @GetMapping("/delete")
     public String deleteForm(@RequestParam(name = "id") String id, Model model){
         Customer customer = this.customerService.findById(id);
@@ -83,22 +92,14 @@ public class CustomerController {
         return "list";
     }
     @GetMapping("/active")
-    public String getListActiveCustomer(Model model){
-        List<Contract> contracts = contractService.findAllByStartDateBeforeAndEndDateAfter(LocalDate.now().toString());
-
-        model.addAttribute("contracts", contracts);
-
-        return "customer/booking_customer";
-    }
-
-    @GetMapping("/search-active")
-    public String searchActiveCustomer(Model model, @RequestParam("inputSearch") String input){
-        List<Contract> contracts = contractService.findAllByStartDateBeforeAndEndDateAfterAndCustomerName(LocalDate.now().toString(), input);
-
-        model.addAttribute("contracts", contracts);
+    public String getListActiveCustomer(Model model, @PageableDefault(value = 5) Pageable pageable){
+        String date = this.contractService.getCurrentDay();
+        model.addAttribute("contracts", this.contractService.getCustomerUsing(date, pageable));
 
         return "customer/booking_customer";
     }
+
+
 
 
 

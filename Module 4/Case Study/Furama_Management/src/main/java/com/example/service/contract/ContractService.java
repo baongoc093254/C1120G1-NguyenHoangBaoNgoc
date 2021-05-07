@@ -15,9 +15,14 @@ public interface ContractService {
 
     void save(Contract contract);
 
+    Page<Contract> getCustomerUsing(String date, Pageable pageable);
 
-    List<Contract> findAllByStartDateBeforeAndEndDateAfter(String currentDate);
 
-    List<Contract> findAllByStartDateBeforeAndEndDateAfterAndCustomerName(String currentDate, String name);
+    String getCurrentDay();
+    double getTotalMoney(Contract contract);
+
+//    List<Contract> findAllByStartDateBeforeAndEndDateAfter(String currentDate);
+//
+//    List<Contract> findAllByStartDateBeforeAndEndDateAfterAndCustomerName(String currentDate, String name);
 
 }

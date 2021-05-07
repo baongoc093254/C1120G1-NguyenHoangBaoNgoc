@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head th:insert="/layout :: header">
@@ -8,10 +8,12 @@
 </head>
 <body>
 <div th:insert="/layout :: nav-bar"></div>
+<h2 class="text-center">Service Management</h2>
 <div>
-    <a th:href="@{/service/create}"><button class="btn btn-success m-3">Create New Service</button></a>
+    <a th:href="@{/service/create}"><button class="btn btn-success m-3" sec:authorize="hasAnyAuthority('ROLE_MANAGE', 'ROLE_PRINCIPAL')">Create New Service</button></a>
 </div>
-<table class="table table-hover">
+
+<table class="table table-hover" id="table-page">
     <thead>
     <th scope="col">ID</th>
     <th scope="col">Name</th>
@@ -47,6 +49,14 @@
 <footer th:insert="/layout :: footer"></footer>
 <script>
     $(document).ready(function () {
+        $('#table-page').dataTable(
+            {
+                "dom": 'lrtip',
+                "lengthChange": false,
+                "pageLength": 4
+            }
+        );
+
         $("#btnModalCreate").click(function () {
             $.ajax({
                 type: "GET",
@@ -115,4 +125,7 @@
     });
 </script>
 </body>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 </html>

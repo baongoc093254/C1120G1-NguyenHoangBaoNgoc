@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous">
+    </script>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+            crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/css/loginpage.css">
+
+</head>
+<body class="img" style="background-image: url(image/coco-ocean-resort-banner-2.jpeg);background-size: 100%; background-repeat: no-repeat">
+
+<!-- /login?error=true -->
+<div th:if="${#request.getParameter('error') == 'true'}"
+     style="color:red;margin:10px 0px;">
+    Login Failed!!!<br />
+    Reason :
+    <span th:if="${#session!= null and #session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION') != null}"
+          th:utext="${#session.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').message}">
+                Static summary
+         </span>
+
+</div>
+
+<section>
+<div class="container">
+    <div class="align-items-center">
+    <div class="row">
+        <div class="col-md-4 login-sec">
+            <h2 class="text-center">Login Now</h2>
+            <form class="login-form" th:action="@{/j_spring_security_check}" method='POST'>
+                <div class="form-group">
+                    <label class="text-uppercase">Username</label>
+                    <input type="text" class="form-control" name="username" placeholder="">
+
+                </div>
+                <div class="form-group">
+                    <label class="text-uppercase">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="">
+                </div>
+
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <small>Remember Me</small>
+                    </label>
+                    <button type="submit" class="btn btn-login float-right">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-8 banner-sec">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img class="d-block img-fluid" src="/static/image/background.jpeg" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="banner-text">
+                                <h2>This is Furama Resort</h2>
+                                <p>A culinary resort on one of the six most luxurious beaches in the world</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="/static/image/furama.jpg" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="banner-text">
+                                <h2>This is Furama Resort</h2>
+                                <p>A culinary resort on one of the six most luxurious beaches in the world</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" src="/static/image/37836676.jpeg" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <div class="banner-text">
+                                <h2>This is Furama Resort</h2>
+                                <p>A culinary resort on one of the six most luxurious beaches in the world</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!--        <section class="ftco-section">-->
+<!--        <div class="container">-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-md-6 text-center mb-5">-->
+<!--                    <h2 class="heading-section">Login</h2>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-md-6 col-lg-4">-->
+<!--                <div class="login-wrap p-0">-->
+<!--                    <h3 class="mb-4 text-center" style="color: white">Have an account ? </h3>-->
+<!--                    <form class="signin-form" th:action="@{/j_spring_security_check}" method='POST'>-->
+<!--                        <div class="form-group">-->
+<!--                            <input type="text" class="form-control" name="username" placeholder="Username" required>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <input id="password-field" type="password" name="password" class="form-control" placeholder="Password" required>-->
+<!--                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>-->
+<!--                        </div>-->
+<!--                        <div class="form-group d-md-flex">-->
+<!--                            <div class="w-50">-->
+<!--                                <label class="checkbox-wrap checkbox-primary" style="color: white">Remember Me-->
+<!--                                    <input type="checkbox" checked>-->
+<!--                                    <span class="checkmark"></span>-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div class="w-50 text-md-right">-->
+<!--                                <a href="#" style="color: #fff">Forgot Password</a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                    <p class="w-100 text-center" style="color: white">&mdash; Or Sign In With &mdash;</p>-->
+<!--                    <div class="social d-flex text-center">-->
+<!--                        <a href="#" class="px-2 py-2 mr-md-1 rounded"><i class="fab fa-facebook"></i> Facebook</a>-->
+<!--                        <a href="#" class="px-2 py-2 ml-md-1 rounded"><i class="fab fa-twitter"></i> Twitter</a>-->
+<!--                        <a href="#" class="px-2 py-2 ml-md-1 rounded"><i class="fab fa-github"></i>Github</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--    </section>-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td>User:</td>-->
+<!--            <td><input type='text' name='username' value=''></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Password:</td>-->
+<!--            <td><input type='password' name='password' /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Remember Me?</td>-->
+<!--            <td><input type="checkbox" name="remember-me" /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><input name="submit" type="submit" value="submit" /></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--<br>-->
+<!--Username/pass:-->
+<!--<ul>-->
+<!--    <li>user/123456</li>-->
+<!--    <li>admin/123456</li>-->
+<!--</ul>-->
+<!--<section class="ftco-section">-->
+<!--    <div class="container">-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-md-6 text-center mb-5">-->
+<!--                <h2 class="heading-section">Login #05</h2>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="row justify-content-center">-->
+<!--            <div class="col-md-7 col-lg-5">-->
+<!--                <div class="wrap">-->
+<!--                    <div class="img" style="background-image: url(images/bg-1.jpg);"></div>-->
+<!--                    <div class="login-wrap p-4 p-md-5">-->
+<!--                        <div class="d-flex">-->
+<!--                            <div class="w-100">-->
+<!--                                <h3 class="mb-4">Sign In</h3>-->
+<!--                            </div>-->
+<!--                            <div class="w-100">-->
+<!--                                <p class="social-media d-flex justify-content-end">-->
+<!--                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>-->
+<!--                                    <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <form action="#" class="signin-form">-->
+<!--                            <div class="form-group mt-3">-->
+<!--                                <input type="text" class="form-control" required>-->
+<!--                                <label class="form-control-placeholder" for="username">Username</label>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <input id="password-field" type="password" class="form-control" required>-->
+<!--                                <label class="form-control-placeholder" for="password">Password</label>-->
+<!--                                <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>-->
+<!--                            </div>-->
+<!--                            <div class="form-group">-->
+<!--                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>-->
+<!--                            </div>-->
+<!--                            <div class="form-group d-md-flex">-->
+<!--                                <div class="w-50 text-left">-->
+<!--                                    <label class="checkbox-wrap checkbox-primary mb-0">Remember Me-->
+<!--                                        <input type="checkbox" checked>-->
+<!--                                        <span class="checkmark"></span>-->
+<!--                                    </label>-->
+<!--                                </div>-->
+<!--                                <div class="w-50 text-md-right">-->
+<!--                                    <a href="#">Forgot Password</a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </form>-->
+<!--                        <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+
+</body>
+
+</html>

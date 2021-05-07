@@ -25,6 +25,7 @@ public class Customer {
     @Column(name = "customer_name", nullable = false)
     private String name;
 
+    @Pattern(regexp = "((19|20)\\d\\d)-(0?[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])",message = " Right format YYYY-MM-DD")
     @Column(name = "customer_birthday", nullable = false, columnDefinition = "DATE")
     private String birthday;
 
