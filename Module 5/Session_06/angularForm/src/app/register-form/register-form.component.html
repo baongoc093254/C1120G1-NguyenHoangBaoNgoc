@@ -1,0 +1,55 @@
+<div class="container col-6">
+  <div class="card border-success">
+    <div class="card-body">
+      <h3 class="card-title text-center"><b style="color: goldenrod">User</b> Register</h3>
+      <form [formGroup]="rfUser" (ngSubmit)="onSubmitForm()">
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="text" class="form-control" formControlName="email">
+          <span *ngIf="rfUser.controls.email.touched && rfUser.controls.email.errors?.required" style="color: red">Ex : email is abc@abc.abc</span>
+        </div>
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" class="form-control" formControlName="password">
+          <span *ngIf="rfUser.controls.password.touched && rfUser.controls.password.errors?.required" style="color: red">Required input</span>
+        </div>
+        <div class="form-group">
+          <label>Country:</label>
+          <select class="form-control" formControlName="country">
+            <option value="VietNam">VietNam</option>
+            <option value="USA">USA</option>
+            <option value="Italy">Italy</option>
+            <option value="Russia">Russia</option>
+            <option value="Korean">Korean</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Age:</label>
+          <input type="number" class="form-control" formControlName="age">
+          <span *ngIf="rfUser.controls.age.touched && rfUser.controls.age.errors?.required" style="color: red">Required input</span>
+        </div>
+        <div class="form-group">
+          <label>Gender:</label>
+          <div class="text-center">
+            <input id="male" type="radio" value="male" name="gender" formControlName="gender">&nbsp;
+            <label for="male">Male</label>
+            &nbsp;
+            <input id="female" type="radio" value="female" name="gender" formControlName="gender">&nbsp;
+            <label for="female">Female</label>
+          </div>
+
+
+        </div>
+        <div class="form-group">
+          <label>Phone:</label>
+          <input type="text" class="form-control" formControlName="phone">
+          <span *ngIf="rfUser.controls.phone.touched && rfUser.controls.phone.errors?.required" style="color: red">Required input</span>
+        </div>
+        <br>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
