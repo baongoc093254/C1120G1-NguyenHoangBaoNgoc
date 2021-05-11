@@ -1,0 +1,38 @@
+<div class="card border-info">
+
+  <div class="card-body">
+    <h4 class="card-title">Product Detail</h4>
+    <div *ngIf="productDetail; else nodata">
+      <div>
+        ID: {{ productDetail.id }}
+      </div>
+      <div>
+        Name: {{ productDetail.name | titlecase }}
+      </div>
+      <div>
+        Cost: {{ productDetail.cost | currency: 'VND' }}
+      </div>
+      <div>
+        Date Start: {{ productDetail.dateStart | date: 'dd/MM/yyyy' }}
+      </div>
+      <div>
+        Location: {{ productDetail.location }}
+      </div>
+      <div>
+        Quantity: {{ productDetail.quantity }}
+      </div>
+<!--      <div>-->
+<!--&lt;!&ndash;        <span *ngIf="productDetail.quantity == 0; else elseBlock">Out of stock</span>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ng-template #elseBlock>&ndash;&gt;-->
+<!--&lt;!&ndash;          <span></span>&ndash;&gt;-->
+<!--&lt;!&ndash;        </ng-template>&ndash;&gt;-->
+<!--        <span *ngIf="productDetail.quantity == 0">-->
+<!--          <button class="btn btn-primary" (click)="updateQuantity()">Update Quantity</button>-->
+<!--        </span>-->
+<!--      </div>-->
+    </div>
+    <ng-template #nodata>
+      <p style="color: red">No data in DB</p>
+    </ng-template>
+  </div>
+</div>
