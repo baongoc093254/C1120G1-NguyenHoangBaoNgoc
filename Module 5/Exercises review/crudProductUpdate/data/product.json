@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone 12",
+      "cost": 25000,
+      "dateStart": "2021/05/05",
+      "country":
+        {
+          "id": 1
+        }
+      ,
+      "quantity": 7
+    },
+    {
+      "id": 2,
+      "name": "Iphone 11",
+      "cost": 25000,
+      "dateStart": "2021/05/05",
+      "country":
+        {
+          "id": 2
+        }
+      ,
+      "quantity": 10
+    },
+    {
+      "id": 3,
+      "name": "Iphone 8",
+      "cost": 25000,
+      "dateStart": "2021/05/05",
+      "country":
+        {
+          "id": 1
+        }
+      ,
+      "quantity": 10
+    },
+    {
+      "id": 4,
+      "name": "Iphone 11",
+      "cost": 25000,
+      "dateStart": "2021/05/05",
+      "country":
+        {
+          "id": 2,
+          "name": "ABC"
+        }
+      ,
+      "quantity": 3
+    },
+    {
+      "id": 5,
+      "name": "Iphone 7",
+      "cost": 25000,
+      "dateStart": "2021/05/05",
+      "country":
+        {
+          "id": 1
+        }
+      ,
+      "quantity": 9
+    }
+  ],
+  "country": [
+    {
+      "id": 1,
+      "name": "VietNam"
+    },
+    {
+      "id": 2,
+      "name": "USA"
+    }
+  ]
+}
+

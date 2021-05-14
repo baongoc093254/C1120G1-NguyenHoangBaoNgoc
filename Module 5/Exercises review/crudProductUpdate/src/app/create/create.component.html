@@ -1,0 +1,94 @@
+<div class="card border-success">
+  <h3 class="text-center">Create new <b style="color: green">Product </b></h3>
+  <div class="card-body">
+    <form [formGroup]="rfProduct" (ngSubmit)="onCreateForm()">
+      <table class="table table-hover col-6" >
+        <thead></thead>
+        <tbody>
+        <tr>
+          <th>ID</th>
+          <td><input type="text" class="form-control" placeholder="Input Id" formControlName="id"></td>
+          <td *ngIf="rfProduct.controls.id.touched && rfProduct.controls.id.errors?.required" style="color: red">ID <strong>Required</strong>></td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td><input type="text" class="form-control" placeholder="Input Name" formControlName="name"></td>
+          <td *ngIf="rfProduct.controls.name.touched && rfProduct.controls.name.errors?.required" style="color: red">Name <strong>Required</strong>></td>
+        </tr>
+        <tr>
+          <th>Cost</th>
+          <td><input type="number" class="form-control" placeholder="Input Cost Product" formControlName="cost"></td>
+          <td *ngIf="rfProduct.controls.cost.touched && rfProduct.controls.cost.errors?.required" style="color: red">Cost <strong>Required</strong>></td>
+        </tr>
+        <tr>
+          <th>Date Start</th>
+          <td><input type="date" class="form-control" placeholder="Input Date Start" formControlName="dateStart"></td>
+          <td *ngIf="rfProduct.controls.dateStart.touched && rfProduct.controls.dateStart.errors?.required" style="color: red">Date Start <strong>Required</strong>></td>
+        </tr>
+        <tr>
+          <th>Country</th>
+          <td>
+            <select class="form-control" formControlName="country">
+              <option value="" selected disabled>Select Country</option>
+              <option *ngFor="let country of countries" [ngValue]="country">{{ country.name }}</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>Quantity</th>
+          <td><input type="text" class="form-control" placeholder="Input Quantity" formControlName="quantity" minlength="1"></td>
+          <td *ngIf="rfProduct.controls.quantity.touched && rfProduct.controls.quantity.errors?.required" style="color: red">Quantity  <strong>Required</strong>></td>
+          <td *ngIf="rfProduct.controls.quantity.touched && rfProduct.controls.quantity.errors?.minlength" style="color: red">Quantity  <strong>Minlength</strong>></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td class="text-center">
+            <button type="submit" class="btn btn-primary">Create</button>
+            &nbsp;
+            <button type="reset" class="btn btn-danger">Cancel</button>
+          </td>
+        </tr>
+        </tbody>
+<!--      <div class="form-group">-->
+<!--        <label>ID</label>-->
+<!--        <input type="text" class="form-control" placeholder="Input Id" formControlName="id">-->
+<!--        <span *ngIf="rfProduct.controls.id.touched && rfProduct.controls.id.errors?.required" style="color: red">ID <strong>Required</strong></span>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label>Name</label>-->
+<!--        <input type="text" class="form-control" placeholder="Input Name" formControlName="name">-->
+<!--        <span *ngIf="rfProduct.controls.name.touched && rfProduct.controls.name.errors?.required" style="color: red">Name <strong>Required</strong></span>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label>Cost</label>-->
+<!--        <input type="number" class="form-control" placeholder="Input Cost Product" formControlName="cost">-->
+<!--        <span *ngIf="rfProduct.controls.cost.touched && rfProduct.controls.cost.errors?.required" style="color: red">Cost <strong>Required</strong></span>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label>Date Start</label>-->
+<!--        <input type="text" class="form-control" placeholder="Input Date Start" formControlName="dateStart">-->
+<!--        <span *ngIf="rfProduct.controls.dateStart.touched && rfProduct.controls.dateStart.errors?.required" style="color: red">Date Start <strong>Required</strong></span>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label>Country:</label>-->
+<!--        <select class="form-control" formControlName="country">-->
+<!--          <option value="VietNam">VietNam</option>-->
+<!--          <option value="USA">USA</option>-->
+<!--          <option value="Italy">Italy</option>-->
+<!--          <option value="Russia">Russia</option>-->
+<!--          <option value="Korean">Korean</option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--      <div class="form-group">-->
+<!--        <label>Quantity</label>-->
+<!--        <input type="text" class="form-control" placeholder="Input Quantity" formControlName="quantity">-->
+<!--        <span *ngIf="rfProduct.controls.quantity.touched && rfProduct.controls.quantity.errors?.required" style="color: red">Quantity  <strong>Required</strong></span>-->
+<!--      </div>-->
+<!--      <button type="submit" class="btn btn-primary">Create</button>-->
+<!--      <button type="reset" class="btn btn-close"></button>-->
+      </table>
+    </form>
+
+  </div>
+</div>
+

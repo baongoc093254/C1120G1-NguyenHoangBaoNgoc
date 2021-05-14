@@ -1,0 +1,57 @@
+<div class="card border-success">
+  <div class="table-wrapper">
+    <div class="table-tittle">
+      <div class="row">
+        <div class="col-sm-11">
+          <h2 class="text-center"><b style="color: green">Product</b> Management</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+<!--  <div *ngIf="arrProduct.length !=0; else elseArrProduct">-->
+    <div>
+  <table class="table table-striped table-hover">
+    <thead>
+    <tr>
+    <th scope="col">#</th>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Cost</th>
+    <th scope="col">Date Start</th>
+    <th scope="col">Location</th>
+    <th scope="col">Quantity</th>
+      <th>Option</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products; let  i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.id }}</td>
+      <td>{{ product.name | titlecase }}</td>
+      <td>{{ product.cost | currency: 'VND' }}</td>
+      <td>{{ product.dateStart | date: 'dd/MM/yyyy' }}</td>
+      <td>{{ product.country.name}}</td>
+      <td>
+        <span *ngIf="product.quantity == 0">Out of stock</span>
+        <span *ngIf="product.quantity > 0 && product.quantity < 10">In stock a little</span>
+        <span *ngIf="product.quantity >= 10">In stock</span>
+      </td>
+      <td>
+        <a [routerLink]="['detail', product.id]">
+          <button class="btn btn-primary">
+          Detail Product
+        </button></a>
+        <a (click)="openDialog(product.id)">
+          <button class="btn btn-primary">Delete</button>
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+<!--  <div #elseArrProduct>-->
+<!--    <p style="color: red"><b>Out of stock. Please add new product !</b></p>-->
+<!--  </div>-->
+
+</div>

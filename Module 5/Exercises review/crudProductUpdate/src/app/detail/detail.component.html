@@ -1,0 +1,43 @@
+<div class="card border-info">
+
+  <div class="card-body">
+    <h4 class="card-title text-center">Product Detail</h4>
+    <button class="btn btn-primary" (click)="backToList()">Back To List</button>
+    <div *ngIf="product; else nodata">
+      <div>
+        ID: {{ product.id }}
+      </div>
+      <div>
+        Name: {{ product.name | titlecase }}
+      </div>
+      <div>
+        Cost: {{ product.cost | currency: 'VND' }}
+      </div>
+      <div>
+        Date Start: {{ product.dateStart | date: 'dd/MM/yyyy' }}
+      </div>
+      <div>
+        Location: {{ product.country }}
+      </div>
+      <div>
+        Quantity: {{ product.quantity }}
+      </div>
+      <div>
+<!--        <span *ngIf="productDetail.quantity == 0; else elseBlock">Out of stock</span>-->
+<!--        <ng-template #elseBlock>-->
+<!--          <span></span>-->
+<!--        </ng-template>-->
+        <span *ngIf="product.quantity == 0">
+          <button class="btn btn-primary" (click)="showUpdateQuantity()">Update Quantity</button>
+        </span>
+      </div>
+      <div id="updateQuantity" style="display: none">
+        <input type="text" #newQuantity class="form-control">
+        <button class="btn btn-check" (click)="setNewQuantity(newQuantity.value)">Submit</button>
+      </div>
+    </div>
+    <ng-template #nodata>
+      <p style="color: red">No data in DB</p>
+    </ng-template>
+  </div>
+</div>
