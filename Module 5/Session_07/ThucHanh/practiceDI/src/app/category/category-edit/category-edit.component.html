@@ -1,0 +1,24 @@
+<div>
+  <h2>Edit Category</h2>
+  <form [formGroup]="categoryForm" (ngSubmit)="updateCategory(id)">
+    <table class="table table-hover">
+      <thead></thead>
+      <tbody>
+      <tr>
+        <th>ID Category:</th>
+        <td><input type="number" formControlName="id"></td>
+      </tr>
+      <tr>
+        <th>Name:</th>
+        <td><input type="text" formControlName="name"></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td>
+          <button class="btn-primary" type="submit">Update</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
