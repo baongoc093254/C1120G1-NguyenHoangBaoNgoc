@@ -53,4 +53,9 @@ export class StudentListComponent implements OnInit {
   //     console.log(data);
   //   })
   // }
+  search() {
+    this.studentService.searchStudent(this.keySearch).subscribe(data => {
+      this.students = data;
+    })
+  }
 }

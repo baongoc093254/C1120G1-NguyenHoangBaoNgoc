@@ -70,7 +70,7 @@ public class StudentController {
         return new ResponseEntity<>(editStudent, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/student/{id}")
     public ResponseEntity<Student> deleteStudent(@PathVariable("id") Integer id) {
         Student deleteStudent = studentService.findById(id);
         if (deleteStudent == null) {
@@ -79,5 +79,10 @@ public class StudentController {
         this.studentService.delete(id);
         return new ResponseEntity<>(deleteStudent, HttpStatus.OK);
     }
+
+//    @GetMapping("/student")
+//    public List<Student> searchStudent(@RequestParam(name = "name") String name) {
+//        return studentService.findAllByNameContaining(name);
+//    }
 
 }

@@ -18,7 +18,7 @@ export class StudentService {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'}),
-      'Access-Control-Allow-Origin': 'http://localhost:4200/', 
+      'Access-Control-Allow-Origin': 'http://localhost:4200/',
       'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       'Access-Control-Allow-Credentials': "true"
     };
@@ -42,14 +42,14 @@ export class StudentService {
   }
 
   editProductById(student: Student, id: number): Observable<any> {
-    return this.httpClient.put(this.baseUrl + '/' + id, student);
+    return this.httpClient.put(this.baseUrl + '/edit/' + id, student);
   }
 
   createStudent(student: Student): Observable<Student[]> {
-    return this.httpClient.post<Student[]>(this.baseUrl, student);
+    return this.httpClient.post<Student[]>(this.baseUrl + '/create/', student);
   }
   deleteProductById(id: number): Observable<any> {
-    return this.httpClient.delete(this.baseUrl + '/' + id, this.httpOptions);
+    return this.httpClient.delete(this.baseUrl + '/' + id);
   }
 
   // search(keySearch: string): Observable<Student[]> {
@@ -58,4 +58,7 @@ export class StudentService {
   // }
 
 
+  searchStudent(keySearch: string): Observable<Student[]> {
+    return this.httpClient.get<Student[]>(this.baseUrl + '?q=' + keySearch);
+  }
 }

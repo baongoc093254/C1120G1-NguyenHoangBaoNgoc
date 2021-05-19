@@ -11,6 +11,7 @@ import { StudentCreateComponent } from './student/student-create/student-create.
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import {StudentDeleteComponent} from './student/student-delete/student-delete.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     StudentListComponent,
     StudentEditComponent,
-    StudentCreateComponent
+    StudentCreateComponent,
+    StudentDeleteComponent
   ],
     imports: [
         BrowserModule,

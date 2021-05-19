@@ -25,7 +25,7 @@ export class StudentDeleteComponent implements OnInit {
 
   deleteProduct() {
     this.studentService.deleteProductById(this.studentId).subscribe(data => {
-      console.log(data);
+      console.log("id xoa " + data);
       this.dialogRef.close();
     })
   }
