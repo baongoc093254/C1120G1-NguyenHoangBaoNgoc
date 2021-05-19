@@ -1,0 +1,13 @@
+<div class="mat-dialog-container">
+  <div class="mat-dialog-content">
+    <h4 class="text-center"><strong style="color: red">Delete</strong> Student</h4>
+  </div>
+  <hr>
+  <p class="text-center">Do you want delete <strong style="color: red">{{studentName}}</strong></p>
+  <div class="mat-dialog-action text-center">
+    <button mat-button type="submit" cdkFocusInitial (click)="deleteProduct()">Delete</button>
+    &nbsp;
+    <button mat-button (click)="close()">Cancel</button>
+  </div>
+</div>
+<!--(click)="deleteProduct()-->

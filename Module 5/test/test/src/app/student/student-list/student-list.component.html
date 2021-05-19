@@ -1,0 +1,35 @@
+
+<div class="container-fluid">
+<!--    <div class="float-lg-start ">-->
+<!--  <input type="text" class="form-control" [(ngModel)]="keySearch" placeholder="Enter something to search">-->
+<!--    </div>-->
+<!--    <button class="btn btn-success" (click)="search()">Search</button>-->
+  <table class="table table-hover">
+    <thead>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Group</th>
+    <th scope="col">Name Project</th>
+    <th scope="col">TuTor</th>
+    <th scope="col">Email</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Option</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students let i = index">
+      <td>{{i + 1 }}</td>
+      <td>{{ student.name | titlecase}}</td>
+      <td>{{ student.group.groupName}}</td>
+      <td>{{ student.nameProject}}</td>
+      <td>{{ student.tutor.tutorName}}</td>
+      <td>{{ student.email}}</td>
+      <td>{{ student.phone}}</td>
+      <td>
+        <a [routerLink]="['detail', student['id']]"><button class="btn btn-success">Edit</button></a>
+        <a [routerLink]="['edit', student['id']]"><button class="btn btn-primary">Edit</button></a>
+        <a (click)="openDialog(student['id'])"><button class="btn btn-danger" >Delete</button></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

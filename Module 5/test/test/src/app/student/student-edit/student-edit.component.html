@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <div class="title text-center"><h1><strong style="color: green">Edit</strong> Customer</h1></div>
+  <button class="btn btn-primary" (click)="backToList()">Back</button>
+  <form [formGroup]="rfEditStudent" (ngSubmit)="onSubmit()">
+    <table class="table table-hover">
+      <thead></thead>
+      <tbody>
+      <tr>
+        <th>Name</th>
+        <td><input type="text" class="form-control" formControlName="name" placeholder="Edit Name Student"></td>
+        <td *ngIf="rfEditStudent.controls.name.touched && rfEditStudent.controls.name.errors?.required" style="color: red">Name Required</td>
+        <td *ngIf="rfEditStudent.controls.name.dirty && rfEditStudent.controls.name.errors?.pattern" style="color: red">Name Invalid</td>
+      </tr>
+      <tr>
+        <th>Group</th>
+        <td>
+          <select class="form-control" formControlName="group">
+            <option value="" selected disabled>Select Group</option>
+            <option *ngFor="let group of groups" [ngValue]="group">{{ group.groupName}}</option>
+          </select>
+        </td>
+        <td *ngIf="rfEditStudent.controls.group.touched && rfEditStudent.controls.group.errors?.required" style="color: red">Group Required</td>
+      </tr>
+      <tr>
+        <th>Name Project</th>
+        <td><input type="text" formControlName="nameProject" class="form-control" placeholder="Edit Name Project"></td>
+        <td *ngIf="rfEditStudent.controls.nameProject.touched && rfEditStudent.controls.nameProject.errors?.required" style="color: red">Name Project Required</td>
+      </tr>
+      <tr>
+        <th>Tutor</th>
+        <td>
+        <select class="form-control" formControlName="tutor">
+          <option value="" selected disabled>Select Tutor</option>
+          <option *ngFor="let tutor of tutors" [ngValue]="tutor">{{ tutor.tutorName}}</option>
+        </select>
+      </td>
+        <td *ngIf="rfEditStudent.controls.tutor.touched && rfEditStudent.controls.tutor.errors?.required" style="color: red">Tutor Required</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><input type="text" formControlName="email" class="form-control" placeholder="Edit Email Student"></td>
+        <td *ngIf="rfEditStudent.controls.email.touched && rfEditStudent.controls.email.errors?.required" style="color: red">Email Required</td>
+      </tr>
+      <tr>
+        <th>Phone</th>
+        <td><input type="number" formControlName="phone" class="form-control" placeholder="Edit Phone Student"></td>
+        <td *ngIf="rfEditStudent.controls.phone.touched && rfEditStudent.controls.phone.errors?.required" style="color: red">Phone Required</td>
+        <td *ngIf="rfEditStudent.controls.phone.touched && rfEditStudent.controls.phone.errors?.pattern" style="color: red">Phone Invalid</td>
+      </tr>
+
+      <tr>
+        <th></th>
+        <td>
+          <button type="submit" class="btn btn-success" [disabled]="rfEditStudent.invalid">Update</button>
+          &nbsp;
+          <button class="btn btn-primary" (click)="cancel()">Cancel</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</div>
+

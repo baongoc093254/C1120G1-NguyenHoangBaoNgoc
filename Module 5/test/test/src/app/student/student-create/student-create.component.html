@@ -1,0 +1,65 @@
+<div class="card border-success">
+  <h3 class="text-center">Create new <b style="color: green">Student </b></h3>
+  <div class="card-body">
+    <form [formGroup]="rfStudent" (ngSubmit)="onCreateForm()">
+      <table class="table table-hover col-6" >
+        <thead></thead>
+        <tbody>
+
+        <tr>
+          <th>Name</th>
+          <td><input type="text" class="form-control" placeholder="Input Name" formControlName="name"></td>
+          <td *ngIf="rfStudent.controls.name.touched && rfStudent.controls.name.errors?.required" style="color: red">Name <strong>Required</strong></td>
+          <td *ngIf="rfStudent.controls.name.dirty && rfStudent.controls.name.errors?.pattern" style="color: red">Name <strong>Invalid</strong></td>
+        </tr>
+        <tr>
+          <th>Group</th>
+          <select class="form-control" formControlName="group">
+            <option value="" selected disabled>Select Group</option>
+            <option *ngFor="let group of groups" [ngValue]="group">{{ group.groupName}}</option>
+          </select>
+          <td *ngIf="rfStudent.controls.group.touched && rfStudent.controls.group.errors?.required" style="color: red">Group Required</td>
+        </tr>
+        <tr>
+          <th>Name Project</th>
+          <td><input type="text" class="form-control" placeholder="Input Name Project" formControlName="nameProject" required></td>
+          <td *ngIf="rfStudent.controls.nameProject.touched && rfStudent.controls.nameProject.errors?.required" style="color: red">Date Start <strong>Required</strong></td>
+        </tr>
+        <tr>
+          <th>Tutor</th>
+          <td>
+            <select class="form-control" formControlName="tutor">
+              <option value="" selected disabled>Select Tutor</option>
+              <option *ngFor="let tutor of tutors" [ngValue]="tutor">{{ tutor.tutorName}}</option>
+            </select>
+          </td>
+            <td *ngIf="rfStudent.controls.tutor.touched && rfStudent.controls.tutor.errors?.required" style="color: red">Tutor Required</td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><input type="text" class="form-control" placeholder="Input Email" formControlName="email" ></td>
+          <td *ngIf="rfStudent.controls.email.touched && rfStudent.controls.email.errors?.required" style="color: red">Email  <strong>Required</strong></td>
+          <td *ngIf="rfStudent.controls.email.touched && rfStudent.controls.email.errors?.email" style="color: red">Email  <strong>Invalid</strong></td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td>
+            <input type="text" class="form-control" placeholder="Input Phone" formControlName="phone"></td>
+          <td *ngIf="rfStudent.controls.phone.touched && rfStudent.controls.phone.errors?.required" style="color: red">Phone Required</td>
+          <td *ngIf="rfStudent.controls.phone.touched && rfStudent.controls.phone.errors?.pattern" style="color: red">Phone Invalid</td>
+        </tr>
+        <tr>
+          <th></th>
+          <td class="text-center">
+            <button type="submit" class="btn btn-primary" [disabled]="rfStudent.invalid">Create</button>
+            &nbsp;
+            <button type="reset" class="btn btn-danger">Cancel</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </form>
+
+  </div>
+</div>
+

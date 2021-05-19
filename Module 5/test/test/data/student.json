@@ -1,0 +1,105 @@
+{
+  "group": [
+    {
+      "id": 1,
+      "name": "Group 1"
+    },
+    {
+      "id": 2,
+      "name": "Group 2"
+    },
+    {
+      "id": 3,
+      "name": "Group 3"
+    }
+  ],
+  "student": [
+    {
+      "id": 2,
+      "name": "Quoc Hoang",
+      "group": {
+        "id": 1,
+        "name": "Group 1"
+      },
+      "nameProject": "Furama Resort",
+      "tutor": "Nguyen Vu Thanh Tien",
+      "email": "hoang@gmail.com",
+      "phone": "0918870891"
+    },
+    {
+      "id": 3,
+      "name": "Ngoc Thuan",
+      "group": {
+        "id": 1,
+        "name": "Group 1"
+      },
+      "nameProject": "Furama Resort",
+      "tutor": "Nguyen Vu Thanh Tien",
+      "email": "thuan@gmail.com",
+      "phone": "0918870456"
+    },
+    {
+      "id": 4,
+      "name": "Hoang Sang",
+      "group": {
+        "id": 2,
+        "name": "Group 2"
+      },
+      "nameProject": "Furama Resort",
+      "tutor": "Doan Phuoc Trung",
+      "email": "sang@gmail.com",
+      "phone": "0918870132"
+    },
+    {
+      "id": 5,
+      "name": "Tuong Vi",
+      "group": {
+        "id": 2,
+        "name": "Group 2"
+      },
+      "nameProject": "Furama Resort",
+      "tutor": "Doan Phuoc Trung",
+      "email": "vi@gmail.com",
+      "phone": "0909123123"
+    },
+    {
+      "name": "Quang1",
+      "group": {
+        "id": 3,
+        "name": "Group 3"
+      },
+      "nameProject": "Intercoin",
+      "tutor": "Doan Ngoc Linh",
+      "email": "quang@gmail.com",
+      "phone": 93412312,
+      "id": 6
+    }
+  ],
+  "tutor": [
+    {
+      "id": 1,
+      "name": "Doan Phuoc Trung"
+    },
+    {
+      "id": 2,
+      "name": "Dang Chi Trung"
+    },
+    {
+      "id": 3,
+      "name": "Nguyen Vu Thanh Tien"
+    },
+    {
+      "id": 4,
+      "name": "Truong Tan Hai"
+    },
+    {
+      "id": 5,
+      "name": "Tran Minh Chien"
+    },
+    {
+      "id": 6,
+      "name": "Doan Ngoc Linh"
+    }
+
+  ]
+}
